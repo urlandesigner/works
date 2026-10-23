@@ -109,6 +109,8 @@
     margin-top: clamp(34px, 5vw, 50px);
   }
 
+  /* O cartão inteiro é o link, não só o texto do fim: alvo grande e uma
+     única área de clique por peça. */
   .versao {
     display: flex;
     flex-direction: column;
@@ -116,7 +118,17 @@
     border: 1px solid var(--linha);
     border-radius: 14px;
     padding: 24px 24px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .24s ease;
   }
+  .versao:hover,
+  .versao:focus-visible {
+    border-color: var(--acento-meio);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra);
+  }
+  .versao:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
   .versao__tag {
     font-family: var(--mono);
     font-size: 10px;
@@ -143,12 +155,22 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--tinta);
-    text-decoration: none;
     border-bottom: 1px solid var(--acento-meio);
     padding-bottom: 2px;
     align-self: flex-start;
+    transition: color .18s ease, border-color .18s ease;
   }
-  .versao__abrir:hover { border-bottom-color: var(--linha-forte); }
+  .versao:hover .versao__abrir,
+  .versao:focus-visible .versao__abrir {
+    color: var(--acento);
+    border-bottom-color: var(--acento);
+  }
+
+  /* Quem pediu menos movimento continua tendo a cor, que é o que informa. */
+  @media (prefers-reduced-motion: reduce) {
+    .versao { transition: border-color .18s ease; }
+    .versao:hover, .versao:focus-visible { transform: none; box-shadow: none; }
+  }
 
   table {
     width: 100%;
@@ -220,7 +242,7 @@
     </p>
 
     <div class="versoes">
-      <article class="versao">
+      <a class="versao" href="../app.html">
         <p class="versao__tag">Comece aqui</p>
         <h3 class="versao__nome">App no celular</h3>
         <p class="versao__desc">
@@ -228,10 +250,10 @@
           lado. Clique numa tela da lista para trocar o conteúdo da moldura
           sem sair da página.
         </p>
-        <a class="versao__abrir" href="../app.html">Abrir o app</a>
-      </article>
+        <span class="versao__abrir">Abrir o app &rarr;</span>
+      </a>
 
-      <article class="versao">
+      <a class="versao" href="../index.html">
         <p class="versao__tag">Para ver uma por uma</p>
         <h3 class="versao__nome">Índice de telas</h3>
         <p class="versao__desc">
@@ -239,8 +261,8 @@
           Abra uma tela isolada quando precisar dela em tamanho real ou para
           mandar o link de uma só.
         </p>
-        <a class="versao__abrir" href="../index.html">Abrir o índice</a>
-      </article>
+        <span class="versao__abrir">Abrir o índice &rarr;</span>
+      </a>
     </div>
 
     <h2>O que tem nas telas</h2>
