@@ -14,6 +14,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 | Pasta | Projeto |
 |---|---|
 | [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 21 telas mobile com as variações de saldo, cartão, extrato e pagamento |
+| [`ComproPay Site/`](ComproPay%20Site/README.md) | Landing one-page da carteira digital, com as trilhas de lojista e de usuário final e formulário de qualificação |
 
 _(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
 
