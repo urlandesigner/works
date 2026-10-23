@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[49485,["/works/Condominio/site/_next/static/chunks/01xlw8hd842-c.js","/works/Condominio/site/_next/static/chunks/0d3shmwh5_nmn.js","/works/Condominio/site/_next/static/chunks/13kr65aj26y5g.js","/works/Condominio/site/_next/static/chunks/035~vks5m1ljj.js","/works/Condominio/site/_next/static/chunks/0vv_bb58q4zyo.js"],"EncomendaDetalhe"]
+3:I[97367,["/works/Condominio/site/_next/static/chunks/01xlw8hd842-c.js","/works/Condominio/site/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"encomenda":{"id":"10","unidade":"302","destinatario":"Diego Rocha","remetente":"Correios","descricao":"Caixa pequena","status":"AGUARDANDO_RETIRADA","recebidaEm":"2025-04-06T13:30:00Z","observacoes":null,"retiradaEm":null}}],[["$","script","script-0",{"src":"/works/Condominio/site/_next/static/chunks/0vv_bb58q4zyo.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"kr4tTV7HuN3GEUrrAbHNt"}
+5:null

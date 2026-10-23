@@ -16,6 +16,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 | [`Analytics/site/`](Analytics/README.md) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site |
 | [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 21 telas mobile com as variações de saldo, cartão, extrato e pagamento |
 | [`ComproPay Site/`](ComproPay%20Site/README.md) | Landing one-page da carteira digital, com as trilhas de lojista e de usuário final e formulário de qualificação |
+| [`Condominio/site/`](Condominio/README.md) | Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes |
 | [`LP Urlan/detalhes/`](LP%20Urlan/README.md) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads |
 | [`LP afiliados 2/site/`](LP%20afiliados%202/README.md) | Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social |
 | [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |

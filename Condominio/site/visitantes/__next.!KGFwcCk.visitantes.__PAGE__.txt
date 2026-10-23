@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/works/Condominio/site/_next/static/chunks/01xlw8hd842-c.js","/works/Condominio/site/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-4","children":["$","p",null,{"className":"text-sm text-muted-foreground","children":"Módulo em desenvolvimento."}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"kr4tTV7HuN3GEUrrAbHNt"}
+4:null

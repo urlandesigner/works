@@ -1,0 +1,196 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── COMUNICADOS ──────────────────────────────────────────────
+model Comunicado {
+  id         String            @id @default(cuid())
+  titulo     String
+  conteudo   String
+  categoria  CategoriaComunicado
+  fixado     Boolean           @default(false)
+  ativo      Boolean           @default(true)
+  criadoEm   DateTime          @default(now())
+  atualizadoEm DateTime        @updatedAt
+}
+
+enum CategoriaComunicado {
+  GERAL
+  MANUTENCAO
+  SEGURANCA
+  FINANCEIRO
+  EVENTOS
+  URGENTE
+}
+
+// ─── CHAMADOS ─────────────────────────────────────────────────
+model Chamado {
+  id          String          @id @default(cuid())
+  titulo      String
+  descricao   String
+  categoria   CategoriaChamado
+  status      StatusChamado   @default(ABERTO)
+  prioridade  Prioridade      @default(NORMAL)
+  unidade     String
+  nomeReq     String
+  respostas   RespostaChamado[]
+  criadoEm    DateTime        @default(now())
+  atualizadoEm DateTime       @updatedAt
+}
+
+model RespostaChamado {
+  id        String   @id @default(cuid())
+  chamadoId String
+  chamado   Chamado  @relation(fields: [chamadoId], references: [id], onDelete: Cascade)
+  texto     String
+  autor     String
+  criadoEm  DateTime @default(now())
+}
+
+enum CategoriaChamado {
+  ELETRICA
+  HIDRAULICA
+  ESTRUTURA
+  LIMPEZA
+  SEGURANCA
+  OUTROS
+}
+
+enum StatusChamado {
+  ABERTO
+  EM_ANDAMENTO
+  AGUARDANDO
+  RESOLVIDO
+  CANCELADO
+}
+
+enum Prioridade {
+  BAIXA
+  NORMAL
+  ALTA
+  URGENTE
+}
+
+// ─── RESERVAS ─────────────────────────────────────────────────
+model AreaComum {
+  id          String    @id @default(cuid())
+  nome        String
+  descricao   String?
+  capacidade  Int?
+  ativa       Boolean   @default(true)
+  reservas    Reserva[]
+}
+
+model Reserva {
+  id        String        @id @default(cuid())
+  areaId    String
+  area      AreaComum     @relation(fields: [areaId], references: [id])
+  unidade   String
+  nomeRes   String
+  data      DateTime
+  horaInicio String
+  horaFim   String
+  status    StatusReserva @default(CONFIRMADA)
+  criadoEm  DateTime      @default(now())
+}
+
+enum StatusReserva {
+  CONFIRMADA
+  CANCELADA
+}
+
+// ─── ENCOMENDAS ───────────────────────────────────────────────
+model Encomenda {
+  id           String          @id @default(cuid())
+  unidade      String
+  destinatario String
+  remetente    String?
+  descricao    String?
+  status       StatusEncomenda @default(AGUARDANDO_RETIRADA)
+  recebidaEm   DateTime        @default(now())
+  retiradaEm   DateTime?
+}
+
+enum StatusEncomenda {
+  AGUARDANDO_RETIRADA
+  RETIRADA
+}
+
+// ─── VISITANTES ───────────────────────────────────────────────
+model Visitante {
+  id         String         @id @default(cuid())
+  nome       String
+  documento  String?
+  unidade    String
+  motivo     String?
+  status     StatusVisita   @default(AGUARDANDO)
+  entradaEm  DateTime?
+  saidaEm    DateTime?
+  criadoEm   DateTime       @default(now())
+}
+
+enum StatusVisita {
+  AGUARDANDO
+  DENTRO
+  SAIU
+  NEGADO
+}
+
+// ─── MENSAGENS ────────────────────────────────────────────────
+model Conversa {
+  id        String     @id @default(cuid())
+  assunto   String
+  unidade   String
+  tipo      TipoConversa
+  mensagens Mensagem[]
+  criadoEm  DateTime   @default(now())
+}
+
+model Mensagem {
+  id          String   @id @default(cuid())
+  conversaId  String
+  conversa    Conversa @relation(fields: [conversaId], references: [id], onDelete: Cascade)
+  texto       String
+  autor       String
+  autorTipo   AutorTipo
+  criadoEm    DateTime @default(now())
+}
+
+enum TipoConversa {
+  SINDICO
+  PORTARIA
+}
+
+enum AutorTipo {
+  MORADOR
+  ADMINISTRACAO
+}
+
+// ─── COMUNIDADE ───────────────────────────────────────────────
+model PostComunidade {
+  id          String              @id @default(cuid())
+  titulo      String
+  descricao   String
+  categoria   CategoriaComunidade
+  unidade     String
+  autor       String
+  contato     String?
+  resolvido   Boolean             @default(false)
+  ativo       Boolean             @default(true)
+  criadoEm    DateTime            @default(now())
+  atualizadoEm DateTime           @updatedAt
+}
+
+enum CategoriaComunidade {
+  VENDA
+  COMPRA
+  ACHADO
+  PERDIDO
+  PRESTADOR
+  EVENTO
+}
