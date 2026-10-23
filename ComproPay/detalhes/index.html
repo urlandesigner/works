@@ -228,17 +228,16 @@
     <h1>As telas do <em>ComproPay</em></h1>
 
     <p class="lede">
-      Protótipo navegável de um app de pagamento no celular: 21 telas em HTML
-      estático, com CSS próprio e tokens em <code>css/tokens.css</code>. Sem
-      framework, sem build, sem dependência. Cobre seis áreas: início, extrato,
-      cartões, pagar, vantagens e ajuda, com as variações de saldo visível ou
-      oculto e de zero, um ou dois cartões.
+      São 21 telas de um app de pagamento no celular, em seis áreas: início,
+      extrato, cartões, pagar, vantagens e ajuda. A tela de início aparece com
+      zero, um e dois cartões, cada uma com o saldo à vista e escondido. Pagar
+      tem os seis caminhos: escolher alguém, ler o QR code, ver quem está por
+      perto, buscar pelo nome, digitar o valor e deixar o pagamento repetir.
     </p>
     <p class="lede">
-      Nada aqui conversa com servidor. Saldo, transações, favoritos e ofertas
-      são fixos no HTML, e os botões navegam entre telas em vez de executar
-      ação. O protótipo existe para percorrer os estados da interface e
-      comparar as variações lado a lado, não para simular o sistema.
+      Nada conversa com servidor. Saldo, transações e ofertas estão escritos
+      nas telas, e os botões levam de uma para outra. Serve para ver a
+      interface de perto e comparar as variações.
     </p>
 
     <div class="versoes">
@@ -264,64 +263,6 @@
         <span class="versao__abrir">Abrir o índice &rarr;</span>
       </a>
     </div>
-
-    <h2>O que tem nas telas</h2>
-    <p class="sub">
-      As variações existem porque cada uma muda o layout, não só o texto: sem
-      cartão a home perde a carteira inteira, e com saldo oculto os números
-      viram pontos sem a linha mudar de altura.
-    </p>
-    <table>
-      <thead>
-        <tr><th>Área</th><th>Telas</th><th>O que varia</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Início</td>
-          <td>6</td>
-          <td>Zero, um ou dois cartões, cada um com saldo visível e saldo oculto</td>
-        </tr>
-        <tr>
-          <td>Pagar</td>
-          <td>6</td>
-          <td>Escolher destinatário, ler QR, próximos de mim, busca, valor e valor recorrente</td>
-        </tr>
-        <tr>
-          <td>Extrato</td>
-          <td>3</td>
-          <td>Lista, detalhe da transação e detalhe com o menu de opções aberto</td>
-        </tr>
-        <tr>
-          <td>Vantagens</td>
-          <td>3</td>
-          <td>Até três vantagens, mais de três, e o detalhe de uma</td>
-        </tr>
-        <tr>
-          <td>Ajuda</td>
-          <td>2</td>
-          <td>Central de ajuda e a conversa com a assistente</td>
-        </tr>
-        <tr>
-          <td>Cartões</td>
-          <td>1</td>
-          <td>Meus cartões</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>Como foi feito</h2>
-    <p class="sub">
-      Cada tela é um arquivo HTML inteiro, sem include e sem montagem. Repete
-      cabeçalho e barra de navegação de propósito: trocar uma tela nunca
-      quebra as outras, e abrir o arquivo mostra tudo o que aquela tela é.
-      <code>css/tokens.css</code> guarda cor, espaçamento e tipografia;
-      <code>css/base.css</code>, o resto. Os ícones são SVG soltos em
-      <code>assets/icons/</code>.
-    </p>
-    <p class="nota">
-      As telas abrem direto do arquivo, sem servidor. Só o app no celular
-      precisa de um, porque usa iframe para trocar a tela dentro da moldura.
-    </p>
 
     <footer>Urlan Dipre</footer>
   </div>
