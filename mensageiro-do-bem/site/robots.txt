@@ -1,0 +1,10 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /mensagem
+Disallow: /pagamento
+Disallow: /historico
+Disallow: /email-templates
+
+Host: https://www.mensageirodobem.com.br
+Sitemap: https://www.mensageirodobem.com.br/sitemap.xml

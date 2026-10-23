@@ -21,6 +21,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 | [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |
 | [`Maquininha Roxinha/`](Maquininha%20Roxinha/README.md) | Terminal de maquininha com 22 telas, da cobrança e Pix ao estorno em dois passos e aos relatórios |
 | [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças em três peças: landing, app web e app mobile |
+| [`mensageiro-do-bem/site/`](mensageiro-do-bem/README.md) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora |
 
 _(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
 

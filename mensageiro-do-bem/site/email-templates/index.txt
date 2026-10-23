@@ -1,0 +1,205 @@
+1:"$Sreact.fragment"
+2:I[79520,["/works/mensageiro-do-bem/site/_next/static/chunks/03a4jm_7-dpof.js"],""]
+3:I[39756,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+4:I[37457,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+c:I[68027,["/works/mensageiro-do-bem/site/_next/static/chunks/03a4jm_7-dpof.js"],"default",1]
+:HL["/works/mensageiro-do-bem/site/_next/static/chunks/16t_eq3xdkc6w.css","style"]
+:HL["/works/mensageiro-do-bem/site/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/works/mensageiro-do-bem/site/_next/static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"c":["","email-templates",""],"q":"","i":false,"f":[[["",{"children":["email-templates",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/works/mensageiro-do-bem/site/_next/static/chunks/16t_eq3xdkc6w.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/works/mensageiro-do-bem/site/_next/static/chunks/03a4jm_7-dpof.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","data-scroll-behavior":"smooth","className":"dm_sans_5ed5edd2-module__8d9AFq__variable cormorant_garamond_bd78546a-module__CtRnrW__variable h-full scroll-smooth antialiased","children":["$","body",null,{"className":"flex min-h-full flex-col font-sans text-[15px] font-normal leading-relaxed text-[var(--ink)] sm:text-base","children":[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-FSNVX01PY6","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-FSNVX01PY6');\n          "}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.mensageirodobem.com.br/#organization\",\"name\":\"Mensageiro do Bem\",\"url\":\"https://www.mensageirodobem.com.br\",\"description\":\"Receba uma mensagem carinhosa e inspiradora por um gesto simbólico. Rápido, sem cadastro e feito para emocionar — e a maior parte é doada para ajudar quem precisa.\",\"founder\":{\"@type\":\"Person\",\"name\":\"Urlan Dipré\",\"url\":\"https://udlabs.com.br\"},\"brand\":{\"@type\":\"Brand\",\"name\":\"UD Labs\",\"url\":\"https://udlabs.com.br\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.mensageirodobem.com.br/#website\",\"url\":\"https://www.mensageirodobem.com.br\",\"name\":\"Mensageiro do Bem\",\"inLanguage\":\"pt-BR\",\"description\":\"Receba uma mensagem carinhosa e inspiradora por um gesto simbólico. Rápido, sem cadastro e feito para emocionar — e a maior parte é doada para ajudar quem precisa.\",\"publisher\":{\"@id\":\"https://www.mensageirodobem.com.br/#organization\"}}]}"}}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[["$","main",null,{"className":"min-h-full px-5 py-10 sm:px-8 sm:py-14","children":["$","div",null,{"className":"mx-auto max-w-6xl","children":[["$","header",null,{"className":"mx-auto max-w-3xl text-center","children":["$L5","$L6","$L7"]}],"$L8"]}]}],null,"$L9"]}],{},null,false,null]},null,false,"$@a"]},null,false,null],"$Lb",false]],"m":"$undefined","G":["$c",["$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"fvE98O7zBw5-tpuGYonXZ"}
+11:I[97367,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+15:I[97367,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
+17:I[97367,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+5:["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]","children":"Studio interno"}]
+6:["$","h1",null,{"className":"mt-4 font-serif text-[2.4rem] font-semibold leading-[0.96] tracking-[-0.04em] text-[var(--ink)] sm:text-[3.6rem]","children":"Templates de e-mail com cara de produto, não de disparo genérico."}]
+7:["$","p",null,{"className":"mx-auto mt-5 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg","children":"Cada template abaixo já sai com assunto, preview text, HTML e versão texto puro. Os previews usam a mesma direção editorial do app para facilitar aprovação de copy e visual."}]
+e:T10e7,<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana, sua mensagem já está pronta.</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f3ece2;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#4a433c;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">Seu gesto de R$10,00 foi confirmado. Agora é hora de abrir a sua pausa de carinho.</div>
+    <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#f3ece2;margin:0;padding:24px 0;width:100%;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="width:100%;max-width:640px;margin:0 auto;padding:0 18px;">
+            <tr>
+              <td>
+                <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#fdf9f3;border:1px solid #e0d5c8;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(74,67,60,0.10);">
+                  <tr>
+                    <td style="padding:0 0 18px;background:radial-gradient(circle at top, #ead8c4 0%, #fdf9f3 58%);">
+                      <div style="padding:36px 34px 10px;">
+                        <p style="margin:0 0 18px;font-size:11px;line-height:1.6;letter-spacing:0.28em;text-transform:uppercase;font-weight:700;color:#7d7268;">Pagamento confirmado</p>
+                        <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:42px;line-height:0.98;font-weight:600;letter-spacing:-0.04em;color:#4a433c;">Ana, sua mensagem já está pronta.</h1>
+                        <p style="margin:22px 0 0;font-size:17px;line-height:1.8;color:#7d7268;">Seu gesto de R$10,00 foi confirmado. Agora é hora de abrir a sua pausa de carinho.</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0 34px 34px;">
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#faf5ec;border:1px solid #e0d5c8;border-radius:24px;">
+                        <tr>
+                          <td style="padding:26px 24px;font-size:18px;line-height:1.9;color:#4a433c;">
+                            <p style="margin:0 0 18px;">Para você, agora.</p><p style="margin:0 0 18px;">Hoje não precisa ser perfeito.</p><p style="margin:0 0 18px;">Basta ser seu — com calma, com coragem do tamanho que couber no peito.</p><p style="margin:0 0 18px;">O mundo continua girando, e você, aos poucos, também segue.</p><p style="margin:0 0 18px;">Essa mensagem foi escolhida para você agora.</p>
+                            <p style="margin:26px 0 0;font-size:16px;line-height:1.8;color:#7d7268;">Guarda esse carinho.</p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" cellPadding="0" cellSpacing="0" style="margin:28px auto 0;">
+                        <tr>
+                          <td align="center" style="border-radius:999px;background:#c65e52;">
+                            <a href="https://mensageirodobem.com/mensagem?id=m01" style="display:inline-block;padding:15px 28px;border-radius:999px;font-size:14px;line-height:1.2;font-weight:700;letter-spacing:0.03em;text-decoration:none;color:#fffaf7;background:linear-gradient(180deg, #c65e52 0%, #b54d42 100%);">Abrir minha mensagem</a>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="margin-top:24px;">
+                        <tr>
+                          <td style="padding-top:22px;border-top:1px solid #e0d5c8;font-size:13px;line-height:1.8;color:#7d7268;">
+                            Obrigada por sustentar um projeto que transforma pequenos gestos em respiro real no meio do dia.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>8:["$","section",null,{"className":"mt-12 grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]","children":[["$","article","payment-confirmed",{"className":"overflow-hidden rounded-[2rem] border border-[var(--stroke)] bg-[var(--paper)] shadow-[var(--shadow-ticket)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] bg-[linear-gradient(180deg,rgba(250,245,236,0.96)_0%,rgba(253,249,243,0.92)_100%)] px-6 py-6 sm:px-7","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[var(--muted)]","children":"Confirmação com entrega da mensagem"}],["$","p",null,{"className":"mt-3 text-sm leading-7 text-[var(--muted)] sm:text-[0.98rem]","children":"Template transacional principal para quando o PIX for confirmado e a pessoa puder abrir a mensagem."}]]}],["$","div",null,{"className":"grid gap-0 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] px-6 py-6 xl:border-b-0 xl:border-r xl:px-7","children":[["$","div",null,{"className":"rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Assunto"}],["$","p",null,{"className":"mt-2 text-base font-medium leading-7 text-[var(--ink)]","children":"Sua mensagem do Mensageiro do Bem chegou"}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Preview text"}],["$","p",null,{"className":"mt-2 text-sm leading-7 text-[var(--ink)]/92","children":"Pagamento confirmado. Sua mensagem já pode ser aberta agora."}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Texto puro"}],["$","pre",null,{"className":"mt-3 overflow-x-auto whitespace-pre-wrap break-words font-sans text-[0.92rem] leading-7 text-[var(--ink)]/92","children":"PAGAMENTO CONFIRMADO\nAna, sua mensagem já está pronta.\nSeu gesto de R$10,00 foi confirmado. Agora é hora de abrir a sua pausa de carinho.\nPara você, agora.\n\nHoje não precisa ser perfeito.\n\nBasta ser seu — com calma, com coragem do tamanho que couber no peito.\n\nO mundo continua girando, e você, aos poucos, também segue.\n\nEssa mensagem foi escolhida para você agora.\nGuarda esse carinho.\nAbrir minha mensagem: https://mensageirodobem.com/mensagem?id=m01\nObrigada por sustentar um projeto que transforma pequenos gestos em respiro real no meio do dia."}]]}]]}],["$","div",null,{"className":"bg-[var(--canvas-mid)]/32 p-3 sm:p-4","children":["$","div",null,{"className":"overflow-hidden rounded-[1.55rem] border border-[var(--stroke-strong)] bg-white shadow-[0_18px_50px_-22px_rgba(74,67,60,0.45)]","children":["$","iframe",null,{"title":"Preview do template Confirmação com entrega da mensagem","srcDoc":"$e","className":"h-[780px] w-full bg-white"}]}]}]]}]]}],"$Lf","$L10"]}]
+9:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+14:[]
+a:"$W14"
+b:["$","$1","h",{"children":[null,["$","$L15",null,{"children":"$L16"}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$12",null,{"name":"Next.Metadata","children":"$L18"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+d:["$","link","0",{"rel":"stylesheet","href":"/works/mensageiro-do-bem/site/_next/static/chunks/16t_eq3xdkc6w.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+19:T10a7,<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafael, tem uma mensagem esperando por você.</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f3ece2;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#4a433c;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">Camila enviou um gesto delicado para tornar o seu dia um pouco mais leve.</div>
+    <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#f3ece2;margin:0;padding:24px 0;width:100%;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="width:100%;max-width:640px;margin:0 auto;padding:0 18px;">
+            <tr>
+              <td>
+                <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#fdf9f3;border:1px solid #e0d5c8;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(74,67,60,0.10);">
+                  <tr>
+                    <td style="padding:0 0 18px;background:radial-gradient(circle at top, #ead8c4 0%, #fdf9f3 58%);">
+                      <div style="padding:36px 34px 10px;">
+                        <p style="margin:0 0 18px;font-size:11px;line-height:1.6;letter-spacing:0.28em;text-transform:uppercase;font-weight:700;color:#7d7268;">Um carinho chegou</p>
+                        <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:42px;line-height:0.98;font-weight:600;letter-spacing:-0.04em;color:#4a433c;">Rafael, tem uma mensagem esperando por você.</h1>
+                        <p style="margin:22px 0 0;font-size:17px;line-height:1.8;color:#7d7268;">Camila enviou um gesto delicado para tornar o seu dia um pouco mais leve.</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0 34px 34px;">
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#faf5ec;border:1px solid #e0d5c8;border-radius:24px;">
+                        <tr>
+                          <td style="padding:26px 24px;font-size:18px;line-height:1.9;color:#4a433c;">
+                            <p style="margin:0 0 18px;">Não precisa responder correndo, nem estar no melhor momento.</p><p style="margin:0 0 18px;">Basta abrir quando sentir que essa pausa cabe no seu peito.</p><p style="margin:0 0 18px;">Recado de Camila:<br />Pensei em você hoje e quis te mandar algo pequeno, mas cheio de cuidado.</p>
+                            <p style="margin:26px 0 0;font-size:16px;line-height:1.8;color:#7d7268;">Abra com calma. O carinho continua aqui.</p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" cellPadding="0" cellSpacing="0" style="margin:28px auto 0;">
+                        <tr>
+                          <td align="center" style="border-radius:999px;background:#c65e52;">
+                            <a href="https://mensageirodobem.com/receber" style="display:inline-block;padding:15px 28px;border-radius:999px;font-size:14px;line-height:1.2;font-weight:700;letter-spacing:0.03em;text-decoration:none;color:#fffaf7;background:linear-gradient(180deg, #c65e52 0%, #b54d42 100%);">Receber minha mensagem</a>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="margin-top:24px;">
+                        <tr>
+                          <td style="padding-top:22px;border-top:1px solid #e0d5c8;font-size:13px;line-height:1.8;color:#7d7268;">
+                            Mensageiro do Bem existe para fazer o cuidado caber em poucos segundos, sem perder profundidade.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>f:["$","article","gift-message",{"className":"overflow-hidden rounded-[2rem] border border-[var(--stroke)] bg-[var(--paper)] shadow-[var(--shadow-ticket)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] bg-[linear-gradient(180deg,rgba(250,245,236,0.96)_0%,rgba(253,249,243,0.92)_100%)] px-6 py-6 sm:px-7","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[var(--muted)]","children":"Presente de carinho"}],["$","p",null,{"className":"mt-3 text-sm leading-7 text-[var(--muted)] sm:text-[0.98rem]","children":"Template para presente ou indicação pessoal, com espaço para um recado curto de quem enviou."}]]}],["$","div",null,{"className":"grid gap-0 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] px-6 py-6 xl:border-b-0 xl:border-r xl:px-7","children":[["$","div",null,{"className":"rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Assunto"}],["$","p",null,{"className":"mt-2 text-base font-medium leading-7 text-[var(--ink)]","children":"Você recebeu um gesto de carinho"}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Preview text"}],["$","p",null,{"className":"mt-2 text-sm leading-7 text-[var(--ink)]/92","children":"Camila enviou uma mensagem especial para você."}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Texto puro"}],["$","pre",null,{"className":"mt-3 overflow-x-auto whitespace-pre-wrap break-words font-sans text-[0.92rem] leading-7 text-[var(--ink)]/92","children":"UM CARINHO CHEGOU\nRafael, tem uma mensagem esperando por você.\nCamila enviou um gesto delicado para tornar o seu dia um pouco mais leve.\nNão precisa responder correndo, nem estar no melhor momento.\n\nBasta abrir quando sentir que essa pausa cabe no seu peito.\n\nRecado de Camila:\nPensei em você hoje e quis te mandar algo pequeno, mas cheio de cuidado.\nAbra com calma. O carinho continua aqui.\nReceber minha mensagem: https://mensageirodobem.com/receber\nMensageiro do Bem existe para fazer o cuidado caber em poucos segundos, sem perder profundidade."}]]}]]}],["$","div",null,{"className":"bg-[var(--canvas-mid)]/32 p-3 sm:p-4","children":["$","div",null,{"className":"overflow-hidden rounded-[1.55rem] border border-[var(--stroke-strong)] bg-white shadow-[0_18px_50px_-22px_rgba(74,67,60,0.45)]","children":["$","iframe",null,{"title":"Preview do template Presente de carinho","srcDoc":"$19","className":"h-[780px] w-full bg-white"}]}]}]]}]]}]
+1a:T109a,<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julia, talvez hoje caiba mais uma palavra boa.</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f3ece2;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#4a433c;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">Tem dias em que a gente não precisa de solução completa. Só de uma frase certa, na hora certa.</div>
+    <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#f3ece2;margin:0;padding:24px 0;width:100%;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="width:100%;max-width:640px;margin:0 auto;padding:0 18px;">
+            <tr>
+              <td>
+                <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#fdf9f3;border:1px solid #e0d5c8;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(74,67,60,0.10);">
+                  <tr>
+                    <td style="padding:0 0 18px;background:radial-gradient(circle at top, #ead8c4 0%, #fdf9f3 58%);">
+                      <div style="padding:36px 34px 10px;">
+                        <p style="margin:0 0 18px;font-size:11px;line-height:1.6;letter-spacing:0.28em;text-transform:uppercase;font-weight:700;color:#7d7268;">Volte quando quiser</p>
+                        <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:42px;line-height:0.98;font-weight:600;letter-spacing:-0.04em;color:#4a433c;">Julia, talvez hoje caiba mais uma palavra boa.</h1>
+                        <p style="margin:22px 0 0;font-size:17px;line-height:1.8;color:#7d7268;">Tem dias em que a gente não precisa de solução completa. Só de uma frase certa, na hora certa.</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0 34px 34px;">
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="background:#faf5ec;border:1px solid #e0d5c8;border-radius:24px;">
+                        <tr>
+                          <td style="padding:26px 24px;font-size:18px;line-height:1.9;color:#4a433c;">
+                            <p style="margin:0 0 18px;">Se o dia apertou, volta aqui.</p><p style="margin:0 0 18px;">O Mensageiro do Bem continua sendo esse lugar pequeno, mas sincero, para te encontrar com alguma delicadeza no meio do caminho.</p>
+                            <p style="margin:26px 0 0;font-size:16px;line-height:1.8;color:#7d7268;">Quando quiser respirar um pouco melhor, a porta continua aberta.</p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" cellPadding="0" cellSpacing="0" style="margin:28px auto 0;">
+                        <tr>
+                          <td align="center" style="border-radius:999px;background:#c65e52;">
+                            <a href="https://mensageirodobem.com/receber" style="display:inline-block;padding:15px 28px;border-radius:999px;font-size:14px;line-height:1.2;font-weight:700;letter-spacing:0.03em;text-decoration:none;color:#fffaf7;background:linear-gradient(180deg, #c65e52 0%, #b54d42 100%);">Quero receber outra mensagem</a>
+                          </td>
+                        </tr>
+                      </table>
+                      <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" style="margin-top:24px;">
+                        <tr>
+                          <td style="padding-top:22px;border-top:1px solid #e0d5c8;font-size:13px;line-height:1.8;color:#7d7268;">
+                            Você está recebendo este e-mail porque já abriu uma mensagem do Mensageiro do Bem antes.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>10:["$","article","come-back",{"className":"overflow-hidden rounded-[2rem] border border-[var(--stroke)] bg-[var(--paper)] shadow-[var(--shadow-ticket)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] bg-[linear-gradient(180deg,rgba(250,245,236,0.96)_0%,rgba(253,249,243,0.92)_100%)] px-6 py-6 sm:px-7","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[var(--muted)]","children":"Reativação suave"}],["$","p",null,{"className":"mt-3 text-sm leading-7 text-[var(--muted)] sm:text-[0.98rem]","children":"Template de retorno, mantendo o tom leve do produto sem parecer uma cobrança comercial."}]]}],["$","div",null,{"className":"grid gap-0 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]","children":[["$","div",null,{"className":"border-b border-[var(--stroke)] px-6 py-6 xl:border-b-0 xl:border-r xl:px-7","children":[["$","div",null,{"className":"rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Assunto"}],["$","p",null,{"className":"mt-2 text-base font-medium leading-7 text-[var(--ink)]","children":"Uma nova pausa de carinho para o seu dia"}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Preview text"}],["$","p",null,{"className":"mt-2 text-sm leading-7 text-[var(--ink)]/92","children":"Se hoje estiver pesado, talvez uma mensagem curta já ajude."}]]}],["$","div",null,{"className":"mt-4 rounded-[1.4rem] border border-[var(--stroke)] bg-[var(--paper-warm)] px-4 py-4","children":[["$","p",null,{"className":"text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]","children":"Texto puro"}],["$","pre",null,{"className":"mt-3 overflow-x-auto whitespace-pre-wrap break-words font-sans text-[0.92rem] leading-7 text-[var(--ink)]/92","children":"VOLTE QUANDO QUISER\nJulia, talvez hoje caiba mais uma palavra boa.\nTem dias em que a gente não precisa de solução completa. Só de uma frase certa, na hora certa.\nSe o dia apertou, volta aqui.\n\nO Mensageiro do Bem continua sendo esse lugar pequeno, mas sincero, para te encontrar com alguma delicadeza no meio do caminho.\nQuando quiser respirar um pouco melhor, a porta continua aberta.\nQuero receber outra mensagem: https://mensageirodobem.com/receber\nVocê está recebendo este e-mail porque já abriu uma mensagem do Mensageiro do Bem antes."}]]}]]}],["$","div",null,{"className":"bg-[var(--canvas-mid)]/32 p-3 sm:p-4","children":["$","div",null,{"className":"overflow-hidden rounded-[1.55rem] border border-[var(--stroke-strong)] bg-white shadow-[0_18px_50px_-22px_rgba(74,67,60,0.45)]","children":["$","iframe",null,{"title":"Preview do template Reativação suave","srcDoc":"$1a","className":"h-[780px] w-full bg-white"}]}]}]]}]]}]
+16:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1b:I[27201,["/works/mensageiro-do-bem/site/_next/static/chunks/01xlw8hd842-c.js","/works/mensageiro-do-bem/site/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+13:null
+18:[["$","title","0",{"children":"Templates de E-mail · Mensageiro do Bem | Mensageiro do Bem"}],["$","meta","1",{"name":"description","content":"Preview interno dos templates de e-mail do Mensageiro do Bem."}],["$","meta","2",{"name":"application-name","content":"Mensageiro do Bem"}],["$","link","3",{"rel":"author","href":"https://udlabs.com.br"}],["$","meta","4",{"name":"author","content":"Urlan Dipré"}],["$","meta","5",{"name":"keywords","content":"mensagem inspiradora,mensagem de carinho,mensagem do bem,motivação,acolhimento,doação,PIX do bem"}],["$","meta","6",{"name":"creator","content":"Urlan Dipré"}],["$","meta","7",{"name":"publisher","content":"UD Labs"}],["$","meta","8",{"name":"robots","content":"noindex, nofollow"}],["$","meta","9",{"property":"og:title","content":"Mensageiro do Bem · Uma mensagem no momento certo"}],["$","meta","10",{"property":"og:description","content":"Receba uma mensagem carinhosa e inspiradora por um gesto simbólico. Rápido, sem cadastro e feito para emocionar — e a maior parte é doada para ajudar quem precisa."}],["$","meta","11",{"property":"og:url","content":"https://www.mensageirodobem.com.br/"}],["$","meta","12",{"property":"og:site_name","content":"Mensageiro do Bem"}],["$","meta","13",{"property":"og:locale","content":"pt_BR"}],["$","meta","14",{"property":"og:image","content":"https://www.mensageirodobem.com.br/opengraph-image?44c84e1560cd28f3"}],["$","meta","15",{"property":"og:image:type","content":"image/png"}],["$","meta","16",{"property":"og:image:width","content":"1200"}],["$","meta","17",{"property":"og:image:height","content":"630"}],["$","meta","18",{"property":"og:image:alt","content":"Mensageiro do Bem — receba uma mensagem que chega bem na hora em que você precisava"}],["$","meta","19",{"property":"og:type","content":"website"}],["$","meta","20",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","21",{"name":"twitter:title","content":"Mensageiro do Bem · Uma mensagem no momento certo"}],["$","meta","22",{"name":"twitter:description","content":"Receba uma mensagem carinhosa e inspiradora por um gesto simbólico. Rápido, sem cadastro e feito para emocionar — e a maior parte é doada para ajudar quem precisa."}],["$","meta","23",{"name":"twitter:image","content":"https://www.mensageirodobem.com.br/opengraph-image?44c84e1560cd28f3"}],["$","meta","24",{"name":"twitter:image:alt","content":"Mensageiro do Bem — receba uma mensagem que chega bem na hora em que você precisava"}],["$","meta","25",{"name":"twitter:image:type","content":"image/png"}],["$","meta","26",{"name":"twitter:image:width","content":"1200"}],["$","meta","27",{"name":"twitter:image:height","content":"630"}],["$","link","28",{"rel":"icon","href":"/favicon.ico"}],["$","link","29",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],["$","$L1b","30",{}]]
