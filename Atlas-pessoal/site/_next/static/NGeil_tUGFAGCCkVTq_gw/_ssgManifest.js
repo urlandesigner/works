@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fcrm\u002F[id]","\u002Fp\u002F[id]","\u002Fprojects\u002F[workspace]\u002F[projectId]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

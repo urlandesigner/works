@@ -1,0 +1,3 @@
+:HL["/works/Atlas-pessoal/site/_next/static/chunks/13wtj8qk4k5l3.css","style"]
+:HL["/works/Atlas-pessoal/site/_next/static/chunks/10dv9ndve6qav.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"NGeil_tUGFAGCCkVTq_gw"}
