@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  /* CTA — o elemento mais visível da página. Reservado SÓ para ação:
+     não usar em headline, ícone ou qualquer outro destaque, senão deixa
+     de ficar claro o que é clicável.
+     Texto branco sobre #C2410C = 5.18:1 (medido), passa WCAG AA (>= 4.5).
+     Trocar por cor de marca só se mantiver contraste >= 4.5:1. */
+  --color-cta: #c2410c;
+  --color-cta-hover: #9a3412;
+
+  /* Identidade de marca (dourado) — NUNCA usar no botão de ação, só em
+     headline/ícone/detalhe, para não competir com o CTA por atenção.
+     Duas variantes por contraste, não por gosto:
+     - gold: sobre fundo claro. #8a6d0a = 4.91:1 sobre branco (passa AA).
+       O dourado vibrante da marca (#efbf1b) dá só 1.76:1 sobre branco —
+       ilegível como texto, por isso é mais escuro aqui.
+     - gold-bright: sobre fundo escuro (tone="dark" do SectionShell).
+       #efbf1b = 11.96:1 sobre #171717 (excelente). É o dourado real da
+       embalagem do produto — funciona porque o fundo já é escuro. */
+  --color-gold: #8a6d0a;
+  --color-gold-bright: #efbf1b;
+
+  /* #0a0a0a é a média medida do fundo escuro da página oficial do produto
+     (rgb(10,10,10)) — quase preto. Existe como token porque o
+     StickyMobileCTA precisa dele fora de qualquer seção (é fixed).
+     O fundo claro (#fafafa) espelha a média do mármore da oficial
+     (rgb(250,250,250)) e vive direto em .tone-light. */
+  --color-dark: #0a0a0a;
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+
+  /* Cores semânticas de texto/borda. Os VALORES abaixo são o padrão
+     (tom claro); as classes .tone-* mais abaixo sobrescrevem essas
+     MESMAS variáveis, então os utilitários (text-heading, text-body,
+     text-muted, text-accent, border-line, bg-surface) ficam iguais em
+     qualquer fundo e os componentes filhos não precisam saber onde estão.
+     era isso que deixava o sistema anterior frágil, com cor declarada
+     à mão em cada span.
+
+     IMPORTANTE: sobrescrever --color-* direto, sem indireção por uma
+     segunda variável. Custom property herda o valor JÁ COMPUTADO: se
+     --color-heading fosse var(--tone-heading), resolveria no :root (tom
+     claro) e o override em .tone-dark nunca chegaria — texto escuro sobre
+     fundo escuro. */
+  --color-heading: #171717;
+  --color-body: #404040;
+  --color-muted: #737373;
+  --color-accent: #8a6d0a; /* gold escuro — 4.91:1 sobre #fafafa */
+  --color-line: #e5e5e5;
+  --color-surface: #ffffff;
+}
+
+/* Contrastes sobre #fafafa: heading 15.9:1 · body 9.4:1 · muted 4.7:1.
+   A textura é um gradiente de altíssimo contraste baixo — imita a veia
+   do mármore sem imagem. Custo: zero bytes. */
+.tone-light {
+  --color-heading: #171717;
+  --color-body: #404040;
+  --color-muted: #737373;
+  --color-accent: #8a6d0a;
+  --color-line: #e5e5e5;
+  /* Card/caixa DENTRO da seção: um passo mais claro que o fundo. */
+  --color-surface: #ffffff;
+
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 20% 0%,
+      rgb(0 0 0 / 0.025),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 90% 100%,
+      rgb(0 0 0 / 0.02),
+      transparent 55%
+    );
+}
+
+/* Contrastes sobre #0a0a0a: heading 20.4:1 · body 12.6:1 · muted 7.3:1 ·
+   accent (gold vibrante) 12.4:1. Aqui o dourado real da embalagem
+   funciona como texto, porque o fundo é escuro. */
+.tone-dark {
+  --color-heading: #ffffff;
+  --color-body: #d4d4d4;
+  --color-muted: #a3a3a3;
+  --color-accent: #efbf1b;
+  --color-line: #333333;
+  /* Card/caixa DENTRO da seção escura: um passo mais CLARO que o fundo
+     (não mais escuro), senão desaparece. */
+  --color-surface: #171717;
+
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(
+      ellipse 70% 50% at 15% 0%,
+      rgb(255 255 255 / 0.045),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 85% 100%,
+      rgb(239 191 27 / 0.035),
+      transparent 55%
+    );
+}
+
+/* Faixa dourada — divisor de alto impacto, como a que a oficial usa
+   antes do FAQ. Texto escuro sobre dourado dá 10.4:1. */
+.tone-gold {
+  --color-heading: #0a0a0a;
+  --color-body: #1c1917;
+  --color-muted: #44403c;
+  --color-accent: #0a0a0a;
+  --color-line: #c9a217;
+  --color-surface: #f5cf4a;
+
+  background-color: #efbf1b;
+}
+
+/* Sem dark mode automático: LP de venda precisa de controle de contraste
+   no CTA, e prefers-color-scheme inverteria a paleta sem garantia de
+   manter os 4.5:1. As seções escuras acima são intencionais (tone por
+   conteúdo), não uma resposta ao tema do sistema operacional. */
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* O FAQItem desenha o próprio indicador — o marcador nativo do <details>
+   morre aqui, nos três motores: list-style cobre Firefox/Chrome, a regra
+   -webkit cobre Safari antigo. */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
