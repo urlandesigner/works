@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ComproPay · Works</title>
+<meta name="description" content="Protótipo navegável do app ComproPay: 21 telas mobile com as variações de saldo, cartão, extrato e pagamento." />
+<meta name="theme-color" content="#181510" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181510'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23e2727d'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet" />
+
+<style>
+  /* :root copiado do index.html da raiz do works, na hora de subir. Capa que
+     herda a pele de outro catálogo sai com a cara errada sem quebrar nada,
+     e esse erro não aparece em teste. */
+  :root {
+    --papel:      #181510;
+    --papel-2:    #211e18;
+    --tinta:      #f2ece1;
+    --apoio:      #a89e8f;
+    --apoio-2:    #5b5449;
+    --linha:      rgba(242, 236, 225, 0.14);
+    --linha-forte: rgba(242, 236, 225, 0.75);
+    --vinho:      #e2727d;
+    --vinho-meio: rgba(226, 114, 125, 0.38);
+    --sombra:     0 18px 40px -20px rgba(0, 0, 0, 0.6);
+
+    --serif: "Fraunces", Georgia, serif;
+    --sans:  "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    --mono:  "Fragment Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --gap: clamp(20px, 4.5vw, 40px);
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+
+  body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 1180px: a medida da página é a mesma em todas as capas. O container largo
+     serve à grade de cartões; a prosa para em 62ch porque a 1180 uma linha
+     passaria de 120 caracteres. */
+  .pagina {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(40px, 7vw, 76px) 16px clamp(60px, 9vw, 110px);
+  }
+
+  .voltar {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--apoio);
+    text-decoration: none;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+  .voltar:hover { color: var(--tinta); }
+
+  .olho {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--apoio);
+    margin: 0 0 16px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 6.2vw, 58px);
+    font-weight: 600;
+    letter-spacing: -.015em;
+    line-height: 1.05;
+    margin: 0 0 clamp(22px, 3vw, 32px);
+  }
+  h1 em { font-style: italic; color: var(--vinho); }
+
+  .lede { max-width: 62ch; color: var(--tinta); margin: 0 0 18px; }
+  .lede:last-of-type { color: var(--apoio); }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: clamp(48px, 7vw, 72px) 0 14px;
+  }
+  .sub { max-width: 62ch; color: var(--apoio); margin: 0 0 22px; }
+
+  /* auto-fill e não auto-fit: com auto-fit as trilhas vazias somem e um
+     cartão sozinho estica pela grade inteira. */
+  .versoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    margin-top: clamp(34px, 5vw, 50px);
+  }
+
+  .versao {
+    display: flex;
+    flex-direction: column;
+    background: var(--papel-2);
+    border: 1px solid var(--linha);
+    border-radius: 14px;
+    padding: 24px 24px 20px;
+  }
+  .versao__tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--vinho);
+    margin: 0 0 12px;
+  }
+  .versao__nome {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .versao__desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--apoio);
+    margin: 0 0 20px;
+  }
+  /* o link fecha na base do cartão, com os cartões da linha na mesma altura */
+  .versao__abrir {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tinta);
+    text-decoration: none;
+    border-bottom: 1px solid var(--vinho-meio);
+    padding-bottom: 2px;
+    align-self: flex-start;
+  }
+  .versao__abrir:hover { border-bottom-color: var(--linha-forte); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 14px 11px 0;
+    border-bottom: 1px solid var(--linha);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--apoio);
+    font-weight: 400;
+  }
+  td { color: var(--apoio); }
+  td:first-child { color: var(--tinta); white-space: nowrap; }
+
+  .nota {
+    max-width: 62ch;
+    font-size: 14px;
+    color: var(--apoio);
+    border-left: 2px solid var(--vinho-meio);
+    padding-left: 16px;
+    margin: 26px 0 0;
+  }
+
+  footer {
+    margin-top: clamp(60px, 9vw, 96px);
+    padding-top: 22px;
+    border-top: 1px solid var(--linha);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--apoio);
+  }
+
+  @media (max-width: 640px) {
+    .versoes { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="pagina">
+    <a class="voltar" href="../../">← Works</a>
+
+    <p class="olho">Protótipo · App de pagamento</p>
+    <h1>As telas do <em>ComproPay</em></h1>
+
+    <p class="lede">
+      Protótipo navegável de um app de pagamento no celular: 21 telas em HTML
+      estático, com CSS próprio e tokens em <code>css/tokens.css</code>. Sem
+      framework, sem build, sem dependência. Cobre seis áreas: início, extrato,
+      cartões, pagar, vantagens e ajuda, com as variações de saldo visível ou
+      oculto e de zero, um ou dois cartões.
+    </p>
+    <p class="lede">
+      Nada aqui conversa com servidor. Saldo, transações, favoritos e ofertas
+      são fixos no HTML, e os botões navegam entre telas em vez de executar
+      ação. O protótipo existe para percorrer os estados da interface e
+      comparar as variações lado a lado, não para simular o sistema.
+    </p>
+
+    <div class="versoes">
+      <article class="versao">
+        <p class="versao__tag">Comece aqui</p>
+        <h3 class="versao__nome">App no celular</h3>
+        <p class="versao__desc">
+          As telas dentro de uma moldura de celular, com a lista de todas ao
+          lado. Clique numa tela da lista para trocar o conteúdo da moldura
+          sem sair da página.
+        </p>
+        <a class="versao__abrir" href="../app.html">Abrir o app</a>
+      </article>
+
+      <article class="versao">
+        <p class="versao__tag">Para ver uma por uma</p>
+        <h3 class="versao__nome">Índice de telas</h3>
+        <p class="versao__desc">
+          As 21 telas em lista, cada uma com o que a distingue das vizinhas.
+          Abra uma tela isolada quando precisar dela em tamanho real ou para
+          mandar o link de uma só.
+        </p>
+        <a class="versao__abrir" href="../index.html">Abrir o índice</a>
+      </article>
+    </div>
+
+    <h2>O que tem nas telas</h2>
+    <p class="sub">
+      As variações existem porque cada uma muda o layout, não só o texto: sem
+      cartão a home perde a carteira inteira, e com saldo oculto os números
+      viram pontos sem a linha mudar de altura.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Área</th><th>Telas</th><th>O que varia</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Início</td>
+          <td>6</td>
+          <td>Zero, um ou dois cartões, cada um com saldo visível e saldo oculto</td>
+        </tr>
+        <tr>
+          <td>Pagar</td>
+          <td>6</td>
+          <td>Escolher destinatário, ler QR, próximos de mim, busca, valor e valor recorrente</td>
+        </tr>
+        <tr>
+          <td>Extrato</td>
+          <td>3</td>
+          <td>Lista, detalhe da transação e detalhe com o menu de opções aberto</td>
+        </tr>
+        <tr>
+          <td>Vantagens</td>
+          <td>3</td>
+          <td>Até três vantagens, mais de três, e o detalhe de uma</td>
+        </tr>
+        <tr>
+          <td>Ajuda</td>
+          <td>2</td>
+          <td>Central de ajuda e a conversa com a assistente</td>
+        </tr>
+        <tr>
+          <td>Cartões</td>
+          <td>1</td>
+          <td>Meus cartões</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Como foi feito</h2>
+    <p class="sub">
+      Cada tela é um arquivo HTML inteiro, sem include e sem montagem. Repete
+      cabeçalho e barra de navegação de propósito: trocar uma tela nunca
+      quebra as outras, e abrir o arquivo mostra tudo o que aquela tela é.
+      <code>css/tokens.css</code> guarda cor, espaçamento e tipografia;
+      <code>css/base.css</code>, o resto. Os ícones são SVG soltos em
+      <code>assets/icons/</code>.
+    </p>
+    <p class="nota">
+      As telas abrem direto do arquivo, sem servidor. Só o app no celular
+      precisa de um, porque usa iframe para trocar a tela dentro da moldura.
+    </p>
+
+    <footer>Urlan Dipre</footer>
+  </div>
+<script src="../../scripts/etapa.js" data-pasta="ComproPay"></script>
+</body>
+</html>

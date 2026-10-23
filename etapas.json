@@ -33,5 +33,10 @@
     }
   ],
   "_projetos": "A chave e o nome da pasta. Projeto sem linha aqui nao mostra etapa em lugar nenhum — melhor vazio do que chute.",
-  "projetos": {}
+  "projetos": {
+    "ComproPay": {
+      "etapa": "prototipar",
+      "desde": "23/10/2026"
+    }
+  }
 }

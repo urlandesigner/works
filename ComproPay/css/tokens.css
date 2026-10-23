@@ -1,0 +1,79 @@
+/* Tokens extraídos do Figma "ComproPay 2.0" — seção Home */
+:root {
+  /* Cores */
+  --color-bg: #f6f6f6;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fafafc;
+  --color-border: #ececec;
+  --color-border-brand: #e9d8ff;
+
+  --color-text: #171717;
+  --color-text-strong: #1c1c1c;
+  --color-text-muted: #717171;
+  --color-text-brand-dark: #26063f;
+  --color-greeting: #330752;
+
+  --color-brand: #7c12c8;
+  --color-brand-600: #6610a8;
+  --color-brand-700: #603c8f;
+  --color-brand-800: #450a70;
+  --color-brand-900: #330752;
+  --color-brand-balance-label: #390960;
+
+  --color-action-bg: rgb(51 7 82 / 0.10);
+  --color-action-border: rgb(69 10 112 / 0.15);
+  --color-nav-bg: rgb(51 7 82 / 0.05);
+  --color-nav-item-inactive: rgb(51 7 82 / 0.55);
+  --color-nav-item-active-bg: rgb(255 255 255 / 0.60);
+
+  --color-page-title: #150427;
+  --color-surface-muted: #f2f4f6;
+  --color-text-subtle: #737373;
+  --color-overlay: rgb(0 0 0 / 0.35);
+  --color-handle: #e2e4e7;
+
+  --shadow-card: 0 2px 4px rgb(148 148 148 / 0.30);
+  --radius-sm: 12px;
+
+  --color-switch-on: #55e061;
+  --color-switch-off: #c9c9ce;
+
+  --color-danger: #dc0000;
+  --color-success-bg: #cbffde;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Tipografia */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* O Figma usa Avenir nos valores e no título. Não há webfont livre: cai para Avenir do sistema. */
+  --font-display: "Avenir Next", "Avenir", "Nunito Sans", var(--font-body);
+
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+
+  /* Espaçamentos */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-9: 36px;
+
+  /* Raios */
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --screen-width: 430px;
+  --content-width: 390px;
+  --tabbar-height: 68px;
+  --statusbar-height: 62px;
+}

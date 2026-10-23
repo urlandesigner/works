@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ComproPay — App no celular</title>
+<link rel="stylesheet" href="css/tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; display: grid; grid-template-columns: 300px 1fr; overflow: hidden;
+    font-family: var(--font-body); color: var(--color-text);
+    background: radial-gradient(1200px 700px at 70% 40%, #efeaf7 0%, #e3e0ea 60%, #d9d6e0 100%);
+  }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Painel de telas */
+  .panel { display: flex; flex-direction: column; min-height: 0; background: var(--color-surface); border-right: .5px solid var(--color-border); }
+  .panel__head { padding: 20px 20px 12px; }
+  .panel__title { margin: 0; font-size: 18px; font-weight: 700; }
+  .panel__sub { margin: 4px 0 0; font-size: 13px; color: var(--color-text-muted); }
+  .panel__actions { display: flex; gap: 8px; padding: 0 20px 16px; }
+  .btn { flex: 1; height: 36px; border-radius: 10px; border: 1px solid var(--color-border-brand); background: var(--color-surface-soft); font-size: 13px; font-weight: 600; color: var(--color-brand-700); }
+  .btn:hover { border-color: var(--color-brand); }
+  .btn:focus-visible, .screen-link:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+  .list { flex: 1; overflow-y: auto; padding: 0 12px 24px; }
+  .group { margin: 12px 0 0; }
+  .group h2 { margin: 0 8px 6px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--color-text-muted); }
+  .screen-link { display: block; width: 100%; padding: 8px 10px; border-radius: 8px; text-align: left; font-size: 14px; }
+  .screen-link:hover { background: var(--color-surface-muted); }
+  .screen-link[aria-current="true"] { background: var(--color-brand); color: var(--color-white); font-weight: 600; }
+
+  /* Palco e mockup */
+  .stage { position: relative; display: grid; place-items: center; min-width: 0; min-height: 0; }
+  .sizer { position: relative; }
+  .phone {
+    position: absolute; left: 0; top: 0; transform-origin: top left;
+    width: 458px; height: 960px; padding: 14px; border-radius: 68px; background: #0c0c0f;
+    box-shadow: inset 0 0 0 2px #2b2b31, 0 0 0 2px #3b3b42, 0 50px 90px rgb(30 20 50 / .35);
+  }
+  .phone::before, .phone::after { content: ""; position: absolute; width: 4px; border-radius: 2px; background: #2b2b31; }
+  .phone::before { left: -6px; top: 170px; height: 64px; box-shadow: 0 90px 0 #2b2b31; }
+  .phone::after { right: -6px; top: 230px; height: 96px; }
+  .phone__screen { position: relative; width: 430px; height: 932px; border-radius: 54px; overflow: hidden; background: var(--color-bg); }
+  .phone__screen iframe { display: block; width: 430px; height: 932px; border: 0; background: var(--color-bg); }
+  .island { position: absolute; z-index: 2; top: 12px; left: 50%; width: 124px; height: 36px; margin-left: -62px; border-radius: 20px; background: #000; pointer-events: none; }
+  .indicator { position: absolute; z-index: 2; bottom: 8px; left: 50%; width: 140px; height: 5px; margin-left: -70px; border-radius: 3px; background: rgb(0 0 0 / .85); pointer-events: none; }
+
+  @media (max-width: 760px) { body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; } .panel { max-height: 40vh; border-right: 0; border-bottom: .5px solid var(--color-border); } }
+</style>
+</head>
+<body>
+<aside class="panel" aria-label="Telas do app">
+  <div class="panel__head">
+    <h1 class="panel__title">ComproPay</h1>
+    <p class="panel__sub" id="current">Tela atual: —</p>
+  </div>
+  <div class="panel__actions">
+    <button class="btn" type="button" id="back">← Voltar</button>
+    <button class="btn" type="button" id="restart">Reiniciar</button>
+    <a class="btn" href="index.html" style="display:grid;place-items:center">Índice</a>
+  </div>
+  <nav class="list" id="list"></nav>
+</aside>
+
+<main class="stage" id="stage">
+  <div class="sizer" id="sizer">
+    <div class="phone" id="phone">
+      <div class="phone__screen">
+        <div class="island"></div>
+        <iframe id="frame" title="App ComproPay" src="home-1-cartao.html"></iframe>
+        <div class="indicator"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  var GROUPS = [
+    { name: 'Home', items: [
+      ['home-1-cartao.html', '1 cartão'],
+      ['home-2-cartoes.html', '2 cartões'],
+      ['home-sem-cartao.html', 'Sem cartão'],
+      ['home-1-cartao-oculto.html', '1 cartão · saldo oculto'],
+      ['home-2-cartoes-oculto.html', '2 cartões · saldo oculto'],
+      ['home-sem-cartao-oculto.html', 'Sem cartão · saldo oculto']
+    ]},
+    { name: 'Extrato', items: [
+      ['extrato.html', 'Lista de transações'],
+      ['extrato-transacao.html', 'Detalhe da transação'],
+      ['extrato-transacao-menu.html', 'Detalhe com menu de opções']
+    ]},
+    { name: 'Cartões', items: [['cartoes.html', 'Meus cartões']] },
+    { name: 'Ajuda', items: [
+      ['ajuda.html', 'Central de ajuda'],
+      ['ajuda-chat.html', 'Chat com a Lia']
+    ]},
+    { name: 'Pagar', items: [
+      ['pagar.html', 'Escolher destinatário'],
+      ['pagar-qr.html', 'Ler QR code'],
+      ['pagar-proximos.html', 'Próximos de mim'],
+      ['pagar-busca.html', 'Resultado da pesquisa'],
+      ['pagar-valor.html', 'Valor do pagamento'],
+      ['pagar-valor-recorrente.html', 'Pagamento recorrente']
+    ]},
+    { name: 'Vantagens', items: [
+      ['vantagens.html', 'Até 3 vantagens'],
+      ['vantagens-mais.html', 'Mais de 3 vantagens'],
+      ['vantagens-detalhe.html', 'Detalhe da vantagem']
+    ]}
+  ];
+  var START = 'home-1-cartao.html';
+  var frame = document.getElementById('frame');
+  var list = document.getElementById('list');
+  var current = document.getElementById('current');
+  var labels = {};
+
+  GROUPS.forEach(function (g) {
+    var wrap = document.createElement('section');
+    wrap.className = 'group';
+    var h = document.createElement('h2'); h.textContent = g.name; wrap.appendChild(h);
+    g.items.forEach(function (it) {
+      labels[it[0]] = g.name + ' · ' + it[1];
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'screen-link'; b.textContent = it[1]; b.dataset.name = it[0];
+      b.addEventListener('click', function () { go(it[0]); });
+      wrap.appendChild(b);
+    });
+    list.appendChild(wrap);
+  });
+
+  function mark(name) {
+    [].forEach.call(list.querySelectorAll('.screen-link'), function (el) {
+      el.setAttribute('aria-current', el.dataset.name === name ? 'true' : 'false');
+    });
+    current.textContent = 'Tela atual: ' + (labels[name] || name);
+  }
+  function go(name) { frame.src = name; mark(name); }
+
+  window.addEventListener('message', function (e) {
+    if (e.source !== frame.contentWindow || !e.data || e.data.type !== 'compropay:screen') return;
+    mark(e.data.name);
+  });
+  document.getElementById('back').addEventListener('click', function () {
+    frame.contentWindow.postMessage({ type: 'compropay:cmd', cmd: 'back' }, '*');
+  });
+  document.getElementById('restart').addEventListener('click', function () { go(START); });
+
+  /* Ajusta o tamanho do celular à janela */
+  var stage = document.getElementById('stage'), sizer = document.getElementById('sizer'), phone = document.getElementById('phone');
+  function fit() {
+    var s = Math.min(1, (stage.clientHeight - 32) / 960, (stage.clientWidth - 32) / 458);
+    s = Math.max(s, 0.3);
+    sizer.style.width = 458 * s + 'px'; sizer.style.height = 960 * s + 'px';
+    phone.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit); fit(); mark(START);
+</script>
+</body>
+</html>

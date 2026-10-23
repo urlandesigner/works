@@ -13,6 +13,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 
 | Pasta | Projeto |
 |---|---|
+| [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 21 telas mobile com as variações de saldo, cartão, extrato e pagamento |
 
 _(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
 
