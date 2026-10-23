@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---------------------------------------------------------------
+     TIPOGRAFIA
+     Display (Anton) só em headline, número grande e CTA — nunca em
+     texto corrido: condensada pesada cansa a leitura em bloco.
+     Body (Newsreader, serifada) carrega todo o resto.
+     --------------------------------------------------------------- */
+  --font-display: var(--font-display), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-body), Georgia, serif;
+
+  /* ---------------------------------------------------------------
+     CTA — o elemento mais visível da página. Reservado SÓ para ação:
+     não usar em headline, ícone ou qualquer outro destaque, senão
+     deixa de ficar claro o que é clicável.
+
+     Lima #EEFE3C é a cor de destaque da própria marca ProDentim
+     (extraída do CSS oficial). Numa página verde ela é a única cor
+     que não pertence à família do fundo — que é exatamente o que se
+     quer do CTA.
+
+     TEXTO ESCURO, não branco: sobre lima, ink dá 16.04:1 (medido);
+     branco daria 1.15:1, ou seja, botão ilegível. Quem trocar a cor
+     do CTA precisa reavaliar a cor do texto junto — as duas decisões
+     são uma só.
+
+     INVARIANTE QUE SUSTENTA ESSA ESCOLHA: os 4 CTAs da página vivem
+     em seções tone-dark, e a barra do StickyMobileCTA é bg-dark/95.
+     Lima sobre o papel claro daria 1.02:1 e o botão sumiria. Se algum
+     dia um CTA for para uma seção tone-light, ele precisa de contorno
+     escuro — ou o CTA muda de cor.
+     --------------------------------------------------------------- */
+  --color-cta: #eefe3c;
+  --color-cta-hover: #d8e81f;
+
+  /* ---------------------------------------------------------------
+     Verde de marca (#007953 no CSS oficial do ProDentim). Duas
+     variantes por CONTRASTE, não por gosto:
+     - brand: para fundo claro. 7.01:1 sobre o papel-menta (#ECF3EA).
+     - brand-bright: para fundo escuro. 9.83:1 sobre a tinta (#04170F).
+     Uma só não cobriria os dois tons sem quebrar AA em um deles.
+
+     Ficam aqui como âncora da paleta: as classes .tone-* abaixo
+     derivam delas. Nenhum componente referencia estes dois tokens
+     direto — se for usar, medir o contraste no fundo de destino.
+     --------------------------------------------------------------- */
+  --color-brand: #0a5d3e;
+  --color-brand-bright: #4fd3a0;
+
+  /* Tinta profunda — o fundo dominante da página. Verde-quase-preto,
+     não neutro: o matiz é o que mantém a página dentro da família da
+     marca mesmo nas áreas sem cor. Existe como token porque o
+     StickyMobileCTA precisa dele fora de qualquer seção (é fixed), o
+     <body> pinta o overscroll do iOS com ele, e o selo "Best Value"
+     usa text-dark sobre bg-accent (9.83:1, medido). */
+  --color-dark: #04170f;
+
+  /* Cores semânticas. Os valores aqui são o padrão (tom escuro, que
+     domina a página); as classes .tone-* sobrescrevem essas MESMAS
+     variáveis, então text-heading / text-body / text-muted /
+     text-accent / border-line / bg-surface funcionam em qualquer
+     fundo e os filhos não precisam saber onde estão.
+
+     IMPORTANTE: sobrescrever --color-* direto, sem indireção por uma
+     segunda variável. Custom property herda o valor JÁ COMPUTADO: se
+     --color-heading fosse var(--tone-heading), resolveria no :root e
+     o override em .tone-dark nunca chegaria. */
+  --color-heading: #ffffff;
+  --color-body: #c6ded2;
+  --color-muted: #8aa79a;
+  --color-accent: #4fd3a0;
+  --color-line: #123a2a;
+  --color-surface: #0b2419;
+}
+
+/* -----------------------------------------------------------------
+   TOM ESCURO — "tinta". O padrão da página.
+   Contrastes MEDIDOS sobre #04170F: heading 18.51:1 · body 13.03:1 ·
+   muted 7.12:1 · accent 9.83:1.
+   Sobre o card (#0B2419): heading 16.40 · body 11.54 · muted 6.31 ·
+   accent 8.71.
+   O fundo é composto: duas luzes radiais (uma no topo, uma embaixo)
+   + uma malha de linhas finas, todas em menta. A malha é o que dá
+   leitura de "ficha técnica" em vez de gradiente genérico, e custa
+   zero byte.
+   ----------------------------------------------------------------- */
+.tone-dark {
+  --color-heading: #ffffff;
+  --color-body: #c6ded2;
+  --color-muted: #8aa79a;
+  --color-accent: #4fd3a0;
+  --color-line: #123a2a;
+  --color-surface: #0b2419;
+
+  position: relative;
+  background-color: #04170f;
+  background-image:
+    radial-gradient(
+      ellipse 70% 55% at 12% 0%,
+      rgb(79 211 160 / 0.09),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 92% 100%,
+      rgb(79 211 160 / 0.06),
+      transparent 58%
+    ),
+    linear-gradient(rgb(79 211 160 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(79 211 160 / 0.045) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 88px,
+    88px 100%;
+}
+
+/* -----------------------------------------------------------------
+   TOM CLARO — "papel". Antes era off-white quente (creme); agora é
+   menta clarissima, derivada do #E6F1E2 da marca. Continua sendo um
+   papel, não branco frio: a seção de análise é o trecho mais longo de
+   leitura da página, e o contraste com a tinta escura vira
+   capa-escura/miolo-claro de revista.
+   Contrastes MEDIDOS sobre #ECF3EA: heading 15.79:1 · body 8.92:1 ·
+   muted 4.77:1 · accent 7.01:1.
+   Sobre o card (#F8FBF7): heading 17.11 · body 9.66 · muted 5.16 ·
+   accent 7.60.
+   ----------------------------------------------------------------- */
+.tone-light {
+  --color-heading: #0e1a14;
+  --color-body: #37453e;
+  --color-muted: #5e6e66;
+  --color-accent: #0a5d3e;
+  --color-line: #d2e0d6;
+  /* Card DENTRO da seção clara: um passo mais claro que o papel. */
+  --color-surface: #f8fbf7;
+
+  position: relative;
+  background-color: #ecf3ea;
+  background-image:
+    radial-gradient(
+      ellipse 75% 50% at 18% 0%,
+      rgb(10 93 62 / 0.06),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 45% at 88% 100%,
+      rgb(0 121 83 / 0.05),
+      transparent 55%
+    );
+}
+
+/* -----------------------------------------------------------------
+   FAIXA — divisor de alto impacto antes da zona de decisão.
+   Verde de marca saturado, branco por cima: 6.56:1 (medido). Usar só
+   com uma linha de conteúdo (o argumento de confiança mais forte),
+   nunca como seção cheia — vira parede verde e perde a função de
+   respiro.
+
+   O verde aqui é #006B49, um passo abaixo do #007953 oficial. No
+   #007953 exato o par muted/fundo dava 3.76:1 e reprovava em AA; para
+   passar, muted teria que ficar tão claro que encostaria no body e a
+   hierarquia sumiria. Escurecer o fundo foi o que abriu espaço para
+   body 5.90 e muted 4.94 continuarem distinguíveis entre si.
+   ----------------------------------------------------------------- */
+.tone-band {
+  --color-heading: #ffffff;
+  --color-body: #e8f6ef;
+  --color-muted: #c9e6d9;
+  --color-accent: #ffffff;
+  --color-line: #2e9873;
+  --color-surface: #04794f;
+
+  background-color: #006b49;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgb(255 255 255 / 0.045) 0 2px,
+      transparent 2px 11px
+    );
+}
+
+/* -----------------------------------------------------------------
+   GRÃO — uma camada de ruído por cima de tudo, bem sutil. É o que
+   tira o "liso demais" de fundo puramente CSS e dá textura de
+   impresso. SVG inline (feTurbulence): zero request, ~200 bytes.
+   pointer-events:none para nunca bloquear clique no CTA.
+   ----------------------------------------------------------------- */
+.tone-dark::before,
+.tone-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.tone-dark::before {
+  opacity: 0.05;
+}
+.tone-light::before {
+  opacity: 0.035;
+}
+/* O conteúdo sobe acima do grão. Sem isto o ruído cobriria o texto. */
+.tone-dark > *,
+.tone-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* -----------------------------------------------------------------
+   TIPOGRAFIA UTILITÁRIA
+   ----------------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+}
+
+/* Anton é toda em caixa-alta de fato (as minúsculas são versaletes
+   estreitos) — tracking negativo evita que headline grande fique
+   espaçada demais, e o leading apertado é o que dá o bloco compacto
+   de cartaz. */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  line-height: 0.94;
+}
+
+/* Rótulo pequeno em caixa-alta: usado em selo, número de seção e
+   sobrelinha. Tracking positivo porque caixa-alta pequena sem
+   espaçamento vira mancha. */
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+/* -----------------------------------------------------------------
+   MOVIMENTO
+   Uma entrada orquestrada na carga (hero) e revelações no scroll.
+   ----------------------------------------------------------------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Entrada do hero: sempre roda (animação de tempo, não de scroll),
+   então é seguro começar em opacity:0. O escalonamento vem do
+   --rise-delay que cada elemento define inline. */
+.rise-in {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: var(--rise-delay, 0s);
+}
+
+/* Revelação no scroll. `.reveal` sozinha NÃO faz nada — o elemento
+   nasce visível. Só o ScrollReveal (client component) adiciona
+   `.will-reveal` ao que está abaixo da dobra, e `.is-visible` quando
+   entra na tela.
+
+   A inversão é deliberada: a versão anterior escondia por CSS e
+   revelava por scroll-timeline, e um bug de range deixou a página
+   inteira invisível. Escondendo só via JS, qualquer falha (JS
+   bloqueado, erro, observer ausente) resulta em página visível. */
+.will-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.will-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* Sem isto, o "0.01ms" acima congelaria a entrada no primeiro frame
+     (opacity:0) e o conteúdo sumiria para quem pede menos movimento. */
+  .rise-in,
+  .will-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* O FAQItem desenha o próprio indicador — o marcador nativo do
+   <details> morre aqui, nos três motores: list-style cobre
+   Firefox/Chrome, a regra -webkit cobre Safari antigo. */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}

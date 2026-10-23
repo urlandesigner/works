@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 525" width="560" height="525" role="img" aria-label="Diagram of the oral microbiome: hundreds of bacterial species share the mouth, only a few drive plaque and odour">
+  <defs>
+    <radialGradient id="cloud" cx="50%" cy="46%" r="56%">
+      <stop offset="0%" stop-color="#0a5d3e" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0a5d3e" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Os "problemáticos" são triângulos, não só uma cor diferente.
+         Distinguir bactéria boa de ruim SÓ por cor quebra para
+         deuteranopia e protanopia (WCAG 1.4.1) — e numa paleta verde
+         com um vermelho o problema é maior, não menor. A forma é a
+         pista que sobrevive a qualquer tipo de visão de cores. -->
+    <g id="ruim">
+      <path d="M0 -8 L7.5 5.5 L-7.5 5.5 Z" fill="#b3261e"/>
+    </g>
+  </defs>
+
+  <rect width="560" height="525" fill="none"/>
+
+  <text x="280" y="30" text-anchor="middle" fill="#0a5d3e" font-family="Helvetica, Arial, sans-serif"
+        font-size="13" letter-spacing="3.6" font-weight="700">THE MOUTH IS NOT STERILE</text>
+
+  <circle cx="280" cy="248" r="196" fill="url(#cloud)"/>
+  <circle cx="280" cy="248" r="176" fill="none" stroke="#cadbd0" stroke-width="1.5"/>
+
+  <!-- tooth silhouette, centre -->
+  <path d="M222 216
+           C222 184 240 166 280 166
+           C320 166 338 184 338 216
+           C338 244 330 256 326 276
+           C322 300 320 330 312 340
+           C305 349 296 346 293 334
+           C289 318 286 292 280 292
+           C274 292 271 318 267 334
+           C264 346 255 349 248 340
+           C240 330 238 300 234 276
+           C230 256 222 244 222 216 Z"
+        fill="#fbfdfa" stroke="#b6cdc0" stroke-width="2"/>
+
+  <!-- neutral / commensal species -->
+  <g fill="#9fb3a8">
+    <circle cx="150" cy="150" r="7"/><circle cx="196" cy="112" r="5"/><circle cx="118" cy="212" r="6"/>
+    <circle cx="404" cy="140" r="6"/><circle cx="440" cy="196" r="7"/><circle cx="372" cy="104" r="5"/>
+    <circle cx="132" cy="300" r="5"/><circle cx="164" cy="358" r="7"/><circle cx="220" cy="398" r="5"/>
+    <circle cx="424" cy="306" r="6"/><circle cx="392" cy="366" r="5"/><circle cx="336" cy="400" r="7"/>
+    <circle cx="106" cy="258" r="4"/><circle cx="456" cy="260" r="4"/><circle cx="280" cy="418" r="5"/>
+    <circle cx="248" cy="120" r="4"/><circle cx="318" cy="118" r="4"/>
+  </g>
+
+  <!-- the few that drive plaque and odour -->
+  <use href="#ruim" x="212" y="182"/>
+  <use href="#ruim" x="356" y="222"/>
+  <use href="#ruim" x="196" y="352"/>
+
+  <!-- legend -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="14">
+    <circle cx="126" cy="472" r="7" fill="#9fb3a8"/>
+    <text x="142" y="477" fill="#37453e">Harmless or helpful</text>
+
+    <use href="#ruim" x="330" y="472"/>
+    <text x="346" y="477" fill="#37453e">Drive plaque and odour</text>
+  </g>
+
+  <text x="280" y="508" text-anchor="middle" fill="#5e6e66" font-family="Helvetica, Arial, sans-serif" font-size="13">
+    Broad antibacterial rinses do not tell the two groups apart.
+  </text>
+</svg>

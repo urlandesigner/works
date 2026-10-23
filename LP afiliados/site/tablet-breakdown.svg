@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700" role="img" aria-label="Diagram of one ProDentim tablet: 3.5 billion CFU across three probiotic strains plus inulin">
+  <defs>
+    <radialGradient id="tab" cx="38%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#fbfdfa"/>
+      <stop offset="62%" stop-color="#e6efe7"/>
+      <stop offset="100%" stop-color="#c9dbcd"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a2418"/>
+      <stop offset="100%" stop-color="#04170f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="700" fill="url(#bg)"/>
+
+  <!-- eyebrow -->
+  <text x="350" y="62" text-anchor="middle" fill="#4fd3a0" font-family="Helvetica, Arial, sans-serif"
+        font-size="17" letter-spacing="4.5" font-weight="700">WHAT IS IN ONE TABLET</text>
+  <line x1="255" y1="82" x2="445" y2="82" stroke="#123a2a" stroke-width="1"/>
+
+  <!-- connector lines, drawn under the tablet -->
+  <g stroke="#1c4a36" stroke-width="1.5">
+    <path d="M228 232 L296 292" fill="none"/>
+    <path d="M472 232 L404 292" fill="none"/>
+    <path d="M228 500 L296 440" fill="none"/>
+    <path d="M472 500 L404 440" fill="none"/>
+  </g>
+
+  <!-- tablet -->
+  <ellipse cx="350" cy="366" rx="128" ry="122" fill="url(#tab)"/>
+  <ellipse cx="350" cy="366" rx="128" ry="122" fill="none" stroke="#a6c1ae" stroke-width="1.5"/>
+  <ellipse cx="350" cy="366" rx="98" ry="93" fill="none" stroke="#bcd2c2" stroke-width="1.5"/>
+
+  <text x="350" y="352" text-anchor="middle" fill="#0e1a14" font-family="Georgia, 'Times New Roman', serif"
+        font-size="60" font-weight="700">3.5B</text>
+  <text x="350" y="386" text-anchor="middle" fill="#55665e" font-family="Helvetica, Arial, sans-serif"
+        font-size="15" letter-spacing="3.4" font-weight="700">CFU TOTAL</text>
+  <text x="350" y="414" text-anchor="middle" fill="#7d8c83" font-family="Helvetica, Arial, sans-serif"
+        font-size="13">at time of manufacture</text>
+
+  <!-- four callouts -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <!-- top left -->
+    <circle cx="212" cy="220" r="7" fill="#4fd3a0"/>
+    <text x="196" y="204" text-anchor="end" fill="#ffffff" font-size="21" font-weight="700">L. reuteri</text>
+    <text x="196" y="228" text-anchor="end" fill="#8aa79a" font-size="15">DSM 17938</text>
+
+    <!-- top right -->
+    <circle cx="488" cy="220" r="7" fill="#4fd3a0"/>
+    <text x="504" y="204" fill="#ffffff" font-size="21" font-weight="700">L. paracasei</text>
+    <text x="504" y="228" fill="#8aa79a" font-size="15">ET-22</text>
+
+    <!-- bottom left -->
+    <circle cx="212" cy="512" r="7" fill="#4fd3a0"/>
+    <text x="196" y="508" text-anchor="end" fill="#ffffff" font-size="21" font-weight="700">B. lactis</text>
+    <text x="196" y="532" text-anchor="end" fill="#8aa79a" font-size="15">BL-04</text>
+
+    <!-- bottom right -->
+    <circle cx="488" cy="512" r="7" fill="#7d9c8e"/>
+    <text x="504" y="508" fill="#ffffff" font-size="21" font-weight="700">Inulin</text>
+    <text x="504" y="532" fill="#8aa79a" font-size="15">prebiotic fibre</text>
+  </g>
+
+  <!-- footnote -->
+  <line x1="150" y1="608" x2="550" y2="608" stroke="#123a2a" stroke-width="1"/>
+  <text x="350" y="638" text-anchor="middle" fill="#8aa79a" font-family="Helvetica, Arial, sans-serif" font-size="15">
+    The label reports 3.5 billion CFU for the blend —
+  </text>
+  <text x="350" y="660" text-anchor="middle" fill="#8aa79a" font-family="Helvetica, Arial, sans-serif" font-size="15">
+    not a figure per individual strain.
+  </text>
+</svg>
