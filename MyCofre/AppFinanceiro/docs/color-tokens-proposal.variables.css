@@ -1,0 +1,104 @@
+/**
+ * Proposta de CSS variables — AppFinanceiro
+ * NÃO aplicado ao app. Copiar para index.css / globals quando for a fase de implementação.
+ *
+ * Convenção: --color-{categoria}-{nome}
+ * Modo escuro: sobrescrever apenas o que difere (texto, fundo, accent).
+ */
+
+:root {
+  /* ——— Background ——— */
+  --color-bg-canvas: #e4e6ed;
+  --color-bg-canvas-wash-top: #f8fafc;
+  --color-bg-canvas-wash-end: #f1f5f9;
+  --color-bg-elevated: #ffffff;
+  --color-bg-muted: #f9fafb;
+  --color-bg-subtle: #f3f4f6;
+  --color-bg-inverse: #020617;
+  --color-bg-inverse-elevated: #0f172a;
+  --color-bg-overlay: rgb(15 23 42 / 0.45);
+  --color-bg-code: #f4f3ec;
+
+  /* ——— Text ——— */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-subtle: #9ca3af;
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: #94a3b8;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-success: #022c22;
+  --color-text-on-error: #450a0a;
+  --color-text-on-warning: #92400e;
+
+  /* ——— Border ——— */
+  --color-border-default: #e5e7eb;
+  --color-border-subtle: #f3f4f6;
+  --color-border-input: #cbd5e1;
+  --color-border-strong: #111827;
+  --color-border-inverse: rgb(255 255 255 / 0.08);
+
+  /* ——— Brand ——— */
+  --color-brand-primary: #09090b;
+  --color-brand-primary-hover: #000000;
+  --color-brand-primary-muted: #f4f4f5;
+  --color-brand-primary-muted-strong: #e4e4e7;
+  --color-brand-on-primary: #ffffff;
+  --color-brand-accent: #aa3bff;
+  --color-brand-accent-hover: #9333ea;
+  --color-brand-accent-muted: rgb(170 59 255 / 0.12);
+  --color-brand-focus-ring: #18181b;
+
+  /* ——— Feedback ——— */
+  --color-success-fg: #047857;
+  --color-success-fg-strong: #065f46;
+  --color-success-bg: #ecfdf5;
+  --color-success-bg-solid: #d1fae5;
+  --color-success-border: #a7f3d0;
+  --color-success-accent: #10b981;
+
+  --color-error-fg: #b91c1c;
+  --color-error-fg-strong: #991b1b;
+  --color-error-bg: #fef2f2;
+  --color-error-border: #fecaca;
+  --color-error-accent: #ef4444;
+
+  --color-warning-fg: #b45309;
+  --color-warning-fg-strong: #92400e;
+  --color-warning-bg-soft: #fffbeb;
+  --color-warning-border: #fde68a;
+  --color-warning-accent: #f59e0b;
+
+  --color-info-fg: #0f172a;
+  --color-info-bg: #ffffff;
+  --color-info-border: #e2e8f0;
+
+  /* ——— Sombras (base, igual tailwind.config hoje) ——— */
+  --color-shadow-rgb: 15, 23, 42;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-canvas: #16171d;
+    --color-bg-canvas-wash-top: #1e293b;
+    --color-bg-canvas-wash-end: #0f172a;
+    --color-bg-elevated: #1e293b;
+    --color-bg-muted: #1f2937;
+    --color-bg-subtle: #374151;
+    --color-text-primary: #f3f4f6;
+    --color-text-secondary: #d1d5db;
+    --color-text-muted: #9ca3af;
+    --color-text-subtle: #6b7280;
+    --color-border-default: #374151;
+    --color-border-subtle: #1f2937;
+    --color-border-input: #4b5563;
+    --color-border-strong: #f3f4f6;
+    --color-brand-accent: #c084fc;
+    --color-brand-accent-hover: #d8b4fe;
+    --color-brand-accent-muted: rgb(192 132 252 / 0.15);
+    --color-info-fg: #f8fafc;
+    --color-info-bg: #1e293b;
+    --color-info-border: #334155;
+    /* Success / error / warning: manter tons emerald/red/amber ou ajustar contraste em fase de QA */
+  }
+}

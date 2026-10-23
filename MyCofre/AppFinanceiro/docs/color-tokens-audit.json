@@ -1,0 +1,238 @@
+{
+  "$schema": "AppFinanceiro — auditoria de cores (somente mapeamento; não altera o app)",
+  "generatedFor": "Tailwind 3.x palette default + tokens custom em tailwind.config.js",
+  "semantic": {
+    "background": {
+      "primary": "#FFFFFF",
+      "primaryExplicit": "#FFFFFF",
+      "canvas": "#E4E6ED",
+      "canvasWashTop": "#F8FAFC",
+      "canvasWashCorner": "#F1F5F9",
+      "secondary": "#F9FAFB",
+      "secondarySlate": "#F1F5F9",
+      "elevatedMuted": "#F9FAFB",
+      "sidebarDark": "#020617",
+      "overlayScrim": "#000000",
+      "codeInline": "#F4F3EC",
+      "metricDefaultIconGradientStart": "#F5F3FF",
+      "metricDefaultIconGradientEnd": "#F8FAFC"
+    },
+    "text": {
+      "primary": "#111827",
+      "primarySlate": "#020617",
+      "primaryHeadingLegacy": "#08060D",
+      "secondary": "#4B5563",
+      "secondarySlate": "#1E293B",
+      "muted": "#6B7280",
+      "mutedCustomLegacy": "#6B6375",
+      "subtle": "#9CA3AF",
+      "onDark": "#FFFFFF",
+      "onDarkMuted": "#94A3B8",
+      "onPrimaryButton": "#FFFFFF",
+      "decorationSubtle": "#E5E7EB",
+      "decorationHover": "#9CA3AF"
+    },
+    "border": {
+      "default": "#E5E7EB",
+      "defaultLegacyVar": "#E5E4E7",
+      "subtle": "#F3F4F6",
+      "subtleSlate": "#F1F5F9",
+      "input": "#CBD5E1",
+      "strongAccent": "#111827",
+      "onDarkHairline": "#FFFFFF"
+    },
+    "feedback": {
+      "success": {
+        "surface": "#ECFDF5",
+        "surfaceToast": "#ECFDF5",
+        "borderSoft": "#A7F3D0",
+        "text": "#047857",
+        "textStrong": "#022C22",
+        "iconMuted": "#059669",
+        "bar": "#10B981"
+      },
+      "error": {
+        "surface": "#FEF2F2",
+        "borderSoft": "#FECACA",
+        "text": "#B91C1C",
+        "textStrong": "#450A0A",
+        "bar": "#EF4444",
+        "accent": "#EF4444"
+      },
+      "warning": {
+        "surfaceCustom": "#FFF4E5",
+        "surfaceTailwind": "#FFFBEB",
+        "ring": "#FDE68A",
+        "text": "#B45309",
+        "badge": "#F59E0B"
+      },
+      "info": {
+        "surface": "#FFFFFF",
+        "border": "#E2E8F0",
+        "text": "#020617"
+      }
+    },
+    "brand": {
+      "primary50": "#F4F4F5",
+      "primary100": "#E4E4E7",
+      "primary400Referenced": null,
+      "primary500": "#18181B",
+      "primary600": "#09090B",
+      "primary700": "#000000",
+      "accentLegacyLight": "#AA3BFF",
+      "accentLegacyDark": "#C084FC",
+      "navigationProgressEnd": "#059669"
+    },
+    "accentDecorative": {
+      "skyMetricIcon": {
+        "bg": "#F0F9FF",
+        "text": "#0369A1"
+      },
+      "tealMetricIcon": {
+        "bg": "#F0FDFA",
+        "text": "#0F766E"
+      },
+      "violetMetricDefault": {
+        "from": "#F5F3FF",
+        "text": "#6D28D9"
+      }
+    },
+    "dataVisualization": {
+      "pieSlice1": "#22C55E",
+      "pieSlice2": "#3B82F6",
+      "pieSlice3": "#F59E0B",
+      "pieSlice4": "#EF4444",
+      "pieSlice5": "#8B5CF6",
+      "pieSlice6": "#EC4899",
+      "pieSlice7": "#64748B"
+    }
+  },
+  "paletteUniqueHex": [
+    "#000000",
+    "#020617",
+    "#022C22",
+    "#0369A1",
+    "#047857",
+    "#059669",
+    "#065F46",
+    "#08060D",
+    "#09090B",
+    "#0F766E",
+    "#111827",
+    "#16171D",
+    "#18181B",
+    "#1E293B",
+    "#1F2028",
+    "#1F2937",
+    "#22C55E",
+    "#2E303A",
+    "#334155",
+    "#374151",
+    "#3B82F6",
+    "#450A0A",
+    "#475569",
+    "#4B5563",
+    "#64748B",
+    "#6B6375",
+    "#6B7280",
+    "#6D28D9",
+    "#8B5CF6",
+    "#94A3B8",
+    "#9CA3AF",
+    "#AA3BFF",
+    "#B45309",
+    "#B91C1C",
+    "#C084FC",
+    "#CBD5E1",
+    "#D1D5DB",
+    "#D97706",
+    "#DC2626",
+    "#E2E8F0",
+    "#E4E4E7",
+    "#E4E6ED",
+    "#E5E4E7",
+    "#E5E7EB",
+    "#EC4899",
+    "#ECFDF5",
+    "#EF4444",
+    "#F0F9FF",
+    "#F0FDFA",
+    "#F3F4F6",
+    "#F4F3EC",
+    "#F4F4F5",
+    "#F4FBF7",
+    "#F5F3FF",
+    "#F8FAFC",
+    "#F9FAFB",
+    "#FEF2F2",
+    "#FEF7F7",
+    "#FEE2E2",
+    "#FECACA",
+    "#FFFBEB",
+    "#FFF4E5",
+    "#FFF7ED",
+    "#FFFFFF",
+    "#A7F3D0",
+    "#FDE68A",
+    "#10B981",
+    "#F59E0B"
+  ],
+  "tailwindConfig": {
+    "brand": {
+      "50": "#F4F4F5",
+      "100": "#E4E4E7",
+      "500": "#18181B",
+      "600": "#09090B",
+      "700": "#000000"
+    },
+    "danger": {
+      "500": "#EF4444",
+      "600": "#DC2626"
+    },
+    "shadowRgbBase": "15, 23, 42"
+  },
+  "cssVariablesIndexCss": {
+    "light": {
+      "--text": "#6B6375",
+      "--text-h": "#08060D",
+      "--bg": "#FFFFFF",
+      "--border": "#E5E4E7",
+      "--code-bg": "#F4F3EC",
+      "--accent": "#AA3BFF",
+      "--accent-bg": "rgba(170, 59, 255, 0.1)",
+      "--accent-border": "rgba(170, 59, 255, 0.5)",
+      "--social-bg": "rgba(244, 243, 236, 0.5)"
+    },
+    "dark": {
+      "--text": "#9CA3AF",
+      "--text-h": "#F3F4F6",
+      "--bg": "#16171D",
+      "--border": "#2E303A",
+      "--code-bg": "#1F2028",
+      "--accent": "#C084FC",
+      "--accent-bg": "rgba(192, 132, 252, 0.15)",
+      "--accent-border": "rgba(192, 132, 252, 0.5)",
+      "--social-bg": "rgba(47, 48, 58, 0.5)"
+    }
+  },
+  "inconsistencies": [
+    "Duas famílias neutras em paralelo: gray-* (cards, header, globals) e slate-* (navegação clara, listas, formulários). Valores próximos mas não idênticos (ex.: gray-900 #111827 vs slate-950 #020617 para texto forte).",
+    "Branco explícito: #FFFFFF em MetricCard vs bg-white do Tailwind — mesmo resultado, duas formas.",
+    "Borda ‘default’: gray-200 #E5E7EB vs variável legacy --border #E5E4E7 (delta mínimo).",
+    "Texto corpo legacy: --text #6B6375 vs gray-500 #6B7280 — função equivalente (muted body).",
+    "Sucesso financeiro: emerald-* no app vs #22C55E (green-500) no gráfico de pizza — dois verdes para dados positivos.",
+    "Erro: danger-500 e red-500 compartilham #EF4444; ainda assim há mistura de classes danger-* e red-*.",
+    "Aviso: bg-[#FFF4E5] no DashboardAlertPopover vs amber-50 #FFFBEB — mesma função, tons diferentes.",
+    "Marca: tokens brand no Tailwind são escala zinc/neutral (#18181B…); accent roxo (#AA3BFF) vive só em index.css e não está no theme.extend.colors.",
+    "Classes Tailwind brand-400 e brand-800 referenciadas no código (metas, avatar); brand-800 não existe em tailwind.config.js — validar se o JIT gera estilo ou se está ineffectivo.",
+    "Feedback positivo: mistura emerald-50/700/950 com text-brand-600 (#09090B) para ‘entrada’ em calendário/transações — semanticamente ‘positivo’ mas visualmente quase preto.",
+    "Superfícies de alerta (AlertCard): hex custom (#F4FBF7, #FFF7ED, #FEF7F7) vs pares Tailwind emerald/amber/red + white/80 — duas linguagens para o mesmo padrão."
+  ],
+  "unificationSuggestions": [
+    "Escolher uma escala neutra (gray OU slate) para texto/borda/fundo em UI shell + formulários, mantendo a outra só se houver razão (ex.: slate para densidade de dados).",
+    "Unificar ‘brand accent’: ou estender theme.colors com roxo do index.css, ou remover --accent do legado se a app for só zinc.",
+    "Alinhar gráficos às cores de feedback (ex.: fatias positivas = emerald-500) ou documentar paleta ‘chart’ separada.",
+    "Substituir hex soltos (#FFF4E5, #F4FBF7…) por tokens nomeados no Tailwind quando refatorar.",
+    "Garantir que todos os passos de brand.* usados no código existam no config (400, 800, etc.)."
+  ]
+}

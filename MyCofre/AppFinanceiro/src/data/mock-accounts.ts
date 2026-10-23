@@ -1,0 +1,43 @@
+import type { Account } from '../types'
+
+export const mockAccounts: Account[] = [
+  {
+    id: 'ac1',
+    user_id: 'u1',
+    name: 'Conta Corrente',
+    institution: 'Banco do Brasil',
+    type: 'checking',
+    initial_balance: 5000,
+    allows_investments: false,
+    created_at: '2025-01-01T00:00:00Z',
+    status: 'active',
+    notes: null,
+    include_in_net_worth: true,
+  },
+  {
+    id: 'ac2',
+    user_id: 'u1',
+    name: 'Poupança',
+    institution: 'Banco do Brasil',
+    type: 'savings',
+    initial_balance: 10000,
+    allows_investments: false,
+    created_at: '2025-01-01T00:00:00Z',
+    status: 'active',
+    notes: null,
+    include_in_net_worth: true,
+  },
+  {
+    id: 'ac3',
+    user_id: 'u1',
+    name: 'Corretora',
+    institution: 'XP Investimentos',
+    type: 'investment',
+    initial_balance: 0,
+    allows_investments: true,
+    created_at: '2025-01-15T00:00:00Z',
+    status: 'active',
+    notes: null,
+    include_in_net_worth: true,
+  },
+]

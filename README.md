@@ -19,6 +19,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 | [`LP afiliados 2/site/`](LP%20afiliados%202/README.md) | Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social |
 | [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |
 | [`Maquininha Roxinha/`](Maquininha%20Roxinha/README.md) | Terminal de maquininha com 22 telas, da cobrança e Pix ao estorno em dois passos e aos relatórios |
+| [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças em três peças: landing, app web e app mobile |
 
 _(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
 

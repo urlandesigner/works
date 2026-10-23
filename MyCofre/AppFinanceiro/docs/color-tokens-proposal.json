@@ -1,0 +1,104 @@
+{
+  "$schema": "Proposta de tokens semânticos — AppFinanceiro (não aplicada ao código)",
+  "version": "0.1.0",
+  "principles": {
+    "neutrals": "Uma única rampa semântica baseada em valores equivalentes à escala Slate/Gray do Tailwind, com nomes de token independentes de 'gray' ou 'slate'. Na refatoração, preferir classes geradas a partir destes tokens (ex.: bg-canvas, text-muted).",
+    "brandPrimary": "Cor de ação principal da interface (botões primários, estados selecionados fortes): zinc escuro já usado como brand-600/700 — separado de accent decorativo.",
+    "brandAccent": "Roxo legado (--accent): destaque opcional, gradientes, links especiais — não substitui primary em CTAs principais.",
+    "success": "Emerald como verde canônico da aplicação (dashboard, toasts, calendário). Gráficos devem convergir para o mesmo accent (#10B981) em fase 2.",
+    "warningSoft": "Superfície de aviso suave unificada em amber-50 (#FFFBEB); substitui hex soltos (#FFF4E5) por equivalência perceptiva mínima."
+  },
+  "token": {
+    "background": {
+      "canvas": "#E4E6ED",
+      "canvasWashTop": "#F8FAFC",
+      "canvasWashEnd": "#F1F5F9",
+      "elevated": "#FFFFFF",
+      "muted": "#F9FAFB",
+      "subtle": "#F3F4F6",
+      "inverse": "#020617",
+      "inverseElevated": "#0F172A",
+      "overlay": "rgba(15, 23, 42, 0.45)",
+      "code": "#F4F3EC"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#4B5563",
+      "muted": "#6B7280",
+      "subtle": "#9CA3AF",
+      "inverse": "#FFFFFF",
+      "inverseMuted": "#94A3B8",
+      "onPrimary": "#FFFFFF",
+      "onSuccess": "#022C22",
+      "onError": "#450A0A",
+      "onWarning": "#92400E"
+    },
+    "border": {
+      "default": "#E5E7EB",
+      "subtle": "#F3F4F6",
+      "input": "#CBD5E1",
+      "strong": "#111827",
+      "inverse": "rgba(255, 255, 255, 0.08)"
+    },
+    "brand": {
+      "primary": "#09090B",
+      "primaryHover": "#000000",
+      "primaryMuted": "#F4F4F5",
+      "primaryMutedStrong": "#E4E4E7",
+      "onPrimary": "#FFFFFF",
+      "accent": "#AA3BFF",
+      "accentHover": "#9333EA",
+      "accentMuted": "rgba(170, 59, 255, 0.12)",
+      "focusRing": "#18181B"
+    },
+    "feedback": {
+      "success": {
+        "fg": "#047857",
+        "fgStrong": "#065F46",
+        "bg": "#ECFDF5",
+        "bgSolid": "#D1FAE5",
+        "border": "#A7F3D0",
+        "accent": "#10B981"
+      },
+      "error": {
+        "fg": "#B91C1C",
+        "fgStrong": "#991B1B",
+        "bg": "#FEF2F2",
+        "border": "#FECACA",
+        "accent": "#EF4444"
+      },
+      "warning": {
+        "fg": "#B45309",
+        "fgStrong": "#92400E",
+        "bgSoft": "#FFFBEB",
+        "border": "#FDE68A",
+        "accent": "#F59E0B"
+      },
+      "info": {
+        "fg": "#0F172A",
+        "bg": "#FFFFFF",
+        "border": "#E2E8F0"
+      }
+    },
+    "data": {
+      "chart": ["#10B981", "#3B82F6", "#F59E0B", "#EF4444", "#8B5CF6", "#EC4899", "#64748B"],
+      "note": "Substitui o primeiro verde do inventário (#22C55E) por success.accent para alinhar métricas e gráficos."
+    },
+    "shadow": {
+      "rgb": "15, 23, 42",
+      "note": "Manter sombras atuais (card, header) usando este RGB como base de opacidade."
+    }
+  },
+  "tailwindMappingPlan": {
+    "extendColors": "theme.extend.colors a partir de var(--color-*) via referência CSS ou valores HEX espelhados",
+    "examples": {
+      "canvas": "background.canvas",
+      "foreground": "text.primary",
+      "card": "background.elevated",
+      "muted": "background.muted",
+      "primary": "brand.primary",
+      "accent": "brand.accent",
+      "destructive": "feedback.error.accent"
+    }
+  }
+}
