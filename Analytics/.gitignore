@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+supabase/.temp/
+.vercel/
+
+# artefatos compilados que não devem sombrear vite.config.ts
+vite.config.js
+vite.config.d.ts
+*.tsbuildinfo
+.vercel
