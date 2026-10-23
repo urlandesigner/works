@@ -4,10 +4,8 @@ Projetos, estudos e protótipos publicados fora do trabalho do dia a dia. Cada
 um é uma **pasta autocontida na raiz**: nada é compartilhado entre projetos,
 de propósito — mexer em um não pode quebrar outro.
 
-Mesma convenção e mesma moldura do
-[`ideias-e-inovacao`](https://github.com/Nivello-Sistemas/ideias-e-inovacao),
-de onde o andaime veio. O que muda aqui: o repositório é **público**, não há
-filtro por projeto, e o portão de senha nasce desligado (ver abaixo).
+O repositório é **público**, e o site do Pages também. O portão de senha
+existe no andaime mas nasce desligado (ver abaixo).
 
 **Link público:** <https://urlandesigner.github.io/works/>
 
@@ -120,9 +118,8 @@ Depois que o Pages compilar, `verificar --site` confere tudo no ar.
 
 ## Aviso de visibilidade
 
-**Este repositório é público, e o site do Pages também.** Diferente do
-`ideias-e-inovacao`, que é privado com o site público: aqui o código-fonte
-de tudo está aberto no GitHub, além das páginas publicadas.
+**Este repositório é público, e o site do Pages também.** O código-fonte de
+tudo está aberto no GitHub, além das páginas publicadas.
 
 Então a conferência antes de publicar vale dobrado. `novo-projeto.py
 segredos` varre texto, e só. **Binário — `.docx`, `.pdf`, imagem — ninguém
