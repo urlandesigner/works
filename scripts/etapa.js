@@ -44,7 +44,7 @@
          escuro no papel escuro, que sao exatamente os dois valores dos dois
          indices. */
       const acento = (function () {
-        const daPagina = getComputedStyle(document.body).getPropertyValue("--vinho").trim();
+        const daPagina = getComputedStyle(document.body).getPropertyValue("--acento").trim();
         if (daPagina) return daPagina;
         const fundo = getComputedStyle(document.body).backgroundColor
           || getComputedStyle(document.documentElement).backgroundColor;
@@ -53,7 +53,7 @@
         const claro = n.length < 3 || (n.length > 3 && n[3] === 0)
           ? true
           : (0.2126 * n[0] + 0.7152 * n[1] + 0.0722 * n[2]) > 128;
-        return claro ? "#6f2e33" : "#e2727d";
+        return claro ? "#7120D1" : "#A255FD";
       })();
 
       const titulo = document.querySelector("h1, h2");

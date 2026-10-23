@@ -66,21 +66,21 @@
     overlay.style.cssText =
       "position:fixed;inset:0;z-index:2147483647;visibility:visible;" +
       "display:flex;align-items:center;justify-content:center;" +
-      "background:#181510;color:#f2ece1;" +
+      "background:#0B0A0F;color:#F1EEF6;" +
       "font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;" +
       "padding:24px;box-sizing:border-box;";
 
     overlay.innerHTML =
       '<form id="portao-form" style="max-width:320px;width:100%;box-sizing:border-box;">' +
-      '<p style="font:400 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase;color:#a89e8f;margin:0 0 16px;"><b style="font-weight:400;color:#e2727d">Urlan</b> · Dipre</p>' +
+      '<p style="font:400 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase;color:#948FA3;margin:0 0 16px;"><b style="font-weight:400;color:#A255FD">Urlan</b> · Dipre</p>' +
       '<h1 style="font-family:Georgia,serif;font-size:clamp(28px,4.6vw,38px);font-weight:600;letter-spacing:-.01em;margin:0 0 14px;line-height:1.1;">Acesso restrito</h1>' +
-      '<p style="font-size:14px;line-height:1.6;color:#a89e8f;margin:0 0 26px;">Peça a senha a quem já tem acesso.</p>' +
+      '<p style="font-size:14px;line-height:1.6;color:#948FA3;margin:0 0 26px;">Peça a senha a quem já tem acesso.</p>' +
       '<label style="display:flex;flex-direction:column;gap:8px;">' +
-      '<span style="font:400 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#a89e8f;">Senha</span>' +
-      '<input id="portao-senha" type="password" autocomplete="current-password" style="width:100%;font:400 16px/1.3 ui-sans-serif,system-ui,sans-serif;color:#f2ece1;background:none;border:0;border-bottom:1px solid rgba(242,236,225,.14);padding:8px 0;outline:none;box-sizing:border-box;" />' +
+      '<span style="font:400 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#948FA3;">Senha</span>' +
+      '<input id="portao-senha" type="password" autocomplete="current-password" style="width:100%;font:400 16px/1.3 ui-sans-serif,system-ui,sans-serif;color:#F1EEF6;background:none;border:0;border-bottom:1px solid rgba(241,238,246,.10);padding:8px 0;outline:none;box-sizing:border-box;" />' +
       "</label>" +
-      '<button type="submit" style="margin-top:18px;font:600 13.5px/1 ui-sans-serif,system-ui,sans-serif;color:#181510;background:#f2ece1;border:0;border-radius:999px;padding:13px 28px;cursor:pointer;">Entrar</button>' +
-      '<p id="portao-erro" role="alert" hidden style="font-size:12.5px;color:#e2727d;margin:14px 0 0;">Senha incorreta.</p>' +
+      '<button type="submit" style="margin-top:18px;font:600 13.5px/1 ui-sans-serif,system-ui,sans-serif;color:#0B0A0F;background:#F1EEF6;border:0;border-radius:999px;padding:13px 28px;cursor:pointer;">Entrar</button>' +
+      '<p id="portao-erro" role="alert" hidden style="font-size:12.5px;color:#A255FD;margin:14px 0 0;">Senha incorreta.</p>' +
       "</form>";
 
     document.body.appendChild(overlay);

@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ComproPay · Works</title>
 <meta name="description" content="Protótipo navegável do app ComproPay: 21 telas mobile com as variações de saldo, cartão, extrato e pagamento." />
-<meta name="theme-color" content="#181510" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181510'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23e2727d'%3EC%3C/text%3E%3C/svg%3E" />
+<meta name="theme-color" content="#0B0A0F" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0A0F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23A255FD'%3EC%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Fragment+Mono&display=swap" rel="stylesheet" />
 
 <style>
   /* :root copiado do index.html da raiz do works, na hora de subir. Capa que
      herda a pele de outro catálogo sai com a cara errada sem quebrar nada,
      e esse erro não aparece em teste. */
   :root {
-    --papel:      #181510;
-    --papel-2:    #211e18;
-    --tinta:      #f2ece1;
-    --apoio:      #a89e8f;
-    --apoio-2:    #5b5449;
-    --linha:      rgba(242, 236, 225, 0.14);
-    --linha-forte: rgba(242, 236, 225, 0.75);
-    --vinho:      #e2727d;
-    --vinho-meio: rgba(226, 114, 125, 0.38);
+    --papel:      #0B0A0F;
+    --papel-2:    #110E18;
+    --tinta:      #F1EEF6;
+    --apoio:      #948FA3;
+    --apoio-2:    #55505F;
+    --linha:      rgba(241, 238, 246, 0.10);
+    --linha-forte: rgba(241, 238, 246, 0.75);
+    --acento:      #A255FD;
+    --acento-meio: rgba(162, 85, 253, 0.38);
     --sombra:     0 18px 40px -20px rgba(0, 0, 0, 0.6);
 
-    --serif: "Fraunces", Georgia, serif;
-    --sans:  "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    --serif: "Lora", Georgia, serif;
+    --sans:  "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
     --mono:  "Fragment Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
     --gap: clamp(20px, 4.5vw, 40px);
@@ -86,7 +86,7 @@
     line-height: 1.05;
     margin: 0 0 clamp(22px, 3vw, 32px);
   }
-  h1 em { font-style: italic; color: var(--vinho); }
+  h1 em { font-style: italic; color: var(--acento); }
 
   .lede { max-width: 62ch; color: var(--tinta); margin: 0 0 18px; }
   .lede:last-of-type { color: var(--apoio); }
@@ -122,7 +122,7 @@
     font-size: 10px;
     letter-spacing: .18em;
     text-transform: uppercase;
-    color: var(--vinho);
+    color: var(--acento);
     margin: 0 0 12px;
   }
   .versao__nome {
@@ -144,7 +144,7 @@
     font-weight: 600;
     color: var(--tinta);
     text-decoration: none;
-    border-bottom: 1px solid var(--vinho-meio);
+    border-bottom: 1px solid var(--acento-meio);
     padding-bottom: 2px;
     align-self: flex-start;
   }
@@ -177,7 +177,7 @@
     max-width: 62ch;
     font-size: 14px;
     color: var(--apoio);
-    border-left: 2px solid var(--vinho-meio);
+    border-left: 2px solid var(--acento-meio);
     padding-left: 16px;
     margin: 26px 0 0;
   }

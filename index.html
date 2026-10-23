@@ -6,20 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Works · Urlan Dipre</title>
 <meta name="description" content="Índice dos projetos, estudos e protótipos publicados por Urlan Dipre." />
-<meta name="theme-color" content="#181510" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181510'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23e2727d'%3EU%3C/text%3E%3C/svg%3E" />
+<meta name="theme-color" content="#0B0A0F" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0A0F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23A255FD'%3EU%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Fragment+Mono&display=swap" rel="stylesheet" />
 
 <!--
   ÍNDICE DO REPOSITÓRIO — não é um projeto, é o catálogo que os guarda.
 
-  Moldura visual, tokens e fontes do índice (mesma base do 404 e das capas
-  copiados de lá). Diferença de propósito: aqui não são protótipos de demanda
-  do dia a dia, são ideias e experimentos do time — por isso não existe filtro
-  de "projeto" (club/pro/ecommerce...), só designer e busca livre.
+  Os tokens, a moldura e as fontes daqui são a fonte do 404 e das capas de
+  projeto, que copiam de lá. Paleta da UD Labs.
+
+  O catálogo guarda projetos, estudos e protótipos pessoais, que não são de
+  uma frente de produto só — por isso não há filtro de "projeto", só designer
+  e busca livre.
 
   A ordem é por atualização, mais recente primeiro. Num catálogo que cresce,
   quem chega procura o que acabou de mudar — a ordem alfabética vive no array,
@@ -39,26 +41,28 @@
 
 <style>
   :root {
-    /* Moldura escura: os tokens abaixo são a fonte das capas de projeto —
-       o objetivo é diferenciar os dois catálogos à distância (protótipos
-       claro, ideias escuro), não uma paleta nova. --vinho foi clareado pra
-       manter o mesmo matiz com contraste em cima de fundo escuro; no claro
-       ele funcionava só por ser mais escuro que o papel. */
-    --papel:      #181510;
-    --papel-2:    #211e18;
-    --tinta:      #f2ece1;
-    --apoio:      #a89e8f;
+    /* Paleta da UD Labs. Estes tokens são a fonte das capas de projeto:
+       capa que copia a pele de outra herda a cor do catálogo dela, e esse
+       erro não quebra nada, só sai com a cara errada.
+
+       --acento é o roxo claro da marca (#A255FD), não o roxo cheio
+       (#7120D1): o cheio dá 2.66:1 sobre o fundo e reprova em AA como
+       texto. Ele serve como preenchimento, com tinta clara em cima. */
+    --papel:      #0B0A0F;
+    --papel-2:    #110E18;
+    --tinta:      #F1EEF6;
+    --apoio:      #948FA3;
     /* --apoio-2 é só ORNAMENTO (numeral, ícone, chevron) — não carrega texto
        que informa, esse usa --apoio. */
-    --apoio-2:    #5b5449;
-    --linha:      rgba(242, 236, 225, 0.14);
-    --linha-forte: rgba(242, 236, 225, 0.75);
-    --vinho:      #e2727d;
-    --vinho-meio: rgba(226, 114, 125, 0.38);
+    --apoio-2:    #55505F;
+    --linha:      rgba(241, 238, 246, 0.10);
+    --linha-forte: rgba(241, 238, 246, 0.75);
+    --acento:      #A255FD;
+    --acento-meio: rgba(162, 85, 253, 0.38);
     --sombra:     0 18px 40px -20px rgba(0, 0, 0, 0.6);
 
-    --serif: "Fraunces", Georgia, serif;
-    --sans:  "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    --serif: "Lora", Georgia, serif;
+    --sans:  "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
     --mono:  "Fragment Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
     --gap: clamp(20px, 4.5vw, 40px);
@@ -86,7 +90,7 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(70rem 30rem at 50% -12%, rgba(226, 114, 125, 0.09), transparent 70%);
+    background: radial-gradient(70rem 30rem at 50% -12%, rgba(162, 85, 253, 0.10), transparent 70%);
   }
 
   .pagina {
@@ -96,7 +100,7 @@
     padding: clamp(48px, 10vh, 112px) var(--gap) 72px;
   }
 
-  ::selection { background: var(--vinho); color: var(--papel); }
+  ::selection { background: var(--acento); color: var(--papel); }
 
   /* ---------- masthead ---------- */
 
@@ -109,7 +113,7 @@
   }
   .kicker b {
     font-weight: 400;
-    color: var(--vinho);
+    color: var(--acento);
   }
 
   h1 {
@@ -128,7 +132,7 @@
     font-style: italic;
     font-weight: 450;
     font-size: 0.3em;
-    color: var(--vinho);
+    color: var(--acento);
     margin-left: 0.18em;
     vertical-align: 1.5em;
     letter-spacing: 0;
@@ -180,7 +184,7 @@
     color: var(--tinta);
     padding: 2px 0;
     outline: none; /* o indicador de foco vive no .busca, via :focus-within */
-    caret-color: var(--vinho);
+    caret-color: var(--acento);
   }
   .busca input::placeholder { color: var(--apoio); }
   .busca input::-webkit-search-cancel-button { -webkit-appearance: none; }
@@ -221,8 +225,8 @@
   }
   select:hover { border-bottom-color: var(--linha); }
   select[data-ativo="true"] {
-    color: var(--vinho);
-    border-bottom-color: var(--vinho);
+    color: var(--acento);
+    border-bottom-color: var(--acento);
   }
   /* Depois do data-ativo de propósito: mesma especificidade, e o foco tem
      que aparecer TAMBÉM no select já filtrado (sublinhado vinho -> tinta). */
@@ -246,7 +250,7 @@
 
   .limpar {
     font: 500 12.5px/1 var(--sans);
-    color: var(--vinho);
+    color: var(--acento);
     background: none;
     border: 0;
     padding: 4px 0;
@@ -256,7 +260,7 @@
     text-decoration-thickness: 1px;
   }
   .limpar:hover { color: var(--tinta); }
-  .limpar:focus-visible { outline: 2px solid var(--vinho); outline-offset: 3px; }
+  .limpar:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
   .limpar[hidden] { display: none; }
 
   /* ---------- as fichas ---------- */
@@ -291,12 +295,12 @@
   }
   .cartao:hover,
   .cartao:focus-visible {
-    border-color: var(--vinho-meio);
+    border-color: var(--acento-meio);
     transform: translateY(-3px);
     box-shadow: var(--sombra);
   }
   .cartao:focus-visible {
-    outline: 2px solid var(--vinho);
+    outline: 2px solid var(--acento);
     outline-offset: 3px;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -319,7 +323,7 @@
     font-variant-numeric: tabular-nums;
     transition: color 160ms ease;
   }
-  .cartao:hover .num, .cartao:focus-visible .num { color: var(--vinho); }
+  .cartao:hover .num, .cartao:focus-visible .num { color: var(--acento); }
 
   .nome {
     font-family: var(--serif);
@@ -335,7 +339,7 @@
      ganha sublinhado nas duas — o truque do background so pinta a ultima */
   .cartao:hover .nome, .cartao:focus-visible .nome {
     text-decoration: underline;
-    text-decoration-color: var(--vinho);
+    text-decoration-color: var(--acento);
     text-decoration-thickness: 1.5px;
     text-underline-offset: 5px;
   }
@@ -389,7 +393,7 @@
     background: var(--linha);
   }
   .regua i[data-feita] { background: var(--apoio-2); }
-  .regua i[data-aqui] { background: var(--vinho); }
+  .regua i[data-aqui] { background: var(--acento); }
 
   .desc {
     font-size: 14px;
@@ -417,7 +421,7 @@
 
   .seta {
     flex: none;
-    color: var(--vinho);
+    color: var(--acento);
     opacity: 0;
     transform: translateX(-6px);
     transition: opacity 200ms ease, transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -499,7 +503,7 @@
 
   /* No fim de propósito: o mobile redefine a borda da .busca via shorthand,
      e esta regra precisa vencer por ordem para o foco aparecer lá também. */
-  .busca:focus-within { border-bottom-color: var(--vinho); }
+  .busca:focus-within { border-bottom-color: var(--acento); }
 </style>
 </head>
 
@@ -513,10 +517,10 @@
       </p>
     </header>
 
-    <form class="mesa anima d4" role="search" aria-label="Buscar e filtrar ideias" onsubmit="return false">
+    <form class="mesa anima d4" role="search" aria-label="Buscar e filtrar projetos" onsubmit="return false">
       <label class="busca">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <input id="f-busca" type="search" placeholder="Buscar peça ou designer" autocomplete="off" aria-label="Buscar ideias" />
+        <input id="f-busca" type="search" placeholder="Buscar peça ou designer" autocomplete="off" aria-label="Buscar projetos" />
         <kbd aria-hidden="true">/</kbd>
       </label>
 
