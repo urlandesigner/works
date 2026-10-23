@@ -62,7 +62,7 @@
 
       const css = document.createElement("style");
       css.textContent = `
-        .yb-fluxo{
+        .fluxo{
           box-sizing:border-box; inline-size:min(260px, 100%);
           float:inline-end; margin:4px 0 20px 28px; padding:14px 16px 13px;
           border:1px solid currentColor; border-radius:10px;
@@ -73,39 +73,39 @@
           border-color:color-mix(in srgb, currentColor 18%, transparent);
           background:color-mix(in srgb, currentColor 4%, transparent);
         }
-        .yb-fluxo__tit{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+        .fluxo__tit{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
           opacity:.55;margin:0 0 9px}
-        .yb-fluxo__regua{display:flex;gap:3px;margin-bottom:10px}
-        .yb-fluxo__regua i{flex:1;height:3px;border-radius:999px;
+        .fluxo__regua{display:flex;gap:3px;margin-bottom:10px}
+        .fluxo__regua i{flex:1;height:3px;border-radius:999px;
           background:color-mix(in srgb, currentColor 16%, transparent)}
-        .yb-fluxo__regua i[data-feita]{background:color-mix(in srgb, currentColor 45%, transparent)}
-        .yb-fluxo__regua i[data-aqui]{background:var(--yb-fluxo-acento, currentColor)}
-        .yb-fluxo__nome{display:block;font-size:13px;line-height:1.3}
-        .yb-fluxo__sai{display:block;font-size:10.5px;line-height:1.5;opacity:.6;margin-top:5px}
-        .yb-fluxo__desde{font-size:10.5px;opacity:.6;margin:9px 0 0}
+        .fluxo__regua i[data-feita]{background:color-mix(in srgb, currentColor 45%, transparent)}
+        .fluxo__regua i[data-aqui]{background:var(--fluxo-acento, currentColor)}
+        .fluxo__nome{display:block;font-size:13px;line-height:1.3}
+        .fluxo__sai{display:block;font-size:10.5px;line-height:1.5;opacity:.6;margin-top:5px}
+        .fluxo__desde{font-size:10.5px;opacity:.6;margin:9px 0 0}
         /* Em tela estreita nao ha espaco vazio ao lado para ocupar: o bloco
            deixa de flutuar e vira uma faixa antes do texto. */
         @media (max-width:720px){
-          .yb-fluxo{float:none;inline-size:auto;margin:16px 0 22px}
+          .fluxo{float:none;inline-size:auto;margin:16px 0 22px}
         }
       `;
       document.head.appendChild(css);
 
       const bloco = document.createElement("aside");
-      bloco.className = "yb-fluxo";
+      bloco.className = "fluxo";
       bloco.setAttribute("aria-label", "Etapa do trabalho");
-      bloco.style.setProperty("--yb-fluxo-acento", acento);
+      bloco.style.setProperty("--fluxo-acento", acento);
       bloco.innerHTML =
-        `<p class="yb-fluxo__tit">Etapa ${aqui + 1} de ${d.fluxo.length}</p>`
-        + `<span class="yb-fluxo__regua" role="img" aria-label="${aqui} de ${d.fluxo.length} concluidas">`
+        `<p class="fluxo__tit">Etapa ${aqui + 1} de ${d.fluxo.length}</p>`
+        + `<span class="fluxo__regua" role="img" aria-label="${aqui} de ${d.fluxo.length} concluidas">`
         + d.fluxo.map((_, i) =>
             `<i${i < aqui ? " data-feita" : ""}${i === aqui ? " data-aqui" : ""}></i>`).join("")
         + `</span>`
-        + `<b class="yb-fluxo__nome">${esc(d.fluxo[aqui].rotulo)}</b>`
-        + `<span class="yb-fluxo__sai">Sai: ${esc(d.fluxo[aqui].sai)}</span>`
+        + `<b class="fluxo__nome">${esc(d.fluxo[aqui].rotulo)}</b>`
+        + `<span class="fluxo__sai">Sai: ${esc(d.fluxo[aqui].sai)}</span>`
         /* A data e a razao de o bloco existir: sem ela "Prototipar" parado
            desde agosto le igualzinho a "Prototipar" de ontem. */
-        + `<p class="yb-fluxo__desde">Nesta etapa desde ${esc(reg.desde)}.</p>`;
+        + `<p class="fluxo__desde">Nesta etapa desde ${esc(reg.desde)}.</p>`;
 
       /* ONDE O BLOCO ENTRA, e por que nao e no fim da pagina. No fim ele ficava
          escondido: o leitor rola a capa inteira para descobrir em que pe esta o
