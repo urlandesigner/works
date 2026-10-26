@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ComproPay · Works</title>
-<meta name="description" content="Protótipo navegável do app ComproPay: 21 telas mobile com as variações de saldo, cartão, extrato e pagamento." />
+<meta name="description" content="Protótipo navegável do app ComproPay: 30 telas mobile, mais o kit de design que sustenta elas." />
 <meta name="theme-color" content="#0B0A0F" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0A0F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23A255FD'%3EC%3C/text%3E%3C/svg%3E" />
 
@@ -228,16 +228,18 @@
     <h1>As telas do <em>ComproPay</em></h1>
 
     <p class="lede">
-      São 21 telas de um app de pagamento no celular, em seis áreas: início,
-      extrato, cartões, pagar, vantagens e ajuda. A tela de início aparece com
-      zero, um e dois cartões, cada uma com o saldo à vista e escondido. Pagar
-      tem os seis caminhos: escolher alguém, ler o QR code, ver quem está por
-      perto, buscar pelo nome, digitar o valor e deixar o pagamento repetir.
+      São 30 telas de um app de pagamento no celular, em oito áreas: login,
+      início, extrato, cartões, pagar, receber, favoritos e vantagens. A tela
+      de início aparece com zero, um e dois cartões, cada uma com o saldo à
+      vista e escondido. Cartões ganhou o fluxo inteiro de adicionar um novo
+      (escolher a arte, digitar os dados, confirmar) e de gerenciar um já
+      existente. Receber tem o QR code próprio e o "cobrar" com valor.
     </p>
     <p class="lede">
       Nada conversa com servidor. Saldo, transações e ofertas estão escritos
-      nas telas, e os botões levam de uma para outra. Serve para ver a
-      interface de perto e comparar as variações.
+      nas telas, e os botões levam de uma para outra. Por baixo de tudo isso
+      tem um kit de design com os tokens de cor, tipografia e espaçamento, e
+      os componentes que as telas reaproveitam.
     </p>
 
     <div class="versoes">
@@ -256,11 +258,22 @@
         <p class="versao__tag">Para ver uma por uma</p>
         <h3 class="versao__nome">Índice de telas</h3>
         <p class="versao__desc">
-          As 21 telas em lista, cada uma com o que a distingue das vizinhas.
+          As 30 telas em lista, cada uma com o que a distingue das vizinhas.
           Abra uma tela isolada quando precisar dela em tamanho real ou para
           mandar o link de uma só.
         </p>
         <span class="versao__abrir">Abrir o índice &rarr;</span>
+      </a>
+
+      <a class="versao" href="../ui-kit/index.html">
+        <p class="versao__tag">Por baixo das telas</p>
+        <h3 class="versao__nome">UI Kit</h3>
+        <p class="versao__desc">
+          Cor, tipografia, espaçamento e os componentes que as 30 telas
+          reaproveitam — extraído do Figma e sincronizado com o CSS real
+          do protótipo, não um documento à parte.
+        </p>
+        <span class="versao__abrir">Abrir o kit &rarr;</span>
       </a>
     </div>
 

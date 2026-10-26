@@ -1,6 +1,6 @@
 # ComproPay
 
-Protótipo navegável de um app de pagamento no celular. 21 telas em HTML
+Protótipo navegável de um app de pagamento no celular. 30 telas em HTML
 estático, com CSS próprio e tokens em `css/tokens.css`. Sem framework, sem
 build, sem dependência.
 
@@ -14,18 +14,22 @@ percorrer os estados da interface e comparar as variações lado a lado.
 |---|---|
 | [`detalhes/`](detalhes/index.html) | A capa do projeto, que é o que o índice do works abre |
 | [`app.html`](app.html) | As telas numa moldura de celular, com a lista ao lado para trocar sem sair da página |
-| [`index.html`](index.html) | As 21 telas em lista, para abrir uma isolada |
+| [`index.html`](index.html) | As 30 telas em lista, para abrir uma isolada |
+| [`ui-kit/`](ui-kit/index.html) | Cor, tipografia, espaçamento e os componentes que as telas reaproveitam |
 
 ## As telas
 
 | Área | Telas | O que varia |
 |---|---|---|
+| Login | 1 | Boas-vindas |
 | Início | 6 | Zero, um ou dois cartões, cada um com saldo visível e oculto |
 | Pagar | 6 | Destinatário, QR, próximos de mim, busca, valor e valor recorrente |
+| Receber | 2 | Meu QR code e cobrar um valor específico |
 | Extrato | 3 | Lista, detalhe da transação, detalhe com menu aberto |
+| Cartões | 5 | Meus cartões, escolher arte, dados, confirmar e gerenciar um cartão |
+| Favoritos | 2 | Favoritar um estabelecimento e ver os já favoritados |
 | Vantagens | 3 | Até três, mais de três, e o detalhe de uma |
 | Ajuda | 2 | Central de ajuda e a conversa com a assistente |
-| Cartões | 1 | Meus cartões |
 
 ## Como está organizado
 
@@ -33,13 +37,23 @@ Cada tela é um arquivo HTML inteiro, sem include e sem montagem. O cabeçalho
 e a barra de navegação se repetem de propósito: trocar uma tela nunca quebra
 as outras, e abrir o arquivo mostra tudo o que aquela tela é.
 
-- `css/tokens.css` — cor, espaçamento e tipografia
-- `css/base.css` — o resto
+- `css/tokens.css` — cor, tipografia, espaçamento, raio e sombra
+- `css/base.css` — os componentes
+- `css/device-frame.css` — a moldura de celular que embrulha qualquer tela aberta sozinha
 - `assets/icons/` — SVG soltos
 - `assets/img/` — imagens das telas
 - `js/embed.js` — a troca de tela dentro da moldura do `app.html`
+- `js/device-frame.js` — monta a moldura em volta de uma tela aberta direto
 
 As telas abrem direto do arquivo, sem servidor. Só o `app.html` precisa de um,
 porque usa iframe.
+
+## O UI Kit
+
+`ui-kit/` documenta o que sustenta as 30 telas: Foundation (cor, tipografia,
+espaçamento, raio, sombra — cada token marcado como "em uso" ou "novo") e
+Components (os 9 componentes reais, com o markup copiado das telas). Os
+tokens vieram do Figma do projeto e ficam sincronizados com `css/tokens.css` —
+mudou um, muda o outro, não é um documento à parte que descola com o tempo.
 
 Urlan Dipre

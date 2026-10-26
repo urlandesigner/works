@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
 <script src="js/embed.js"></script>
 <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/device-frame.css">
+<script src="js/device-frame.js" defer></script>
 </head>
 <body>
 <main class="screen">
@@ -25,8 +27,8 @@
           <span class="header__greeting">Olá, Eduardo!</span>
         </div>
         <div class="header__actions">
-          <button class="icon-btn" type="button" aria-label="Menu de desenvolvimento"><img src="assets/icons/header-dev.svg" alt=""></button>
-          <button class="icon-btn" type="button" aria-label="Ocultar saldo" aria-pressed="false"><img src="assets/icons/header-eye.svg" alt=""></button>
+          <a class="icon-btn" href="pagar-qr.html" aria-label="Pagar com QR code"><img src="assets/icons/header-dev.svg" alt=""></a>
+          <a class="icon-btn" href="home-sem-cartao-oculto.html" aria-label="Ocultar saldo"><img src="assets/icons/header-eye.svg" alt=""></a>
           <button class="icon-btn" type="button" aria-label="Notificações"><img src="assets/icons/header-bell.svg" alt=""></button>
         </div>
       </header>
@@ -42,17 +44,17 @@
           <div class="quick-actions">
             <button class="quick-action" type="button"><img src="assets/icons/transfer.svg" alt="">Transferir</button>
             <button class="quick-action" type="button"><img src="assets/icons/deposit.svg" alt="">Depositar</button>
-            <button class="quick-action" type="button"><img src="assets/icons/charge.svg" alt="">Cobrar</button>
+            <a class="quick-action" href="receber-valor.html"><img src="assets/icons/charge.svg" alt="">Cobrar</a>
           </div>
         </section>
       <section class="section" aria-labelledby="t-fav">
-        <div class="section__head"><h2 class="section__title" id="t-fav">Favoritos</h2><a class="link-more" href="#">Gerenciar <img src="assets/icons/chevron-right.svg" alt=""></a></div>
+        <div class="section__head"><h2 class="section__title" id="t-fav">Favoritos</h2><a class="link-more" href="meus-favoritos.html">Gerenciar <img src="assets/icons/chevron-right.svg" alt=""></a></div>
         <div class="favorites">
-          <a class="favorite favorite--new" href="#"><span class="favorite__thumb"><img src="assets/icons/favorite-new.svg" alt=""></span>Novo</a>
-          <a class="favorite" href="#"><img class="favorite__thumb" src="assets/img/fav-la-nutri.jpg" alt="">La Nutri</a>
-          <a class="favorite" href="#"><img class="favorite__thumb" src="assets/img/fav-tagline.png" alt="">Tagline</a>
-          <a class="favorite" href="#"><img class="favorite__thumb" src="assets/img/fav-steak-brand.jpg" alt="">Steak Brand</a>
-          <a class="favorite" href="#"><img class="favorite__thumb" src="assets/img/fav-coffee-co.jpg" alt="">Coffee.co</a>
+          <a class="favorite favorite--new" href="favoritar.html"><span class="favorite__thumb"><img src="assets/icons/favorite-new.svg" alt=""></span>Novo</a>
+          <a class="favorite" href="pagar-valor.html"><img class="favorite__thumb" src="assets/img/fav-la-nutri.jpg" alt="">La Nutri</a>
+          <a class="favorite" href="pagar-valor.html"><img class="favorite__thumb" src="assets/img/fav-tagline.png" alt="">Tagline</a>
+          <a class="favorite" href="pagar-valor.html"><img class="favorite__thumb" src="assets/img/fav-steak-brand.jpg" alt="">Steak Brand</a>
+          <a class="favorite" href="pagar-valor.html"><img class="favorite__thumb" src="assets/img/fav-coffee-co.jpg" alt="">Coffee.co</a>
         </div>
       </section>
     </div>
@@ -80,7 +82,7 @@
   </div>
   <nav class="tabbar" aria-label="Principal">
     <div class="tabbar__group">
-      <a class="tabbar__item" href="#" aria-current="page"><img src="assets/icons/nav-inicio.svg" alt="">Início</a>
+      <a class="tabbar__item" href="home-sem-cartao.html" aria-current="page"><img src="assets/icons/nav-inicio.svg" alt="">Início</a>
       <a class="tabbar__item" href="extrato.html"><img src="assets/icons/nav-extrato.svg" alt="">Extrato</a>
     </div>
     <div class="tabbar__group">

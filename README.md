@@ -15,7 +15,7 @@ existe no andaime mas nasce desligado (ver abaixo).
 |---|---|
 | [`Analytics/site/`](Analytics/README.md) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site |
 | [`Atlas-pessoal/site/`](Atlas-pessoal/README.md) | Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita |
-| [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 21 telas mobile com as variações de saldo, cartão, extrato e pagamento |
+| [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 30 telas mobile com cartões, receber, favoritos, login e o UI kit que sustenta tudo |
 | [`ComproPay Site/`](ComproPay%20Site/README.md) | Landing one-page da carteira digital, com as trilhas de lojista e de usuário final e formulário de qualificação |
 | [`Condominio/site/`](Condominio/README.md) | Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes |
 | [`Dr.Geraldo/detalhes/`](Dr.Geraldo/README.md) | Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente |
