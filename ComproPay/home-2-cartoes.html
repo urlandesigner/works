@@ -28,15 +28,15 @@
           <span class="header__greeting">Olá, Eduardo!</span>
         </div>
         <div class="header__actions">
-          <a class="icon-btn" href="pagar-qr.html" aria-label="Pagar com QR code"><img src="assets/icons/header-dev.svg" alt=""></a>
-          <a class="icon-btn" href="home-2-cartoes-oculto.html" aria-label="Ocultar saldo"><img src="assets/icons/header-eye.svg" alt=""></a>
-          <button class="icon-btn" type="button" aria-label="Notificações"><img src="assets/icons/header-bell.svg" alt=""></button>
+          <a class="icon-btn" href="pagar-qr.html" aria-label="Pagar com QR code" data-component="BotaoIcone" data-props="icone, rotulo, onClick" data-states="padrao" data-state="padrao" data-ds="button"><img src="assets/icons/header-dev.svg" alt=""></a>
+          <a class="icon-btn" href="home-2-cartoes-oculto.html" aria-label="Ocultar saldo" data-component="BotaoIcone" data-props="icone, rotulo, onClick" data-states="padrao" data-state="padrao" data-ds="button"><img src="assets/icons/header-eye.svg" alt=""></a>
+          <button class="icon-btn" type="button" aria-label="Notificações" data-component="BotaoIcone" data-props="icone, rotulo, onClick" data-states="padrao" data-state="padrao" data-ds="button"><img src="assets/icons/header-bell.svg" alt=""></button>
         </div>
       </header>
       <section class="section section--cards" aria-labelledby="t-cartoes">
           <div class="section__head"><h2 class="section__title" id="t-cartoes">Meus cartões</h2><a class="link-more" href="cartoes.html">Gerenciar <img src="assets/icons/chevron-right.svg" alt=""></a></div>
           <div class="cards">
-            <article class="card" style="background-image:url(assets/img/card-alimentacao-lg.png)">
+            <article class="card" style="background-image:url(assets/img/card-alimentacao-lg.png)" data-component="CartaoPagamento" data-props="arte, categoria, saldo, numero, bloqueado" data-states="padrao, bloqueado" data-state="padrao" data-ds="card" data-template>
               <span class="card__chip">Alimentação</span>
               <img class="card__logo" src="assets/img/card-logo.png" alt="">
               <div class="card__balance">
@@ -44,7 +44,7 @@
                 <span class="card__number">•••• 8393</span>
               </div>
             </article>
-            <article class="card" style="background-image:url(assets/img/card-transporte-lg.png)">
+            <article class="card" style="background-image:url(assets/img/card-transporte-lg.png)" data-component="CartaoPagamento" data-props="arte, categoria, saldo, numero, bloqueado" data-states="padrao, bloqueado" data-state="padrao" data-ds="card" data-template>
               <span class="card__chip">Transporte</span>
               <img class="card__logo" src="assets/img/card-logo.png" alt="">
               <div class="card__balance">
@@ -89,18 +89,18 @@
     <section class="section" aria-labelledby="t-svc">
       <h2 class="section__title" id="t-svc">Serviços</h2>
       <div class="services">
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-rede.svg" alt=""></span>Rede</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-cashback.svg" alt=""></span>Cashback</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-rotativo.svg" alt=""></span>Rotativo</a>
-        <a class="service" href="#"><span class="service__tile"><span class="badge-new">Novo</span><img src="assets/icons/svc-boletos.svg" alt=""></span>Boletos</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-vendas.svg" alt=""></span>Vendas</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-emprestimos.svg" alt=""></span>Empréstimos</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-assinaturas.svg" alt=""></span>Doações</a>
-        <a class="service" href="#"><span class="service__tile"><img src="assets/icons/svc-ver-todos.svg" alt=""></span>Ver todos</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-rede.svg" alt=""></span>Rede</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-cashback.svg" alt=""></span>Cashback</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-rotativo.svg" alt=""></span>Rotativo</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="novo" data-ds="service" data-template><span class="service__tile"><span class="badge-new" data-component="Badge" data-props="texto" data-states="novo" data-state="novo" data-ds="badge">Novo</span><img src="assets/icons/svc-boletos.svg" alt=""></span>Boletos</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-vendas.svg" alt=""></span>Vendas</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-emprestimos.svg" alt=""></span>Empréstimos</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-assinaturas.svg" alt=""></span>Doações</a>
+        <a class="service" href="#" data-component="AtalhoServico" data-props="icone, rotulo, onClick" data-states="padrao, novo" data-state="padrao" data-ds="service" data-template><span class="service__tile"><img src="assets/icons/svc-ver-todos.svg" alt=""></span>Ver todos</a>
       </div>
     </section>
   </div>
-  <nav class="tabbar" aria-label="Principal">
+  <nav class="tabbar" aria-label="Principal" data-component="Tabbar" data-props="itemAtivo" data-states="padrao" data-state="padrao" data-ds="tabbar">
     <div class="tabbar__group">
       <a class="tabbar__item" href="home-2-cartoes.html" aria-current="page"><img src="assets/icons/nav-inicio.svg" alt="">Início</a>
       <a class="tabbar__item" href="extrato.html"><img src="assets/icons/nav-extrato.svg" alt="">Extrato</a>

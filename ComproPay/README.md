@@ -14,8 +14,9 @@ percorrer os estados da interface e comparar as variações lado a lado.
 |---|---|
 | [`detalhes/`](detalhes/index.html) | A capa do projeto, que é o que o índice do works abre |
 | [`app.html`](app.html) | As telas numa moldura de celular, com a lista ao lado para trocar sem sair da página |
-| [`index.html`](index.html) | As 30 telas em lista, para abrir uma isolada |
+| [`telas.html`](telas.html) | As 30 telas em lista, para abrir uma isolada |
 | [`ui-kit/`](ui-kit/index.html) | Cor, tipografia, espaçamento e os componentes que as telas reaproveitam |
+| [`handoff/`](handoff/index.html) | Painel de estados e Dev mode: navega os cenários e inspeciona token, CSS e contraste de 9 componentes anotados |
 
 ## As telas
 
@@ -45,8 +46,8 @@ as outras, e abrir o arquivo mostra tudo o que aquela tela é.
 - `js/embed.js` — a troca de tela dentro da moldura do `app.html`
 - `js/device-frame.js` — monta a moldura em volta de uma tela aberta direto
 
-As telas abrem direto do arquivo, sem servidor. Só o `app.html` precisa de um,
-porque usa iframe.
+As telas abrem direto do arquivo, sem servidor. `app.html` e `handoff/`
+precisam de um, porque usam iframe.
 
 ## O UI Kit
 
@@ -55,5 +56,17 @@ espaçamento, raio, sombra — cada token marcado como "em uso" ou "novo") e
 Components (os 9 componentes reais, com o markup copiado das telas). Os
 tokens vieram do Figma do projeto e ficam sincronizados com `css/tokens.css` —
 mudou um, muda o outro, não é um documento à parte que descola com o tempo.
+
+## O Handoff
+
+`handoff/` tem duas ferramentas na mesma página: o Painel de estados navega
+as 30 telas por cenário, com largura mobile (um número digitado também, pra
+testar uma largura exata) e tema claro/escuro; o Dev mode, ligado por padrão,
+mostra ao clicar numa peça o nome, se já existe no UI Kit, de qual token veio
+cada valor, o CSS real e o contraste medido. 9 componentes estão anotados no
+HTML das telas (tabbar, botão, badge, switch, busca, favoritar, cartão de
+pagamento, transação e atalho de serviço); o resto aparece sem anotação.
+
+Abas de código e o Manual de implementação não entraram nesta rodada.
 
 Urlan Dipre

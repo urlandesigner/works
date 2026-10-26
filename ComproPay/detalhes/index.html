@@ -226,27 +226,19 @@
     <a class="voltar" href="../../">← Works</a>
 
     <p class="olho">Protótipo · App de pagamento</p>
-    <h1>As telas do <em>ComproPay</em></h1>
+    <h1><em>ComproPay</em></h1>
 
     <p class="lede">
-      São 30 telas de um app de pagamento no celular, em oito áreas: login,
-      início, extrato, cartões, pagar, receber, favoritos e vantagens. A tela
-      de início aparece com zero, um e dois cartões, cada uma com o saldo à
-      vista e escondido. Cartões ganhou o fluxo inteiro de adicionar um novo
-      (escolher a arte, digitar os dados, confirmar) e de gerenciar um já
-      existente. Receber tem o QR code próprio e o "cobrar" com valor.
-    </p>
-    <p class="lede">
-      Nada conversa com servidor. Saldo, transações e ofertas estão escritos
-      nas telas, e os botões levam de uma para outra. Por baixo de tudo isso
-      tem um kit de design com os tokens de cor, tipografia e espaçamento, e
-      os componentes que as telas reaproveitam.
+      Aqui ficam as entregas de design do ComproPay: atualizações e telas
+      novas do app, e dos outros pedaços do projeto: site, app da
+      maquininha. Cada entrega é um protótipo navegável, pronto pra revisão
+      e handoff.
     </p>
 
     <div class="versoes">
       <a class="versao" href="../app.html">
         <p class="versao__tag">Comece aqui</p>
-        <h3 class="versao__nome">App no celular</h3>
+        <h3 class="versao__nome">Protótipo</h3>
         <p class="versao__desc">
           As telas dentro de uma moldura de celular, com a lista de todas ao
           lado. Clique numa tela da lista para trocar o conteúdo da moldura
@@ -255,15 +247,14 @@
         <span class="versao__abrir">Abrir o app &rarr;</span>
       </a>
 
-      <a class="versao" href="../index.html">
-        <p class="versao__tag">Para ver uma por uma</p>
-        <h3 class="versao__nome">Índice de telas</h3>
+      <a class="versao" href="../handoff/index.html">
+        <p class="versao__tag">As ferramentas</p>
+        <h3 class="versao__nome">Handoff</h3>
         <p class="versao__desc">
-          As 30 telas em lista, cada uma com o que a distingue das vizinhas.
-          Abra uma tela isolada quando precisar dela em tamanho real ou para
-          mandar o link de uma só.
+          As ferramentas em volta da tela. Navegue cada estado e inspecione a
+          peça para ver de onde vem cada valor.
         </p>
-        <span class="versao__abrir">Abrir o índice &rarr;</span>
+        <span class="versao__abrir">Abrir o handoff &rarr;</span>
       </a>
 
       <a class="versao" href="../ui-kit/index.html">
@@ -271,12 +262,27 @@
         <h3 class="versao__nome">UI Kit</h3>
         <p class="versao__desc">
           Cor, tipografia, espaçamento e os componentes que as 30 telas
-          reaproveitam — extraído do Figma e sincronizado com o CSS real
+          reaproveitam, extraído do Figma e sincronizado com o CSS real
           do protótipo, não um documento à parte.
         </p>
         <span class="versao__abrir">Abrir o kit &rarr;</span>
       </a>
     </div>
+
+    <h2>O que está instalado</h2>
+    <p class="sub">As quatro ferramentas do pacote de handoff, e o que cada uma faz neste projeto.</p>
+    <table>
+      <thead><tr><th>Ferramenta</th><th>Neste projeto</th></tr></thead>
+      <tbody>
+        <tr><td>Painel de estados</td><td>Navega as 30 telas por cenário, mais largura do dispositivo (mobile, tablet, desktop ou um número digitado) e tema claro/escuro. Cada tela é um cenário já pronto, não um estado gerado por parâmetro: preenchimento e erro dentro de uma mesma tela, como o formulário do cartão, ainda não têm cenário próprio aqui.</td></tr>
+        <tr><td>Dev mode</td><td>Clique numa peça com o modo Inspecionar ligado e veja o nome, se já existe no UI Kit, de qual token veio cada valor, o CSS real e o contraste medido. Nove componentes estão anotados (tabbar, botão, badge, switch, busca, favoritar, cartão de pagamento, transação e atalho de serviço); o resto da tela aparece sem anotação.</td></tr>
+        <tr><td>Abas de código</td><td>Não entrou nesta rodada.</td></tr>
+        <tr><td>Manual de implementação</td><td>Não entrou nesta rodada.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="nota">A ferramenta não toca no protótipo: ela roda numa página de fora e desenha por cima, num iframe.</p>
+    <p class="nota">Precisa de servidor pra rodar. O protótipo sozinho continua abrindo direto.</p>
 
     <footer>Urlan Dipre</footer>
   </div>

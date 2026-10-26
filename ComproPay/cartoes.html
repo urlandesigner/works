@@ -27,17 +27,17 @@
   <div class="cards-page">
     <div class="banner">
       <h2 class="banner__title" id="t-saldo">Usar saldo para pagar</h2>
-      <button class="switch" type="button" role="switch" aria-checked="true" aria-labelledby="t-saldo" onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked') !== 'true')"></button>
+      <button class="switch" type="button" role="switch" aria-checked="true" aria-labelledby="t-saldo" onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked') !== 'true')" data-component="Switch" data-props="rotulo, checked, onChange" data-states="off, on" data-state="on" data-ds="switch"></button>
     </div>
     <ul class="card-list">
-      <li><article class="card card--lg" style="background-image:url(assets/img/card-alimentacao-lg.png)">
+      <li><article class="card card--lg" style="background-image:url(assets/img/card-alimentacao-lg.png)" data-component="CartaoPagamento" data-props="arte, categoria, saldo, numero, bloqueado" data-states="padrao, bloqueado" data-state="padrao" data-ds="card" data-template>
         <div class="card__top"><span class="card__chip">Alimentação</span><a class="link-more" href="cartao-gerenciar.html" style="color:#fff">Gerenciar <img src="assets/icons/chevron-white.svg" alt=""></a></div>
         <div class="card__balance">
           <div><div class="card__balance-label">Saldo do cartão</div><div class="card__balance-value">R$300,00</div></div>
           <div class="card__status"><span>Principal</span><span class="card__number">•••• 8393</span></div>
         </div>
       </article></li>
-      <li><article class="card card--lg" style="background-image:url(assets/img/card-transporte-lg.png)">
+      <li><article class="card card--lg" style="background-image:url(assets/img/card-transporte-lg.png)" data-component="CartaoPagamento" data-props="arte, categoria, saldo, numero, bloqueado" data-states="padrao, bloqueado" data-state="padrao" data-ds="card" data-template>
         <div class="card__top"><span class="card__chip">Transporte</span><a class="link-more" href="cartao-gerenciar.html" style="color:#fff">Gerenciar <img src="assets/icons/chevron-white.svg" alt=""></a></div>
         <div class="card__balance">
           <div><div class="card__balance-label">Saldo do cartão</div><div class="card__balance-value">R$200,00</div></div>
@@ -47,7 +47,7 @@
     </ul>
     <a class="btn-add" href="cartao-arte.html"><img src="assets/icons/plus-circle.svg" alt="">Adicionar cartão</a>
   </div>
-  <nav class="tabbar" aria-label="Principal">
+  <nav class="tabbar" aria-label="Principal" data-component="Tabbar" data-props="itemAtivo" data-states="padrao" data-state="padrao" data-ds="tabbar">
     <div class="tabbar__group">
       <a class="tabbar__item" href="home-1-cartao.html"><img src="assets/icons/nav-inicio-off.svg" alt="">Início</a>
       <a class="tabbar__item" href="extrato.html"><img src="assets/icons/nav-extrato.svg" alt="">Extrato</a>

@@ -25,34 +25,34 @@
     <span></span>
   </header>
   <div class="favlist">
-    <label class="search"><img src="assets/icons/search.svg" alt=""><input class="composer__input" id="search" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="font-family:var(--font-body);font-weight:400;font-size:14px;color:inherit"></label>
+    <label class="search" data-component="CampoBusca" data-props="valor, placeholder, onChange" data-states="padrao, preenchido" data-state="padrao" data-ds="search"><img src="assets/icons/search.svg" alt=""><input class="composer__input" id="search" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="font-family:var(--font-body);font-weight:400;font-size:14px;color:inherit"></label>
     <section aria-labelledby="t-fav">
       <h2 class="favlist__heading" id="t-fav">Próximos de mim</h2>
       <ul class="favlist__items" id="list">
-        <li class="place-row" data-q="@lautri restaurante la nutri"><img class="place__avatar" src="assets/img/fav-la-nutri.jpg" alt="">
+        <li class="place-row" data-q="@lautri restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-la-nutri.jpg" alt="">
           <span class="place__text"><span class="tx__title">@lautri</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="on" aria-label="Remover dos favoritos"><img src="assets/icons/bookmark-on.svg" alt=""></button></li>
-        <li class="place-row" data-q="@subwaypcosta subway"><img class="place__avatar" src="assets/img/avatar-subway.png" alt="">
+          <button class="place-bookmark" type="button" data-state="on" aria-label="Remover dos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="on" data-ds="favorite" data-template><img src="assets/icons/bookmark-on.svg" alt=""></button></li>
+        <li class="place-row" data-q="@subwaypcosta subway" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/avatar-subway.png" alt="">
           <span class="place__text"><span class="tx__title">@subwaypcosta</span><span class="tx__desc">Subway</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@tagline restaurante la nutri"><img class="place__avatar" src="assets/img/fav-tagline.png" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@tagline restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-tagline.png" alt="">
           <span class="place__text"><span class="tx__title">@tagline</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@steakbrand restaurante la nutri"><img class="place__avatar" src="assets/img/fav-steak-brand.jpg" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@steakbrand restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-steak-brand.jpg" alt="">
           <span class="place__text"><span class="tx__title">@steakbrand</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@coffee.co restaurante la nutri"><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@coffee.co restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
           <span class="place__text"><span class="tx__title">@coffee.co</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@coffee.co restaurante la nutri"><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@coffee.co restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
           <span class="place__text"><span class="tx__title">@coffee.co</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@coffee.co restaurante la nutri"><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@coffee.co restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
           <span class="place__text"><span class="tx__title">@coffee.co</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
-        <li class="place-row" data-q="@coffee.co restaurante la nutri"><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+        <li class="place-row" data-q="@coffee.co restaurante la nutri" data-component="ItemFavorito" data-props="avatar, nome, descricao, endereco, onRemover" data-states="padrao" data-state="padrao" data-ds="tx" data-template><img class="place__avatar" src="assets/img/fav-coffee-co.jpg" alt="">
           <span class="place__text"><span class="tx__title">@coffee.co</span><span class="tx__desc">Restaurante La Nutri</span><span class="tx__date">Praia de Itapatica - Vila Velha - ES</span></span>
-          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos"><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
+          <button class="place-bookmark" type="button" data-state="off" aria-label="Adicionar aos favoritos" data-component="BotaoFavoritar" data-props="favoritado, onClick" data-states="off, on" data-state="off" data-ds="favorite" data-template><img src="assets/icons/bookmark-off.svg" alt=""></button></li>
       </ul>
     </section>
   </div>

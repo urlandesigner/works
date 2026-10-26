@@ -25,7 +25,7 @@
     <span></span>
   </header>
   <div class="help">
-    <label class="search"><img src="assets/icons/search.svg" alt=""><input class="composer__input" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="font-family:var(--font-body);font-weight:400;font-size:14px;color:inherit"></label>
+    <label class="search" data-component="CampoBusca" data-props="valor, placeholder, onChange" data-states="padrao, preenchido" data-state="padrao" data-ds="search"><img src="assets/icons/search.svg" alt=""><input class="composer__input" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="font-family:var(--font-body);font-weight:400;font-size:14px;color:inherit"></label>
     <a class="lia" href="ajuda-chat.html">
       <div class="lia__base">
         <img src="assets/icons/message-circle.svg" alt="" width="24" height="24">
@@ -43,7 +43,7 @@
       </ul>
     </section>
   </div>
-  <nav class="tabbar" aria-label="Principal">
+  <nav class="tabbar" aria-label="Principal" data-component="Tabbar" data-props="itemAtivo" data-states="padrao" data-state="padrao" data-ds="tabbar">
     <div class="tabbar__group">
       <a class="tabbar__item" href="home-1-cartao.html"><img src="assets/icons/nav-inicio-off.svg" alt="">Início</a>
       <a class="tabbar__item" href="extrato.html"><img src="assets/icons/nav-extrato.svg" alt="">Extrato</a>
