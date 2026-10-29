@@ -27,7 +27,7 @@
   "use strict";
 
   var CHAVE = "works-portao";
-  var HASH = "1b805a2d381077cfdcca9a2d28dae13ec3ef76e0ad67c7e2c0c6be45254c9e57";
+  var HASH = "8ee3ff8f140bec6c50a3a2429acf8e7c0be5b8ff96ba9fd8b766aa03769f7339";
 
   // HASH vazio = portao desligado. Este repositorio e PUBLICO no GitHub,
   // entao o portao aqui nao esconde nada de quem abre o repo — so evita que
