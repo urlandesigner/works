@@ -15,13 +15,12 @@ existe no andaime mas nasce desligado (ver abaixo).
 |---|---|
 | [`Analytics/site/`](Analytics/README.md) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site |
 | [`Atlas-pessoal/site/`](Atlas-pessoal/README.md) | Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita |
-| [ComproPay](https://urlandesigner.github.io/compropay/) | Índice próprio dos projetos da ComproPay, no repositório [`compropay`](https://github.com/urlandesigner/compropay): telas do app, site institucional e central de ajuda |
+| [ComproPay](https://urlandesigner.github.io/compropay/) | Índice próprio com os projetos de design da ComproPay, no repositório [`compropay`](https://github.com/urlandesigner/compropay) |
 | [`Condominio/site/`](Condominio/README.md) | Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes |
 | [`Dr.Geraldo/detalhes/`](Dr.Geraldo/README.md) | Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente |
 | [`LP Urlan/detalhes/`](LP%20Urlan/README.md) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads |
 | [`LP afiliados 2/site/`](LP%20afiliados%202/README.md) | Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social |
 | [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |
-| [`Maquininha Roxinha/`](Maquininha%20Roxinha/README.md) | Terminal de maquininha, da cobrança e do Pix ao estorno e aos relatórios |
 | [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças: landing, app web e app mobile |
 | [`mensageiro-do-bem/site/`](mensageiro-do-bem/README.md) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora |
 
