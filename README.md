@@ -15,16 +15,14 @@ existe no andaime mas nasce desligado (ver abaixo).
 |---|---|
 | [`Analytics/site/`](Analytics/README.md) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site |
 | [`Atlas-pessoal/site/`](Atlas-pessoal/README.md) | Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita |
-| [`ComproPay/`](ComproPay/README.md) | Protótipo navegável do app de pagamento, 30 telas mobile com cartões, receber, favoritos, login e o UI kit que sustenta tudo |
-| [`ComproPay Site/`](ComproPay%20Site/README.md) | Landing one-page da carteira digital, com as trilhas de lojista e de usuário final e formulário de qualificação |
-| [`ComproPay Wiki/`](ComproPay%20Wiki/README.md) | Central de ajuda do app com 26 respostas, busca por palavra e filtro por categoria, uma página para cada pergunta |
+| [ComproPay](https://urlandesigner.github.io/compropay/) | Índice próprio dos projetos da ComproPay, no repositório [`compropay`](https://github.com/urlandesigner/compropay): telas do app, site institucional e central de ajuda |
 | [`Condominio/site/`](Condominio/README.md) | Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes |
 | [`Dr.Geraldo/detalhes/`](Dr.Geraldo/README.md) | Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente |
 | [`LP Urlan/detalhes/`](LP%20Urlan/README.md) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads |
 | [`LP afiliados 2/site/`](LP%20afiliados%202/README.md) | Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social |
 | [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |
-| [`Maquininha Roxinha/`](Maquininha%20Roxinha/README.md) | Terminal de maquininha com 22 telas, da cobrança e Pix ao estorno em dois passos e aos relatórios |
-| [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças em três peças: landing, app web e app mobile |
+| [`Maquininha Roxinha/`](Maquininha%20Roxinha/README.md) | Terminal de maquininha, da cobrança e do Pix ao estorno e aos relatórios |
+| [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças: landing, app web e app mobile |
 | [`mensageiro-do-bem/site/`](mensageiro-do-bem/README.md) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora |
 
 _(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
@@ -80,6 +78,35 @@ fora da lista some do filtro em silêncio.
 Dá para editar os dois arquivos à mão, como sempre deu: **continua não
 havendo passo de build**. O script edita no lugar e o `index.html` segue
 legível — ele é só um datilógrafo que não esquece a segunda metade.
+
+### Texto de apresentação não envelhece
+
+Os textos que **apresentam** um projeto dizem o que ele é, para quem e o que
+dá para fazer nele, e não como está hoje. Valem para:
+
+- o `--desc` do registro (cartão do índice e tabela deste README);
+- o `<meta name="description">` e os parágrafos de abertura da capa
+  (`detalhes/`);
+- a descrição de cada cartão dentro da capa.
+
+Nesses textos não entra nada que muda quando o projeto anda: **quantidade**
+(26 perguntas, 22 telas, três peças), **lista de itens** (as categorias,
+as telas, os componentes) ou **histórico do trabalho** (o que foi corrigido,
+de onde veio, o que entrou nesta rodada). Se o número interessa, quem mostra
+é o próprio projeto — a lista de perguntas, o kit — porque lá ele se
+atualiza sozinho.
+
+O teste: se amanhã entrar uma pergunta ou uma tela nova, o texto continua
+certo? Se não continua, ele está descrevendo o estado, não o projeto.
+
+Ruim: "São 26 perguntas e respostas sobre o app, em 10 categorias: adicionar
+dinheiro, retirar dinheiro…"
+
+Bom: "A central de ajuda do app: as dúvidas de quem usa o app, organizadas
+por categoria."
+
+Os READMEs de cada pasta são documentação técnica e podem ter número, porque
+quem mexe no projeto atualiza junto.
 
 **Projeto com mais de uma mão:** `--designer` repete (`--designer Urlan
 --designer Fulano`). O campo é quem atuou, não quem registrou. Nome novo
