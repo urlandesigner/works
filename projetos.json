@@ -73,6 +73,12 @@
       "desc": "Hub do time de design da Ybera: cases, processo e cultura do time num lugar só, para dar visibilidade ao trabalho e manter a identidade coerente",
       "url": "https://designportal-v1.vercel.app/",
       "repo": "urlandesigner/designportal"
+    },
+    {
+      "nome": "Dra.BeatrizMartins",
+      "desc": "Site de uma pneumologista de Vitória/ES, página única com especialidades, credenciais, depoimentos, perguntas frequentes e agendamento pelo WhatsApp",
+      "url": "https://dra-beatriz-martins.vercel.app/",
+      "repo": "urlandesigner/Dra.BeatrizMartins"
     }
   ]
 }
