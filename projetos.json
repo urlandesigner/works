@@ -67,6 +67,12 @@
       "desc": "Estudo de design de card de oferta de marketplace, com preço, prazo de entrega, frete e botão de compra",
       "url": "https://hub1-drab.vercel.app/",
       "repo": "urlandesigner/hub1"
+    },
+    {
+      "nome": "Portal de Design",
+      "desc": "Hub do time de design da Ybera: cases, processo e cultura do time num lugar só, para dar visibilidade ao trabalho e manter a identidade coerente",
+      "url": "https://designportal-v1.vercel.app/",
+      "repo": "urlandesigner/designportal"
     }
   ]
 }
