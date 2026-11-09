@@ -5,32 +5,19 @@
   404 DO REPOSITÓRIO INTEIRO.
 
   O GitHub Pages só usa o 404.html da RAIZ do site, para qualquer endereço
-  errado em qualquer pasta — o 404 de um projeto (ex.: <Pasta>/site/404.html)
-  nunca é servido sozinho. Este arquivo faz duas coisas:
+  errado. Os projetos não moram mais aqui — vivem nos repositórios deles —,
+  então este arquivo faz duas coisas:
 
-  1. Se o endereço errado é de um projeto que tem 404 própria, leva para ela.
-     Procura, nesta ordem, <Pasta>/site/404.html (projetos com build) e
-     <Pasta>/404.html. Projeto novo com 404 própria entra sozinho, sem
-     mexer aqui.
-  2. Se não, mostra uma 404 geral, no visual do índice, com link para ele.
+  1. Se o endereço é de uma pasta antiga (/works/Atlas-pessoal/…), procura
+     em `projetos.json` o projeto com essa `pasta_antiga` e leva para o
+     endereço dele em produção. Link antigo compartilhado continua valendo.
+  2. Se não achar, mostra uma 404 geral, no visual do índice.
 
-  Como este arquivo aparece em qualquer profundidade de pasta, nada aqui usa
-  caminho relativo: a raiz é calculada do endereço (/works/ no
-  Pages, / num servidor local na raiz do repositório).
-
-  O portão (scripts/portao.js) entra como em toda página do repositório:
-  primeiro item do <head>, bloqueante — escrito por document.write porque o
-  caminho depende da raiz calculada.
+  A raiz é calculada do endereço (/works/ no Pages, / num servidor local),
+  porque este arquivo aparece em qualquer profundidade de pasta.
 -->
 <script>
-  (function () {
-    var prefixo = "/works/";
-    window.RAIZ_REPO = location.pathname.indexOf(prefixo) === 0 ? prefixo : "/";
-    // O atributo é montado em partes de propósito: escrito inteiro, o
-    // `novo-projeto.py verificar` lê o texto como link e acusa link quebrado.
-    var atributo = "sr" + "c";
-    document.write("<script " + atributo + '="' + window.RAIZ_REPO + 'scripts/portao.js"><\/script>');
-  })();
+  window.RAIZ_REPO = location.pathname.indexOf("/works/") === 0 ? "/works/" : "/";
 </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -188,28 +175,22 @@
         document.body.classList.remove("procurando");
       }
 
-      // Primeira pasta depois da raiz = o projeto.
+      // Primeira pasta depois da raiz = o projeto antigo.
       var resto = location.pathname.slice(raiz.length);
-      var pasta = resto.split("/")[0];
+      var pasta = decodeURIComponent(resto.split("/")[0]);
       if (!pasta || pasta === "404.html") return mostrarGeral();
 
-      var candidatos = [raiz + pasta + "/site/404.html", raiz + pasta + "/404.html"];
       // Se a busca demorar, mostra a geral em vez de deixar a tela vazia.
       var desistir = setTimeout(mostrarGeral, 2500);
-
-      (function tentar(i) {
-        if (i >= candidatos.length) {
+      fetch(raiz + "projetos.json")
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var p = d.projetos.filter(function (x) { return x.pasta_antiga === pasta; })[0];
           clearTimeout(desistir);
-          return mostrarGeral();
-        }
-        fetch(candidatos[i], { method: "HEAD" })
-          .then(function (r) {
-            // Pasta sem 404 própria: o Pages responde 404 (com esta página).
-            if (r.ok) location.replace(candidatos[i]);
-            else tentar(i + 1);
-          })
-          .catch(function () { tentar(i + 1); });
-      })(0);
+          if (p) location.replace(p.url);
+          else mostrarGeral();
+        })
+        .catch(function () { clearTimeout(desistir); mostrarGeral(); });
     })();
   </script>
 </body>

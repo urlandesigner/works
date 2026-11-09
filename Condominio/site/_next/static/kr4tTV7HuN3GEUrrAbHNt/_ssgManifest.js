@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fchamados\u002F[id]","\u002Fcomunicados\u002F[id]","\u002Fencomendas\u002F[id]","\u002Freservas\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

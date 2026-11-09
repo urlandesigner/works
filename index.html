@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script src="scripts/portao.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Works · Urlan Dipre</title>
@@ -14,29 +13,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Fragment+Mono&display=swap" rel="stylesheet" />
 
 <!--
-  ÍNDICE DO REPOSITÓRIO — não é um projeto, é o catálogo que os guarda.
+  VITRINE — não guarda projeto nenhum, só aponta para onde cada um mora.
 
-  Os tokens, a moldura e as fontes daqui são a fonte do 404 e das capas de
-  projeto, que copiam de lá. Paleta da UD Labs.
+  Cada projeto vive no repositório dele e tem o próprio endereço em produção.
+  Este índice lê `projetos.json` e abre esse endereço. Nada daqui é copiado
+  para dentro deste repositório: o código segue no repo de origem.
 
-  O catálogo guarda projetos, estudos e protótipos pessoais, que não são de
-  uma frente de produto só — por isso não há filtro de "projeto", só designer
-  e busca livre.
+  PARA ADICIONAR UM PROJETO: `python3 scripts/vitrine.py adicionar`, ou uma
+  linha em `projetos.json`. O 404.html lê o mesmo arquivo.
 
-  A ordem é por atualização, mais recente primeiro. Num catálogo que cresce,
-  quem chega procura o que acabou de mudar — a ordem alfabética vive no array,
-  a cronológica na tela.
-
-  PARA ADICIONAR UM PROJETO: um objeto em PROJETOS, no <script> do fim — de
-  preferência via `python3 scripts/novo-projeto.py registrar`, que também
-  atualiza o README e valida o designer contra o filtro. Filtro, busca,
-  contagem e estado vazio se ajustam sozinhos.
-
-  PORTÃO: `scripts/portao.js`, incluído aqui como o primeiro item do
-  <head>. É o MESMO arquivo que toda outra página do repo inclui — uma
-  senha única, compartilhada com o time, protege o site inteiro, não só
-  esta tela. Detalhes, limites e como trocar a senha estão comentados no
-  próprio arquivo; não duplicar essa explicação aqui.
+  Paleta da UD Labs. Ordem na tela = ordem no arquivo.
 -->
 
 <style>
@@ -157,7 +143,7 @@
     top: 0;
     z-index: 5;
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) auto auto auto;
+    grid-template-columns: minmax(200px, 1fr) auto;
     align-items: end;
     gap: 10px 26px;
     margin-top: clamp(40px, 7vh, 64px);
@@ -197,40 +183,6 @@
     padding: 3px 6px 2px;
   }
   @media (hover: none) { .busca kbd { display: none; } }
-
-  .campo { display: flex; flex-direction: column; gap: 6px; }
-  .campo > span {
-    font: 400 10px/1 var(--mono);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--apoio);
-  }
-
-  /* select nativo de propósito: teclado, leitor de tela e a roda do celular
-     vêm de graça. A casca é só um sublinhado. */
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    font: 500 14px/1 var(--sans);
-    color: var(--tinta);
-    background: transparent
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6' viewBox='0 0 9 6'%3E%3Cpath d='M1 1l3.5 3.5L8 1' stroke='%23a89e8f' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-      no-repeat right 2px center;
-    border: 0;
-    border-bottom: 1px solid transparent;
-    border-radius: 0;
-    padding: 6px 20px 12px 0;
-    cursor: pointer;
-    transition: border-color 140ms ease, color 140ms ease;
-  }
-  select:hover { border-bottom-color: var(--linha); }
-  select[data-ativo="true"] {
-    color: var(--acento);
-    border-bottom-color: var(--acento);
-  }
-  /* Depois do data-ativo de propósito: mesma especificidade, e o foco tem
-     que aparecer TAMBÉM no select já filtrado (sublinhado vinho -> tinta). */
-  select:focus-visible { outline: none; border-bottom-color: var(--tinta); }
 
   .mesa-fim {
     display: flex;
@@ -279,6 +231,7 @@
   @media (max-width: 620px) { ol { grid-template-columns: 1fr; } }
 
   .item[hidden] { display: none; }
+  .erro-carga { padding: 72px 0; font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--apoio); }
 
   .cartao {
     display: flex;
@@ -344,57 +297,6 @@
     text-underline-offset: 5px;
   }
 
-  /* SELO DA ETAPA — no alto, ao lado do de projeto onde ele existe.
-     NEUTRO, e nao no vinho da casa: ali ja ha um selo vinho, e dois selos de
-     mesma cor lado a lado competem em vez de dividirem o trabalho. O de
-     projeto responde "de quem e" e chama; o de etapa responde "em que pe
-     esta" e classifica. A cor da etapa fica na regua, embaixo. */
-  .selos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 5px;
-    min-width: 0;
-  }
-  .etapa-selo {
-    flex: none;
-    font: 400 9.5px/1 var(--mono);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--apoio);
-    border: 1px solid var(--linha);
-    border-radius: 999px;
-    padding: 5px 9px 4px;
-    white-space: nowrap;
-  }
-  /* ---------- etapa ----------
-     SEIS SEGMENTOS, e nao seis rotulos: o nome das seis etapas no cartao
-     roubaria a linha do titulo. A regua diz "quanto andou" de relance, e a
-     palavra embaixo diz onde parou.
-
-     A DATA NAO E ENFEITE. Etapa nao erra no dia em que se escreve, erra
-     sozinha com o tempo: "Prototipar" parado desde agosto continua dizendo
-     "Prototipar". Com "desde 13/08" ao lado, parado se denuncia. */
-  .etapa {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    margin-top: 16px;
-  }
-  .regua {
-    display: flex;
-    gap: 3px;
-  }
-  .regua i {
-    flex: 1;
-    height: 3px;
-    border-radius: 999px;
-    background: var(--linha);
-  }
-  .regua i[data-feita] { background: var(--apoio-2); }
-  .regua i[data-aqui] { background: var(--acento); }
-
   .desc {
     font-size: 14px;
     line-height: 1.5;
@@ -416,8 +318,6 @@
     font: 400 10.5px/1.5 var(--mono);
     color: var(--apoio);
   }
-  .quem time { color: var(--apoio); }
-  .quem .sep { color: var(--apoio); margin: 0 4px; }
 
   .seta {
     flex: none;
@@ -481,24 +381,10 @@
   }
 
   /* ---------- estreito ---------- */
-
   @media (max-width: 720px) {
-    /* Sem sticky no estreito: a mesa inteira ocupa um terço da tela, e barra
-       fixa desse tamanho vira teto, não ferramenta. */
-    .mesa {
-      position: static;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "busca busca" "etap desi" "fim fim";
-      gap: 6px 20px;
-    }
-    /* nth-of-type conta todos os <label>, e o primeiro é a busca —
-       por isso os campos começam no 2º, não no 1º */
-    .busca { grid-area: busca; border-bottom: 1px solid var(--linha); }
-    .campo:nth-of-type(2) { grid-area: etap; }
-    .campo:nth-of-type(3) { grid-area: desi; }
-    .mesa-fim { grid-area: fim; justify-self: start; padding: 6px 0 12px; }
-    /* 16px: abaixo disso o iOS dá zoom quando o select recebe foco */
-    select { width: 100%; font-size: 16px; }
+    .mesa { position: static; grid-template-columns: 1fr; gap: 6px 20px; }
+    .busca { border-bottom: 1px solid var(--linha); }
+    .mesa-fim { justify-self: start; padding: 6px 0 12px; }
   }
 
   /* No fim de propósito: o mobile redefine a borda da .busca via shorthand,
@@ -513,38 +399,17 @@
       <p class="kicker anima d1"><b>Urlan</b> · Dipre</p>
       <h1 class="anima d2">Works<sup id="total"></sup></h1>
       <p class="lede anima d3">
-        Projetos, estudos e protótipos. Cada pasta se abre sozinha.
+        Projetos, estudos e protótipos. Cada cartão abre o projeto no ar.
       </p>
     </header>
 
-    <form class="mesa anima d4" role="search" aria-label="Buscar e filtrar projetos" onsubmit="return false">
+    <form class="mesa anima d4" role="search" aria-label="Buscar projetos" onsubmit="return false">
       <label class="busca">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <input id="f-busca" type="search" placeholder="Buscar peça ou designer" autocomplete="off" aria-label="Buscar projetos" />
+        <input id="f-busca" type="search" placeholder="Buscar projeto" autocomplete="off" aria-label="Buscar projetos" />
         <kbd aria-hidden="true">/</kbd>
       </label>
-
-      <!-- As opções nascem do etapas.json, e não escritas aqui: o fluxo mora num
-           arquivo só, e uma lista repetida no markup seria a segunda verdade
-           sobre quantas etapas existem. -->
-      <label class="campo" id="campo-etapa" hidden>
-        <span>Etapa</span>
-        <select id="f-etapa" aria-label="Filtrar por etapa">
-          <option value="">Todas</option>
-        </select>
-      </label>
-
-      <label class="campo">
-        <span>Designer</span>
-        <select id="f-designer" aria-label="Filtrar por designer">
-          <option value="">Todos</option>
-          <option value="Urlan">Urlan</option>
-        </select>
-      </label>
-
       <div class="mesa-fim">
-        <!-- aria-live: quem usa leitor de tela precisa saber que a lista
-             mudou, já que filtrar não move o foco -->
         <p class="contagem" id="contagem" aria-live="polite"></p>
         <button class="limpar" id="limpar" type="button" hidden>Limpar</button>
       </div>
@@ -553,114 +418,27 @@
     <ol id="lista"></ol>
 
     <div class="vazio" id="vazio" hidden>
-      <p id="vazio-filtro">Nada por aqui com <strong id="vazio-criterio"></strong>.</p>
-      <p id="vazio-catalogo" hidden>Nenhum projeto publicado ainda.</p>
-      <button class="limpar" id="vazio-limpar" type="button" onclick="limparTudo()">Limpar busca e filtro</button>
+      <p>Nada por aqui com <strong id="vazio-criterio"></strong>.</p>
+      <button class="limpar" type="button" onclick="limparTudo()">Limpar busca</button>
     </div>
 
+    <p class="erro-carga" id="erro-carga" hidden>Não consegui carregar a lista de projetos.</p>
+
     <footer>
-      <span>Repositório e site públicos</span>
+      <span>Cada projeto vive no próprio repositório</span>
     </footer>
   </div>
 
 <script>
-/* ==================================================================
-   REGISTRO DOS PROJETOS — a única coisa a editar para adicionar um.
-   `scripts/novo-projeto.py registrar` faz isso por você, e também
-   atualiza o README e valida o designer contra o filtro.
-
-   designers: QUEM ATUOU, e não quem registrou — uma lista, porque
-              projeto de duas mãos tinha de escolher um nome e o outro
-              sumia do filtro. Cada nome casa com um <option>. Lista
-              vazia quando a autoria ainda não foi confirmada.
-   ================================================================== */
-const PROJETOS = [
-  {
-    nome: "Analytics",
-    desc: "Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "Analytics/site/",
-  },
-  {
-    nome: "Atlas-pessoal",
-    desc: "Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "Atlas-pessoal/site/",
-  },
-  {
-    nome: "ComproPay",
-    desc: "Índice próprio com os projetos de design da ComproPay",
-    designers: ["Urlan"],
-    atualizado: "29/10/2026",
-    href: "https://urlandesigner.github.io/compropay/",
-  },
-  {
-    nome: "Condominio",
-    desc: "Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "Condominio/site/",
-  },
-  {
-    nome: "Dr.Geraldo",
-    desc: "Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "Dr.Geraldo/detalhes/",
-  },
-  {
-    nome: "LP Urlan",
-    desc: "Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "LP%20Urlan/detalhes/",
-  },
-  {
-    nome: "LP afiliados",
-    desc: "Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "LP%20afiliados/site/",
-  },
-  {
-    nome: "LP afiliados 2",
-    desc: "Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "LP%20afiliados%202/site/",
-  },
-  {
-    nome: "MyCofre",
-    desc: "Produto pessoal de finanças: landing, app web e app mobile",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "MyCofre/detalhes/",
-  },
-  {
-    nome: "mensageiro-do-bem",
-    desc: "Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora",
-    designers: ["Urlan"],
-    atualizado: "23/10/2026",
-    href: "mensageiro-do-bem/site/",
-  },
-];
-
-const SETA = '<svg class="seta" width="17" height="16" viewBox="0 0 17 16" fill="none" aria-hidden="true"><path d="M3 8h11M9.5 3.5L14 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const SETA = '<svg class="seta" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 const lista = document.getElementById("lista");
 const vazio = document.getElementById("vazio");
 const vazioCriterio = document.getElementById("vazio-criterio");
-const vazioFiltro = document.getElementById("vazio-filtro");
-const vazioCatalogo = document.getElementById("vazio-catalogo");
-const vazioLimpar = document.getElementById("vazio-limpar");
 const contagem = document.getElementById("contagem");
 const fBusca = document.getElementById("f-busca");
-const fEtapa = document.getElementById("f-etapa");
-const campoEtapa = document.getElementById("campo-etapa");
-const fDesigner = document.getElementById("f-designer");
 const btnLimpar = document.getElementById("limpar");
+let itens = [];
 
 function escapar(s) {
   return String(s).replace(/[&<>"']/g, (c) =>
@@ -672,138 +450,71 @@ function chato(s) {
   return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
-/* A ordem da tela é cronológica — o mais recente no topo, porque num catálogo
-   que cresce se procura o que acabou de mudar. A alfabética vive no array. */
-function chaveData(ddmmaaaa) {
-  const [d, m, a] = ddmmaaaa.split("/").map(Number);
-  return a * 10000 + m * 100 + d;
+function endereco(url) {
+  const u = new URL(url);
+  return u.host + (u.pathname === "/" ? "" : u.pathname.replace(/\/$/, ""));
 }
-const ORDENADOS = PROJETOS.map((p, i) => ({ ...p, i }))
-  .sort((x, y) => chaveData(y.atualizado) - chaveData(x.atualizado) || x.i - y.i);
 
-document.getElementById("total").textContent = "·" + PROJETOS.length;
-
-/* Render uma vez; filtrar depois só liga e desliga `hidden`. */
-/* `|Urlan|Fulano|` e nao `Urlan, Fulano`: o filtro compara um nome inteiro
-   entre barras, entao ninguem casa por pedaco de outro nome. */
-const cerca = (ns) => `|${ns.join("|")}|`;
-/* O `datetime` exige ISO. Com `01/10/2026` ali dentro o atributo e invalido e
-   a data nao e legivel por maquina — o texto visivel continua em dd/mm. */
-const iso = (d) => { const [x, m2, a] = d.split("/"); return `${a}-${m2}-${x}`; };
-
-lista.innerHTML = ORDENADOS.map((p, i) => `
-  <li class="item"
-      data-pasta="${escapar(decodeURIComponent(p.href.replace(/\/$/, "").split("/")[0]))}"
-      data-etapa=""
-      data-designer="${escapar(cerca(p.designers))}"
-      data-busca="${escapar(chato([p.nome, p.desc, p.designers.join(" ")].join(" ")))}">
-    <a class="cartao" href="${escapar(p.href)}">
-      <span class="alto">
-        <span class="num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
-        <span class="selos">
-          <span class="etapa-selo" hidden></span>
+function montar(projetos) {
+  document.getElementById("total").textContent = "·" + projetos.length;
+  lista.innerHTML = projetos.map((p, i) => `
+    <li class="item" data-busca="${escapar(chato(p.nome + " " + p.desc))}">
+      <a class="cartao" href="${escapar(p.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="alto">
+          <span class="num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
         </span>
-      </span>
-      <span class="nome">${escapar(p.nome)}</span>
-      <span class="desc">${escapar(p.desc)}</span>
-      <span class="etapa" hidden></span>
-      <span class="pe">
-        <span class="quem">${escapar(p.designers.length ? p.designers.join(" · ") : "a confirmar")}<span class="sep">·</span><time datetime="${escapar(iso(p.atualizado))}">${escapar(p.atualizado)}</time></span>
-        ${SETA}
-      </span>
-    </a>
-  </li>`).join("");
+        <span class="nome">${escapar(p.nome)}</span>
+        <span class="desc">${escapar(p.desc)}</span>
+        <span class="pe">
+          <span class="quem">${escapar(endereco(p.url))}</span>
+          ${SETA}
+        </span>
+      </a>
+    </li>`).join("");
+  itens = [...lista.querySelectorAll(".item")];
 
-const itens = [...lista.querySelectorAll(".item")];
-
-/* OPCAO QUE NAO ACHA NADA NAO FICA NA LISTA. O filtro oferecia quatro
-   designers com um so atras de tudo — escolher qualquer um dos outros tres
-   caia direto no estado vazio, e o estado vazio ali nao e resposta, e um beco.
-   As opcoes continuam escritas no HTML porque `novo-projeto.py` le dali para
-   validar o que pode entrar: some da tela de quem filtra, segue valendo para
-   quem registra. */
-for (const op of fDesigner.options) {
-  if (!op.value) continue;
-  op.hidden = !itens.some((li) => li.dataset.designer.includes(`|${op.value}|`));
-}
-
-/* Entrada em cascata, uma vez só — filtrar é instantâneo, sem re-animação:
-   resposta imediata parece mais rápida do que coreografia repetida. */
-if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-  itens.forEach((li, i) => {
-    li.classList.add("anima");
-    li.style.animationDelay = `${290 + Math.min(i, 11) * 55}ms`;
-  });
+  /* Entrada em cascata, uma vez só — filtrar é instantâneo. */
+  if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    itens.forEach((li, i) => {
+      li.classList.add("anima");
+      li.style.animationDelay = `${290 + Math.min(i, 11) * 55}ms`;
+    });
+  }
+  fBusca.value = new URLSearchParams(location.search).get("q") || "";
+  aplicar({ atualizarUrl: false });
 }
 
 function aplicar({ atualizarUrl = true } = {}) {
   const q = chato(fBusca.value.trim());
-  const etap = fEtapa.value;
-  const desi = fDesigner.value;
-
   let visiveis = 0;
   itens.forEach((li) => {
-    const ok =
-      (!q || li.dataset.busca.includes(q)) &&
-      (!etap || li.dataset.etapa === etap) &&
-      (!desi || li.dataset.designer.includes(`|${desi}|`));
+    const ok = !q || li.dataset.busca.includes(q);
     li.hidden = !ok;
     if (ok) visiveis++;
   });
-
-  const filtrando = q || etap || desi;
-  contagem.textContent = filtrando
+  contagem.textContent = q
     ? `${visiveis} de ${itens.length}`
-    : `${itens.length} ${itens.length === 1 ? "peça" : "peças"}`;
-  btnLimpar.hidden = !filtrando;
-
-  fEtapa.dataset.ativo = String(!!etap);
-  fDesigner.dataset.ativo = String(!!desi);
-
+    : `${itens.length} ${itens.length === 1 ? "projeto" : "projetos"}`;
+  btnLimpar.hidden = !q;
   vazio.hidden = visiveis > 0;
-  if (!visiveis) {
-    /* Catalogo vazio nao e o mesmo que filtro sem resultado: sem esta
-       distincao o primeiro acesso do repositorio lia "Nada por aqui com ."
-       e oferecia limpar um filtro que ninguem tinha posto. */
-    const semCatalogo = itens.length === 0;
-    vazioCatalogo.hidden = !semCatalogo;
-    vazioFiltro.hidden = semCatalogo;
-    vazioLimpar.hidden = semCatalogo;
-    const partes = [];
-    if (q) partes.push(`“${fBusca.value.trim()}”`);
-    if (etap) partes.push(fEtapa.selectedOptions[0].textContent);
-    if (desi) partes.push(desi);
-    vazioCriterio.textContent = partes.join(" + ");
-  }
-
-  // filtro compartilhável: a URL carrega o estado, porque metade da utilidade
-  // de um filtro num time é mandar o link já filtrado
+  vazioCriterio.textContent = `“${fBusca.value.trim()}”`;
   if (atualizarUrl) {
-    const ps = new URLSearchParams();
-    if (fBusca.value.trim()) ps.set("q", fBusca.value.trim());
-    if (etap) ps.set("etapa", etap);
-    if (desi) ps.set("designer", desi);
-    history.replaceState(null, "", ps.size ? `?${ps}` : location.pathname);
+    history.replaceState(null, "", q ? `?q=${encodeURIComponent(fBusca.value.trim())}` : location.pathname);
   }
 }
 
 function limparTudo() {
   fBusca.value = "";
-  fEtapa.value = "";
-  fDesigner.value = "";
   aplicar();
   fBusca.focus();
 }
 
 fBusca.addEventListener("input", () => aplicar());
-fEtapa.addEventListener("change", () => aplicar());
-fDesigner.addEventListener("change", () => aplicar());
 btnLimpar.addEventListener("click", limparTudo);
 
-/* Teclado: `/` cai na busca de onde estiver; Esc limpa; ↓↑ andam pelas fichas. */
+/* Teclado: `/` cai na busca de onde estiver; Esc limpa; ↓↑ andam pelos cartões. */
 document.addEventListener("keydown", (e) => {
-  const emCampo = /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName);
-
+  const emCampo = document.activeElement.tagName === "INPUT";
   if (e.key === "/" && !emCampo) {
     e.preventDefault();
     fBusca.focus();
@@ -815,19 +526,13 @@ document.addEventListener("keydown", (e) => {
     else fBusca.blur();
     return;
   }
-
   if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
-  if (emCampo && document.activeElement !== fBusca) return;
-
   const links = itens.filter((li) => !li.hidden).map((li) => li.querySelector("a"));
   if (!links.length) return;
   const pos = links.indexOf(document.activeElement);
   const naBusca = document.activeElement === fBusca;
-
-  // fora da busca e fora da lista, seta é rolagem da página — não é nossa
   if (!naBusca && pos === -1) return;
-
   let alvo;
   if (naBusca) {
     if (e.key === "ArrowUp") return;
@@ -839,82 +544,10 @@ document.addEventListener("keydown", (e) => {
   else if (pos === 0 && e.key === "ArrowUp") { e.preventDefault(); fBusca.focus(); }
 });
 
-/* Prefetch no hover: quando o clique vier, a página já chegou. */
-const prefeitos = new Set();
-lista.addEventListener("pointerenter", (e) => {
-  const a = e.target.closest && e.target.closest("a");
-  if (!a || prefeitos.has(a.href)) return;
-  prefeitos.add(a.href);
-  const l = document.createElement("link");
-  l.rel = "prefetch";
-  l.href = a.href;
-  document.head.appendChild(l);
-}, true);
-
-/* Estado inicial vindo da URL */
-/* A ETAPA CHEGA DEPOIS, e de proposito. Ela mora no etapas.json porque a capa
-   de cada projeto le do mesmo arquivo — etapa escrita em sete lugares envelhece
-   em seis. Se o fetch falhar, o cartao fica como estava e o filtro nao aparece:
-   a pagina nunca depende dele para existir.
-
-   Projeto sem linha no JSON nao mostra etapa nenhuma. Melhor vazio do que
-   chute — selo com a palavra errada parece dado e nao e. */
-fetch("etapas.json")
+fetch("projetos.json")
   .then((r) => (r.ok ? r.json() : Promise.reject()))
-  .then((d) => {
-    const ondeNoFluxo = new Map(d.fluxo.map((e, i) => [e.id, i]));
-    let algum = false;
-
-    for (const li of itens) {
-      const reg = d.projetos[li.dataset.pasta];
-      if (!reg || !ondeNoFluxo.has(reg.etapa)) continue;
-      algum = true;
-      li.dataset.etapa = reg.etapa;
-      const aqui = ondeNoFluxo.get(reg.etapa);
-      const e = d.fluxo[aqui];
-      const cx = li.querySelector(".etapa");
-      cx.innerHTML =
-        `<span class="regua" role="img" aria-label="Etapa ${aqui + 1} de ${d.fluxo.length}: ${escapar(e.rotulo)}">`
-        + d.fluxo.map((_, i) =>
-            `<i${i < aqui ? " data-feita" : ""}${i === aqui ? " data-aqui" : ""}></i>`).join("")
-        /* SEM A DATA AQUI. Ela e o ponto do campo na capa, mas no cartao o pe
-           ja mostra "Urlan · 01/10/2026" dois centimetros abaixo — a mesma
-           data duas vezes no mesmo cartao le como erro, nao como reforco.
-
-           E SEM O NOME DA ETAPA, que subiu para o alto do cartao. Solto sob a
-           regua ele ficava orfao: nem titulo, nem rodape, nem selo — uma
-           palavra no meio do cartao. La em cima ele vira o que sempre foi,
-           uma etiqueta de estado. */
-        + `</span>`;
-      cx.hidden = false;
-      const selo = li.querySelector(".etapa-selo");
-      selo.textContent = e.rotulo;
-      selo.hidden = false;
-      li.dataset.busca += " " + chato(e.rotulo);
-    }
-
-    /* Filtro so existe se houver o que filtrar: com zero projetos marcados ele
-       seria um campo que so leva ao estado vazio. */
-    if (!algum) return;
-    for (const e of d.fluxo) {
-      if (!itens.some((li) => li.dataset.etapa === e.id)) continue;
-      fEtapa.append(new Option(e.rotulo, e.id));
-    }
-    campoEtapa.hidden = false;
-    const daUrl = new URLSearchParams(location.search).get("etapa");
-    if ([...fEtapa.options].some((o) => o.value === daUrl)) {
-      fEtapa.value = daUrl;
-      aplicar({ atualizarUrl: false });
-    }
-  })
-  .catch(() => {});
-
-const params = new URLSearchParams(location.search);
-fBusca.value = params.get("q") || "";
-if ([...fDesigner.options].some((o) => o.value === params.get("designer")))
-  fDesigner.value = params.get("designer");
-
-aplicar({ atualizarUrl: false });
+  .then((d) => montar(d.projetos))
+  .catch(() => { document.getElementById("erro-carga").hidden = false; contagem.textContent = ""; });
 </script>
 </body>
 </html>

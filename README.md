@@ -1,184 +1,68 @@
 # Works — Urlan Dipre
 
-Projetos, estudos e protótipos publicados fora do trabalho do dia a dia. Cada
-um é uma **pasta autocontida na raiz**: nada é compartilhado entre projetos,
-de propósito — mexer em um não pode quebrar outro.
-
-O repositório é **público**, e o site do Pages também. O portão de senha
-existe no andaime mas nasce desligado (ver abaixo).
+Vitrine dos projetos, estudos e protótipos publicados fora do trabalho do dia
+a dia. **Este repositório não guarda projeto nenhum**: cada um vive no próprio
+repositório e tem o próprio endereço em produção. Aqui só há uma página que
+lista e abre esses endereços.
 
 **Link público:** <https://urlandesigner.github.io/works/>
 
 ## Projetos
 
-| Pasta | Projeto |
-|---|---|
-| [`Analytics/site/`](Analytics/README.md) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site |
-| [`Atlas-pessoal/site/`](Atlas-pessoal/README.md) | Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita |
-| [ComproPay](https://urlandesigner.github.io/compropay/) | Índice próprio com os projetos de design da ComproPay, no repositório [`compropay`](https://github.com/urlandesigner/compropay) |
-| [`Condominio/site/`](Condominio/README.md) | Painel de gestão de condomínio: comunicados, chamados, reservas, encomendas e visitantes |
-| [`Dr.Geraldo/detalhes/`](Dr.Geraldo/README.md) | Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente |
-| [`LP Urlan/detalhes/`](LP%20Urlan/README.md) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads |
-| [`LP afiliados 2/site/`](LP%20afiliados%202/README.md) | Segunda landing page de afiliado, suplemento dietético com foco em ingredientes e prova social |
-| [`LP afiliados/site/`](LP%20afiliados/README.md) | Landing page de afiliado para probiótico oral, com prova social, comparação e teste de headline |
-| [`MyCofre/detalhes/`](MyCofre/README.md) | Produto pessoal de finanças: landing, app web e app mobile |
-| [`mensageiro-do-bem/site/`](mensageiro-do-bem/README.md) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora |
+| Projeto | O que é | Código |
+|---|---|---|
+| [Analytics](https://analytics-seven-smoky.vercel.app/) | Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site | [`urlandesigner/Analytics`](https://github.com/urlandesigner/Analytics) |
+| [Atlas-pessoal](https://propostas.udlabs.com.br/) | Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita | [`urlandesigner/Atlas-Pessoal`](https://github.com/urlandesigner/Atlas-Pessoal) |
+| [ComproPay](https://urlandesigner.github.io/compropay/) | Índice próprio com os projetos de design da ComproPay | [`urlandesigner/compropay`](https://github.com/urlandesigner/compropay) |
+| [Dr.Geraldo](https://drgeraldo.vercel.app/) | Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente | [`urlandesigner/drgeraldo`](https://github.com/urlandesigner/drgeraldo) |
+| [LP Urlan](https://lp-urlan-dipre.vercel.app/) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads | [`urlandesigner/LP-UrlanDipre`](https://github.com/urlandesigner/LP-UrlanDipre) |
+| [LP afiliados](https://lp-afiliados-gilt.vercel.app/) | Landing page de afiliado para suplemento, com análise de ingredientes, prova social e teste de headline | [`urlandesigner/LP-afiliados`](https://github.com/urlandesigner/LP-afiliados) |
+| [mensageiro-do-bem](https://mensageirodobem.vercel.app/) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora | [`urlandesigner/Mensageirodobem`](https://github.com/urlandesigner/Mensageirodobem) |
 
-_(vazio — o primeiro `registrar` escreve a primeira linha aqui)_
+## Como funciona
 
-## Como está organizado
+- `projetos.json` — **a fonte única**: nome, descrição, `url` em produção, `repo`
+  de origem e, quando existia pasta aqui, `pasta_antiga`.
+- `index.html` — lê o `projetos.json` e desenha os cartões. Cada cartão abre a
+  `url` em outra aba.
+- `404.html` — o Pages só usa o da raiz. Se o endereço errado for de uma pasta
+  antiga (`/works/Atlas-pessoal/…`), leva para a `url` do projeto, então link
+  antigo compartilhado continua valendo. Senão, mostra uma 404 geral.
+- `scripts/vitrine.py` — adiciona projeto e confere se as urls respondem.
 
-Cada projeto é uma pasta na raiz, com um `index.html` dentro — isso faz o
-link no índice ser sempre `Nome%20da%20Pasta/`, sem ninguém precisar decidir
-para onde apontar. Quando o projeto tem mais de uma peça, esse `index.html` é
-uma capa que lista as peças; quando tem só uma, é a própria peça. Em projeto
-com build, é o `index.html` do export (`<Pasta>/site/`).
+## Regra de ouro
 
-Na raiz ficam estas coisas, e todas precisam estar aí:
-
-- `index.html` — índice dos projetos. É a página que o GitHub Pages serve na
-  raiz; sem ela o site abre em 404. É também o que mantém o link curto, já
-  que os caminhos das pastas têm espaços e a URL os codifica como `%20`.
-- `.nojekyll` — desliga o Jekyll no Pages. Sem isso arquivos e pastas
-  iniciados por `_` são ignorados — e um export do Next.js usa `_next/`.
-- `scripts/novo-projeto.py` — registra, marca a etapa, verifica links e varre
-  por segredo.
-- `etapas.json` — em que ponto do fluxo cada projeto está. Fonte única: o
-  cartão do índice e a capa de cada projeto leem daqui.
-- `scripts/etapa.js` — desenha o fluxo na capa de um projeto. Uma linha por capa.
-- `scripts/portao.js` — o portão de senha. Ver o aviso no fim.
-- `.gitignore`
-
-### Página de erro (404)
-
-O GitHub Pages só usa o [`404.html`](404.html) da raiz, para qualquer endereço
-errado em qualquer pasta. Ele leva quem errou o endereço para a 404 do próprio
-projeto, quando existe — procura `<Pasta>/site/404.html` e depois
-`<Pasta>/404.html` —, e senão mostra uma 404 geral com link para o índice.
-Projeto novo com 404 própria entra sozinho, sem mexer nesse arquivo.
+**O projeto sobe para o repositório dele, não para cá.** Aqui entra só o link.
 
 ## Adicionar um projeto
 
-Criar a pasta na raiz (com o `index.html` dela) e registrá-la:
+Primeiro o projeto precisa estar no ar, com repositório próprio. Depois:
 
 ```bash
-python3 scripts/novo-projeto.py registrar \
-  --pasta "Nome da Pasta" \
-  --desc "uma linha, aparece no índice e aqui no README" \
-  --designer Urlan
+python3 scripts/vitrine.py adicionar \
+  --nome "Nome" \
+  --desc "o que é, para quem e o que dá para fazer" \
+  --url https://meu-projeto.vercel.app/ \
+  --repo urlandesigner/meu-projeto
 ```
 
-Registrar exige tocar em **dois** lugares — o array `PROJETOS` do
-`index.html` e a tabela aqui em cima. Esquecer um deixa o projeto invisível
-num dos dois e nada acusa; o comando faz os dois de uma vez. Ele também
-recusa `--designer` que não case com um `<option>` do filtro, porque um valor
-fora da lista some do filtro em silêncio.
+O comando recusa url que não responde 200 e atualiza o `projetos.json` e a
+tabela deste README juntos. Dá para editar os dois à mão. Para conferir tudo:
 
-Dá para editar os dois arquivos à mão, como sempre deu: **continua não
-havendo passo de build**. O script edita no lugar e o `index.html` segue
-legível — ele é só um datilógrafo que não esquece a segunda metade.
+```bash
+python3 scripts/vitrine.py verificar
+```
+
+Para ver local, sirva a pasta (o `index.html` lê o JSON por `fetch`, então
+abrir o arquivo direto não funciona): `python3 -m http.server 8000`.
 
 ### Texto de apresentação não envelhece
 
-Os textos que **apresentam** um projeto dizem o que ele é, para quem e o que
-dá para fazer nele, e não como está hoje. Valem para:
+A `desc` diz o que o projeto é, para quem e o que dá para fazer nele. Não leva
+**quantidade** (26 perguntas, 22 telas), **lista de itens** nem **histórico do
+trabalho**. Teste: se amanhã entrar uma tela nova, o texto continua certo?
 
-- o `--desc` do registro (cartão do índice e tabela deste README);
-- o `<meta name="description">` e os parágrafos de abertura da capa
-  (`detalhes/`);
-- a descrição de cada cartão dentro da capa.
+## Removido da vitrine
 
-Nesses textos não entra nada que muda quando o projeto anda: **quantidade**
-(26 perguntas, 22 telas, três peças), **lista de itens** (as categorias,
-as telas, os componentes) ou **histórico do trabalho** (o que foi corrigido,
-de onde veio, o que entrou nesta rodada). Se o número interessa, quem mostra
-é o próprio projeto — a lista de perguntas, o kit — porque lá ele se
-atualiza sozinho.
-
-O teste: se amanhã entrar uma pergunta ou uma tela nova, o texto continua
-certo? Se não continua, ele está descrevendo o estado, não o projeto.
-
-Ruim: "São 26 perguntas e respostas sobre o app, em 10 categorias: adicionar
-dinheiro, retirar dinheiro…"
-
-Bom: "A central de ajuda do app: as dúvidas de quem usa o app, organizadas
-por categoria."
-
-Os READMEs de cada pasta são documentação técnica e podem ter número, porque
-quem mexe no projeto atualiza junto.
-
-**Projeto com mais de uma mão:** `--designer` repete (`--designer Urlan
---designer Fulano`). O campo é quem atuou, não quem registrou. Nome novo
-precisa virar `<option>` no filtro do `index.html` antes, senão o script
-recusa.
-
-## Marcar a etapa
-
-O fluxo tem seis etapas — Discover, Define, Ideate, Prototype, Test,
-Deliver. Para dizer onde um projeto está:
-
-```bash
-python3 scripts/novo-projeto.py etapa --pasta "Nome da Pasta" --etapa prototipar
-```
-
-Os rótulos estão em inglês e os ids seguem em português (`entender`,
-`definir`, `idear`, `prototipar`, `testar`, `entregar`) — id é interno e
-trocá-lo invalidaria o que já está marcado.
-
-A data de entrada na etapa é gravada junto, e **remarcar a mesma etapa não a
-rejuvenesce**: projeto parado em Prototype desde agosto continua dizendo
-agosto. É o ponto do campo — etapa não erra no dia em que se escreve, erra
-sozinha com o tempo, e sem a data um projeto travado lê igual a um que andou
-ontem. Para corrigir uma data, `--desde dd/mm/aaaa`.
-
-**Projeto sem etapa não mostra etapa em lugar nenhum** — nem régua no cartão,
-nem fluxo na capa, e o filtro de etapa só aparece quando há pelo menos um
-projeto marcado. Vazio é melhor do que chute.
-
-Para o fluxo aparecer na capa de um projeto, uma linha nela, antes do
-`</body>` final — e **na página que o cartão abre**, que pode ser uma
-subpasta (`site/`, `handoff/`), não o `index.html` da raiz da pasta:
-
-```html
-<script src="../scripts/etapa.js" data-pasta="Nome da Pasta"></script>
-```
-
-O bloco herda a cor do texto em volta, então serve na capa clara e na escura
-sem saber qual é qual.
-
-Antes de subir:
-
-```bash
-python3 scripts/novo-projeto.py segredos "Nome da Pasta"   # o site é público
-python3 scripts/novo-projeto.py verificar                  # link quebrado não avisa sozinho
-```
-
-Depois que o Pages compilar, `verificar --site` confere tudo no ar.
-
-## Aviso de visibilidade
-
-**Este repositório é público, e o site do Pages também.** O código-fonte de
-tudo está aberto no GitHub, além das páginas publicadas.
-
-Então a conferência antes de publicar vale dobrado. `novo-projeto.py
-segredos` varre texto, e só. **Binário — `.docx`, `.pdf`, imagem — ninguém
-varre.** Se o projeto for de cliente, de trabalho ou tiver dado de alguém,
-confira antes; publicado aqui é publicado para a internet inteira.
-
-### Portão de senha
-
-`scripts/portao.js` pede uma senha única antes de mostrar qualquer página.
-**Ele nasce desligado neste repositório** (`HASH = ""` no arquivo), porque
-num repo público ele não esconderia nada: o HTML está aberto no GitHub do
-lado. Ligar só faz sentido se o repositório virar privado algum dia.
-
-Para ligar, gerar o hash e colar em `HASH`:
-
-```bash
-python3 -c "import hashlib;print(hashlib.sha256(b'a-senha').hexdigest())"
-```
-
-Com o portão ligado, toda página `.html` nova precisa incluir
-`<script src="{profundidade}scripts/portao.js"></script>` como o primeiro
-item do `<head>`. Trocar a senha é trocar o `HASH`: quem já tinha entrado
-perde acesso sozinho, sem precisar de lista de quem tinha.
+- **Condominio** e **MyCofre** — saíram até terem repositório e endereço
+  próprios. O código antigo continua no histórico do git deste repositório.

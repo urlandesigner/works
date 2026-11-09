@@ -1,0 +1,54 @@
+{
+  "_leia": "FONTE UNICA DA VITRINE. O index.html desenha os cartoes daqui e o 404.html usa `pasta_antiga` para levar links antigos (/works/<Pasta>/) ao projeto no ar. `url` e o endereco em producao; `repo` e onde o codigo mora — o codigo NAO fica neste repositorio. A ordem do arquivo e a ordem na tela. Quem escreve: `scripts/vitrine.py adicionar`.",
+  "projetos": [
+    {
+      "nome": "Analytics",
+      "desc": "Status board de analytics do portfólio, sincroniza GA4 e mostra tráfego de cada site",
+      "url": "https://analytics-seven-smoky.vercel.app/",
+      "repo": "urlandesigner/Analytics",
+      "pasta_antiga": "Analytics"
+    },
+    {
+      "nome": "Atlas-pessoal",
+      "desc": "Ferramenta pessoal de freelance: CRM de leads, propostas, projetos e indicadores de receita",
+      "url": "https://propostas.udlabs.com.br/",
+      "repo": "urlandesigner/Atlas-Pessoal",
+      "pasta_antiga": "Atlas-pessoal"
+    },
+    {
+      "nome": "ComproPay",
+      "desc": "Índice próprio com os projetos de design da ComproPay",
+      "url": "https://urlandesigner.github.io/compropay/",
+      "repo": "urlandesigner/compropay",
+      "pasta_antiga": "ComproPay"
+    },
+    {
+      "nome": "Dr.Geraldo",
+      "desc": "Proposta de site para consultório de endocrinologia, página única pronta para aprovação do cliente",
+      "url": "https://drgeraldo.vercel.app/",
+      "repo": "urlandesigner/drgeraldo",
+      "pasta_antiga": "Dr.Geraldo"
+    },
+    {
+      "nome": "LP Urlan",
+      "desc": "Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads",
+      "url": "https://lp-urlan-dipre.vercel.app/",
+      "repo": "urlandesigner/LP-UrlanDipre",
+      "pasta_antiga": "LP Urlan"
+    },
+    {
+      "nome": "LP afiliados",
+      "desc": "Landing page de afiliado para suplemento, com análise de ingredientes, prova social e teste de headline",
+      "url": "https://lp-afiliados-gilt.vercel.app/",
+      "repo": "urlandesigner/LP-afiliados",
+      "pasta_antiga": "LP afiliados"
+    },
+    {
+      "nome": "mensageiro-do-bem",
+      "desc": "Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora",
+      "url": "https://mensageirodobem.vercel.app/",
+      "repo": "urlandesigner/Mensageirodobem",
+      "pasta_antiga": "mensageiro-do-bem"
+    }
+  ]
+}

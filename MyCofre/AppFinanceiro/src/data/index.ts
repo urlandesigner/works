@@ -1,6 +1,0 @@
-export { mockUsers } from './mock-users'
-export { mockAccounts } from './mock-accounts'
-export { mockCategories } from './mock-categories'
-export { mockTransactions } from './mock-transactions'
-export { mockInvestments } from './mock-investments'
-export { mockGoals } from './mock-goals'
