@@ -25,6 +25,8 @@ lista e abre esses endereços.
 | [Dra.BeatrizMartins](https://dra-beatriz-martins.vercel.app/) | Site de uma pneumologista de Vitória/ES, página única com especialidades, credenciais, depoimentos, perguntas frequentes e agendamento pelo WhatsApp | [`urlandesigner/Dra.BeatrizMartins`](https://github.com/urlandesigner/Dra.BeatrizMartins) |
 | [Hub Inteligente](https://ybera-links.vercel.app/) | Comparador de ofertas de um produto da Ybera: reúne os canais oficiais e compara preço, prazo e condições lado a lado para quem quer decidir onde comprar | [`urlandesigner/YberaLinks`](https://github.com/urlandesigner/YberaLinks) |
 | [Ybera PRO](https://sitepro-six.vercel.app/) | Site do programa PRO da Ybera para distribuidores, representantes e profissionais de salão, com visão de carteira, comissões e cadastro | [`urlandesigner/Site-Ybera-PRO`](https://github.com/urlandesigner/Site-Ybera-PRO) |
+| [Dra.LarissaCoelho](https://larissa-coelho.vercel.app/) | Site de uma dentista de Vila Velha/ES, página única com especialidades, tratamentos, diferenciais e agendamento de avaliação | [`urlandesigner/Larissa-Coelho`](https://github.com/urlandesigner/Larissa-Coelho) |
+| [Loja Ybera](https://loja-ybera.vercel.app/) | Proposta de nova loja institucional da Ybera, com apresentação da marca e vitrine das linhas de produto para cabelo | [`urlandesigner/LojaYbera`](https://github.com/urlandesigner/LojaYbera) |
 
 ## Como funciona
 

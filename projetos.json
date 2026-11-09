@@ -91,6 +91,18 @@
       "desc": "Site do programa PRO da Ybera para distribuidores, representantes e profissionais de salão, com visão de carteira, comissões e cadastro",
       "url": "https://sitepro-six.vercel.app/",
       "repo": "urlandesigner/Site-Ybera-PRO"
+    },
+    {
+      "nome": "Dra.LarissaCoelho",
+      "desc": "Site de uma dentista de Vila Velha/ES, página única com especialidades, tratamentos, diferenciais e agendamento de avaliação",
+      "url": "https://larissa-coelho.vercel.app/",
+      "repo": "urlandesigner/Larissa-Coelho"
+    },
+    {
+      "nome": "Loja Ybera",
+      "desc": "Proposta de nova loja institucional da Ybera, com apresentação da marca e vitrine das linhas de produto para cabelo",
+      "url": "https://loja-ybera.vercel.app/",
+      "repo": "urlandesigner/LojaYbera"
     }
   ]
 }
