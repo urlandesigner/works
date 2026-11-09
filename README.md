@@ -23,6 +23,7 @@ lista e abre esses endereços.
 | [Hub 1](https://hub1-drab.vercel.app/) | Estudo de design de card de oferta de marketplace, com preço, prazo de entrega, frete e botão de compra | [`urlandesigner/hub1`](https://github.com/urlandesigner/hub1) |
 | [Portal de Design](https://designportal-v1.vercel.app/) | Hub do time de design da Ybera: cases, processo e cultura do time num lugar só, para dar visibilidade ao trabalho e manter a identidade coerente | [`urlandesigner/designportal`](https://github.com/urlandesigner/designportal) |
 | [Dra.BeatrizMartins](https://dra-beatriz-martins.vercel.app/) | Site de uma pneumologista de Vitória/ES, página única com especialidades, credenciais, depoimentos, perguntas frequentes e agendamento pelo WhatsApp | [`urlandesigner/Dra.BeatrizMartins`](https://github.com/urlandesigner/Dra.BeatrizMartins) |
+| [Hub Inteligente](https://ybera-links.vercel.app/) | Comparador de ofertas de um produto da Ybera: reúne os canais oficiais e compara preço, prazo e condições lado a lado para quem quer decidir onde comprar | [`urlandesigner/YberaLinks`](https://github.com/urlandesigner/YberaLinks) |
 
 ## Como funciona
 

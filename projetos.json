@@ -79,6 +79,12 @@
       "desc": "Site de uma pneumologista de Vitória/ES, página única com especialidades, credenciais, depoimentos, perguntas frequentes e agendamento pelo WhatsApp",
       "url": "https://dra-beatriz-martins.vercel.app/",
       "repo": "urlandesigner/Dra.BeatrizMartins"
+    },
+    {
+      "nome": "Hub Inteligente",
+      "desc": "Comparador de ofertas de um produto da Ybera: reúne os canais oficiais e compara preço, prazo e condições lado a lado para quem quer decidir onde comprar",
+      "url": "https://ybera-links.vercel.app/",
+      "repo": "urlandesigner/YberaLinks"
     }
   ]
 }
