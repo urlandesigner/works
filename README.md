@@ -20,6 +20,7 @@ lista e abre esses endereços.
 | [mensageiro-do-bem](https://mensageirodobem.vercel.app/) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora | [`urlandesigner/Mensageirodobem`](https://github.com/urlandesigner/Mensageirodobem) |
 | [Portfólio](https://urlandipre.vercel.app/) | Portfólio de Urlan Dipré, product designer e UX/UI: cases, experiência profissional e contato para novos projetos | [`urlandesigner/urlandipre`](https://github.com/urlandesigner/urlandipre) |
 | [MyCofre](https://app-financeiro-sand.vercel.app/) | App de controle financeiro pessoal, com conta própria para acompanhar o dinheiro em um só lugar | [`urlandesigner/AppFinanceiro`](https://github.com/urlandesigner/AppFinanceiro) |
+| [Hub 1](https://hub1-drab.vercel.app/) | Estudo de design de card de oferta de marketplace, com preço, prazo de entrega, frete e botão de compra | [`urlandesigner/hub1`](https://github.com/urlandesigner/hub1) |
 
 ## Como funciona
 
