@@ -85,6 +85,12 @@
       "desc": "Comparador de ofertas de um produto da Ybera: reúne os canais oficiais e compara preço, prazo e condições lado a lado para quem quer decidir onde comprar",
       "url": "https://ybera-links.vercel.app/",
       "repo": "urlandesigner/YberaLinks"
+    },
+    {
+      "nome": "Ybera PRO",
+      "desc": "Site do programa PRO da Ybera para distribuidores, representantes e profissionais de salão, com visão de carteira, comissões e cadastro",
+      "url": "https://sitepro-six.vercel.app/",
+      "repo": "urlandesigner/Site-Ybera-PRO"
     }
   ]
 }
