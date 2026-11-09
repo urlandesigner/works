@@ -49,6 +49,18 @@
       "url": "https://mensageirodobem.vercel.app/",
       "repo": "urlandesigner/Mensageirodobem",
       "pasta_antiga": "mensageiro-do-bem"
+    },
+    {
+      "nome": "Portfólio",
+      "desc": "Portfólio de Urlan Dipré, product designer e UX/UI: cases, experiência profissional e contato para novos projetos",
+      "url": "https://urlandipre.vercel.app/",
+      "repo": "urlandesigner/urlandipre"
+    },
+    {
+      "nome": "MyCofre",
+      "desc": "App de controle financeiro pessoal, com conta própria para acompanhar o dinheiro em um só lugar",
+      "url": "https://app-financeiro-sand.vercel.app/",
+      "repo": "urlandesigner/AppFinanceiro"
     }
   ]
 }

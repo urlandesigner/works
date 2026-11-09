@@ -18,6 +18,8 @@ lista e abre esses endereços.
 | [LP Urlan](https://lp-urlan-dipre.vercel.app/) | Landing page pessoal da UD Labs, com briefing de projeto e diagnóstico de site para captar leads | [`urlandesigner/LP-UrlanDipre`](https://github.com/urlandesigner/LP-UrlanDipre) |
 | [LP afiliados](https://lp-afiliados-gilt.vercel.app/) | Landing page de afiliado para suplemento, com análise de ingredientes, prova social e teste de headline | [`urlandesigner/LP-afiliados`](https://github.com/urlandesigner/LP-afiliados) |
 | [mensageiro-do-bem](https://mensageirodobem.vercel.app/) | Microproduto de validação: paga um Pix simbólico e recebe uma mensagem inspiradora | [`urlandesigner/Mensageirodobem`](https://github.com/urlandesigner/Mensageirodobem) |
+| [Portfólio](https://urlandipre.vercel.app/) | Portfólio de Urlan Dipré, product designer e UX/UI: cases, experiência profissional e contato para novos projetos | [`urlandesigner/urlandipre`](https://github.com/urlandesigner/urlandipre) |
+| [MyCofre](https://app-financeiro-sand.vercel.app/) | App de controle financeiro pessoal, com conta própria para acompanhar o dinheiro em um só lugar | [`urlandesigner/AppFinanceiro`](https://github.com/urlandesigner/AppFinanceiro) |
 
 ## Como funciona
 
@@ -64,5 +66,6 @@ trabalho**. Teste: se amanhã entrar uma tela nova, o texto continua certo?
 
 ## Removido da vitrine
 
-- **Condominio** e **MyCofre** — saíram até terem repositório e endereço
-  próprios. O código antigo continua no histórico do git deste repositório.
+- **Condominio** — saiu até ter repositório e endereço próprios. O código
+  antigo continua no histórico do git deste repositório. (O MyCofre voltou,
+  agora com repositório próprio.)
