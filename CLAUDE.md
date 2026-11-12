@@ -15,3 +15,10 @@ Ao escrever a `desc` de um projeto, descreva o que ele é, para quem e o que dá
 para fazer nele. Não use quantidade (perguntas, telas, categorias,
 componentes), lista de itens nem histórico do trabalho: esse texto não pode
 precisar de edição quando o projeto crescer.
+
+## Propostas de sites
+
+`propostas/` é a página **Propostas de sites**: mesma vitrine, lendo
+`propostas/propostas.json`. O código das propostas mora em
+`urlandesigner/propostas-sites`. Só adicione a proposta que o Urlan pedir:
+`python3 scripts/vitrine.py adicionar --lista propostas …`.

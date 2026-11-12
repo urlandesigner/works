@@ -1,0 +1,11 @@
+{
+  "_leia": "LISTA DA PAGINA /propostas/. Mesmo formato do projetos.json da raiz: `url` e o endereco no ar; `repo` e onde o codigo mora (urlandesigner/propostas-sites, uma pasta por lead). Ordem do arquivo = ordem na tela. So entra o que o Urlan pedir. Quem escreve: `scripts/vitrine.py adicionar --lista propostas`.",
+  "propostas": [
+    {
+      "nome": "Dra. Viviane Marchesi",
+      "desc": "Proposta de site para uma psiquiatra de Vitória/ES: apresenta a médica e o atendimento e leva o paciente a agendar a consulta pelo WhatsApp",
+      "url": "https://propostas-sites-rho.vercel.app/",
+      "repo": "urlandesigner/propostas-sites"
+    }
+  ]
+}

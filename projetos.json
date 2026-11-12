@@ -103,6 +103,12 @@
       "desc": "Proposta de nova loja institucional da Ybera, com apresentação da marca e vitrine das linhas de produto para cabelo",
       "url": "https://loja-ybera.vercel.app/",
       "repo": "urlandesigner/LojaYbera"
+    },
+    {
+      "nome": "Propostas de sites",
+      "desc": "Lista das propostas de site feitas para apresentar a clientes, cada uma aberta no ar para o cliente ver antes de fechar",
+      "url": "https://urlandesigner.github.io/works/propostas/",
+      "repo": "urlandesigner/propostas-sites"
     }
   ]
 }

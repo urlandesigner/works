@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Propostas de sites · Urlan Dipre</title>
+<meta name="description" content="Propostas de site feitas por Urlan Dipre para apresentar a clientes." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#0B0A0F" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0A0F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23A255FD'%3EU%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Fragment+Mono&display=swap" rel="stylesheet" />
+
+<!--
+  PROPOSTAS DE SITES — lista de links, igual à vitrine da raiz.
+
+  Cada proposta mora no repositório urlandesigner/propostas-sites (uma pasta
+  por lead, um projeto no Vercel por pasta). Esta página lê
+  `propostas.json` e abre o endereço no ar. Nada do site é copiado para cá.
+
+  PARA ADICIONAR: `python3 scripts/vitrine.py adicionar --lista propostas`.
+  Só entra o que o Urlan pedir. noindex: são sites de clientes que ainda
+  não aceitaram.
+
+  Paleta da UD Labs. Ordem na tela = ordem no arquivo.
+-->
+
+<style>
+  :root {
+    /* Paleta da UD Labs. Estes tokens são a fonte das capas de projeto:
+       capa que copia a pele de outra herda a cor do catálogo dela, e esse
+       erro não quebra nada, só sai com a cara errada.
+
+       --acento é o roxo claro da marca (#A255FD), não o roxo cheio
+       (#7120D1): o cheio dá 2.66:1 sobre o fundo e reprova em AA como
+       texto. Ele serve como preenchimento, com tinta clara em cima. */
+    --papel:      #0B0A0F;
+    --papel-2:    #110E18;
+    --tinta:      #F1EEF6;
+    --apoio:      #948FA3;
+    /* --apoio-2 é só ORNAMENTO (numeral, ícone, chevron) — não carrega texto
+       que informa, esse usa --apoio. */
+    --apoio-2:    #55505F;
+    --linha:      rgba(241, 238, 246, 0.10);
+    --linha-forte: rgba(241, 238, 246, 0.75);
+    --acento:      #A255FD;
+    --acento-meio: rgba(162, 85, 253, 0.38);
+    --sombra:     0 18px 40px -20px rgba(0, 0, 0, 0.6);
+
+    --serif: "Lora", Georgia, serif;
+    --sans:  "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --mono:  "Fragment Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --gap: clamp(20px, 4.5vw, 40px);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { color-scheme: dark; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--papel);
+    color: var(--tinta);
+    font: 400 16px/1.55 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Um sopro de luz no alto — vinho, não branco: no escuro um glow neutro
+     lê como tela quebrada; um tingido de leve na cor de acento lê como
+     atmosfera de propósito. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(70rem 30rem at 50% -12%, rgba(162, 85, 253, 0.10), transparent 70%);
+  }
+
+  .pagina {
+    position: relative;
+    max-width: 1104px;
+    margin: 0 auto;
+    padding: clamp(48px, 10vh, 112px) var(--gap) 72px;
+  }
+
+  ::selection { background: var(--acento); color: var(--papel); }
+
+  /* ---------- masthead ---------- */
+
+  .kicker {
+    font: 400 11px/1 var(--mono);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--apoio);
+    margin: 0 0 26px;
+  }
+  .kicker .voltar { color: var(--apoio); text-decoration: none; }
+  .kicker .voltar:hover, .kicker .voltar:focus-visible { color: var(--tinta); }
+  .kicker b {
+    font-weight: 400;
+    color: var(--acento);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 7vw, 74px);
+    font-weight: 560;
+    font-variation-settings: "opsz" 120;
+    letter-spacing: -0.015em;
+    line-height: 1;
+    margin: 0;
+  }
+
+  /* O total como expoente do título: o catálogo anuncia o próprio tamanho. */
+  h1 sup {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 450;
+    font-size: 0.3em;
+    color: var(--acento);
+    margin-left: 0.18em;
+    vertical-align: 1.5em;
+    letter-spacing: 0;
+  }
+
+  .lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 430;
+    font-size: clamp(17px, 2vw, 20px);
+    font-variation-settings: "opsz" 22;
+    color: var(--apoio);
+    max-width: 48ch;
+    margin: 20px 0 0;
+  }
+
+  /* ---------- mesa de trabalho: busca + filtro ----------
+     Fica presa no topo porque o catálogo vai crescer; o fundo é o próprio
+     papel, para o bloco pesar o mínimo quando grudar. */
+  .mesa {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) auto;
+    align-items: end;
+    gap: 10px 26px;
+    margin-top: clamp(40px, 7vh, 64px);
+    padding: 18px 0 0;
+    background: var(--papel); /* fallback: sem ele, navegador sem color-mix() descarta a linha de baixo e a mesa fica transparente */
+    background: color-mix(in srgb, var(--papel) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1.5px solid var(--linha-forte);
+  }
+
+  .busca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+  }
+  .busca svg { flex: none; color: var(--apoio-2); }
+  .busca input {
+    width: 100%;
+    border: 0;
+    background: none;
+    font: 400 16px/1.3 var(--sans);
+    color: var(--tinta);
+    padding: 2px 0;
+    outline: none; /* o indicador de foco vive no .busca, via :focus-within */
+    caret-color: var(--acento);
+  }
+  .busca input::placeholder { color: var(--apoio); }
+  .busca input::-webkit-search-cancel-button { -webkit-appearance: none; }
+  .busca kbd {
+    flex: none;
+    font: 400 10px/1 var(--mono);
+    color: var(--apoio);
+    border: 1px solid var(--linha);
+    border-radius: 4px;
+    padding: 3px 6px 2px;
+  }
+  @media (hover: none) { .busca kbd { display: none; } }
+
+  .mesa-fim {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 12px;
+    justify-self: end;
+  }
+
+  .contagem {
+    font: 400 11px/1 var(--mono);
+    color: var(--apoio);
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .limpar {
+    font: 500 12.5px/1 var(--sans);
+    color: var(--acento);
+    background: none;
+    border: 0;
+    padding: 4px 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .limpar:hover { color: var(--tinta); }
+  .limpar:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+  .limpar[hidden] { display: none; }
+
+  /* ---------- as fichas ---------- */
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: clamp(24px, 4vh, 36px) 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    /* fichas da mesma linha, mesma altura — o pé alinha pelo stretch do grid */
+    align-items: stretch;
+  }
+  @media (max-width: 980px) { ol { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { ol { grid-template-columns: 1fr; } }
+
+  .item[hidden] { display: none; }
+  .erro-carga { padding: 72px 0; font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--apoio); }
+
+  .cartao {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 22px 22px 20px;
+    background: var(--papel-2);
+    border: 1px solid var(--linha);
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1),
+                box-shadow 240ms ease;
+  }
+  .cartao:hover,
+  .cartao:focus-visible {
+    border-color: var(--acento-meio);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+  }
+  .cartao:focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cartao, .cartao:hover, .cartao:focus-visible { transform: none; }
+  }
+
+  .alto {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 450;
+    font-size: 17px;
+    color: var(--apoio-2);
+    font-variant-numeric: tabular-nums;
+    transition: color 160ms ease;
+  }
+  .cartao:hover .num, .cartao:focus-visible .num { color: var(--acento); }
+
+  .nome {
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 520;
+    font-variation-settings: "opsz" 40;
+    letter-spacing: -0.008em;
+    line-height: 1.14;
+    padding-bottom: 3px;
+    align-self: start;
+  }
+  /* text-decoration, nao background-image: nome que quebra em duas linhas
+     ganha sublinhado nas duas — o truque do background so pinta a ultima */
+  .cartao:hover .nome, .cartao:focus-visible .nome {
+    text-decoration: underline;
+    text-decoration-color: var(--acento);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+  }
+
+  .desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--apoio);
+    margin-top: 8px;
+  }
+
+  /* O pé cola embaixo: com fichas da mesma altura na linha, designer e data
+     formam uma régua contínua atravessando a grade. */
+  .pe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 22px;
+  }
+  .quem {
+    font: 400 10.5px/1.5 var(--mono);
+    color: var(--apoio);
+  }
+
+  .seta {
+    flex: none;
+    color: var(--acento);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 200ms ease, transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .cartao:hover .seta, .cartao:focus-visible .seta {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  @media (hover: none) {
+    .seta { opacity: 1; transform: none; }
+  }
+
+  /* ---------- vazio ---------- */
+
+  .vazio {
+    padding: 72px 0;
+    text-align: center;
+  }
+  .vazio p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 21px;
+    font-weight: 440;
+    color: var(--apoio);
+    margin: 0 0 18px;
+  }
+  .vazio strong { color: var(--tinta); font-weight: 520; }
+
+  /* ---------- colofão ---------- */
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px 32px;
+    flex-wrap: wrap;
+    margin-top: clamp(56px, 10vh, 96px);
+    padding-top: 18px;
+    border-top: 1px solid var(--linha);
+    font: 400 11px/1.7 var(--mono);
+    color: var(--apoio);
+  }
+  footer code { font-family: inherit; color: var(--tinta); }
+
+  /* ---------- entrada ---------- */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .anima {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: subir 640ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+    .d1 { animation-delay: 40ms; }
+    .d2 { animation-delay: 110ms; }
+    .d3 { animation-delay: 180ms; }
+    .d4 { animation-delay: 250ms; }
+    @keyframes subir { to { opacity: 1; transform: none; } }
+  }
+
+  /* ---------- estreito ---------- */
+  @media (max-width: 720px) {
+    .mesa { position: static; grid-template-columns: 1fr; gap: 6px 20px; }
+    .busca { border-bottom: 1px solid var(--linha); }
+    .mesa-fim { justify-self: start; padding: 6px 0 12px; }
+  }
+
+  /* No fim de propósito: o mobile redefine a borda da .busca via shorthand,
+     e esta regra precisa vencer por ordem para o foco aparecer lá também. */
+  .busca:focus-within { border-bottom-color: var(--acento); }
+</style>
+</head>
+
+<body>
+  <div class="pagina">
+    <header>
+      <p class="kicker anima d1"><a class="voltar" href="../">← Works</a> · <b>Urlan</b> · Dipre</p>
+      <h1 class="anima d2">Propostas de sites<sup id="total"></sup></h1>
+      <p class="lede anima d3">
+        Sites feitos para apresentar a clientes. Cada cartão abre a proposta no ar.
+      </p>
+    </header>
+
+    <form class="mesa anima d4" role="search" aria-label="Buscar propostas" onsubmit="return false">
+      <label class="busca">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <input id="f-busca" type="search" placeholder="Buscar proposta" autocomplete="off" aria-label="Buscar propostas" />
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+      <div class="mesa-fim">
+        <p class="contagem" id="contagem" aria-live="polite"></p>
+        <button class="limpar" id="limpar" type="button" hidden>Limpar</button>
+      </div>
+    </form>
+
+    <ol id="lista"></ol>
+
+    <div class="vazio" id="vazio" hidden>
+      <p>Nada por aqui com <strong id="vazio-criterio"></strong>.</p>
+      <button class="limpar" type="button" onclick="limparTudo()">Limpar busca</button>
+    </div>
+
+    <p class="erro-carga" id="erro-carga" hidden>Não consegui carregar a lista de propostas.</p>
+
+    <footer>
+      <span>Cada proposta vive em <code>urlandesigner/propostas-sites</code></span>
+    </footer>
+  </div>
+
+<script>
+const SETA = '<svg class="seta" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+const lista = document.getElementById("lista");
+const vazio = document.getElementById("vazio");
+const vazioCriterio = document.getElementById("vazio-criterio");
+const contagem = document.getElementById("contagem");
+const fBusca = document.getElementById("f-busca");
+const btnLimpar = document.getElementById("limpar");
+let itens = [];
+
+function escapar(s) {
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* Busca sem acento: "protótipo" e "prototipo" são a mesma coisa. */
+function chato(s) {
+  return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+function endereco(url) {
+  const u = new URL(url);
+  return u.host + (u.pathname === "/" ? "" : u.pathname.replace(/\/$/, ""));
+}
+
+function montar(projetos) {
+  document.getElementById("total").textContent = "·" + projetos.length;
+  lista.innerHTML = projetos.map((p, i) => `
+    <li class="item" data-busca="${escapar(chato(p.nome + " " + p.desc))}">
+      <a class="cartao" href="${escapar(p.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="alto">
+          <span class="num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+        </span>
+        <span class="nome">${escapar(p.nome)}</span>
+        <span class="desc">${escapar(p.desc)}</span>
+        <span class="pe">
+          <span class="quem">${escapar(endereco(p.url))}</span>
+          ${SETA}
+        </span>
+      </a>
+    </li>`).join("");
+  itens = [...lista.querySelectorAll(".item")];
+
+  /* Entrada em cascata, uma vez só — filtrar é instantâneo. */
+  if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    itens.forEach((li, i) => {
+      li.classList.add("anima");
+      li.style.animationDelay = `${290 + Math.min(i, 11) * 55}ms`;
+    });
+  }
+  fBusca.value = new URLSearchParams(location.search).get("q") || "";
+  aplicar({ atualizarUrl: false });
+}
+
+function aplicar({ atualizarUrl = true } = {}) {
+  const q = chato(fBusca.value.trim());
+  let visiveis = 0;
+  itens.forEach((li) => {
+    const ok = !q || li.dataset.busca.includes(q);
+    li.hidden = !ok;
+    if (ok) visiveis++;
+  });
+  contagem.textContent = q
+    ? `${visiveis} de ${itens.length}`
+    : `${itens.length} ${itens.length === 1 ? "proposta" : "propostas"}`;
+  btnLimpar.hidden = !q;
+  vazio.hidden = visiveis > 0;
+  vazioCriterio.textContent = `“${fBusca.value.trim()}”`;
+  if (atualizarUrl) {
+    history.replaceState(null, "", q ? `?q=${encodeURIComponent(fBusca.value.trim())}` : location.pathname);
+  }
+}
+
+function limparTudo() {
+  fBusca.value = "";
+  aplicar();
+  fBusca.focus();
+}
+
+fBusca.addEventListener("input", () => aplicar());
+btnLimpar.addEventListener("click", limparTudo);
+
+/* Teclado: `/` cai na busca de onde estiver; Esc limpa; ↓↑ andam pelos cartões. */
+document.addEventListener("keydown", (e) => {
+  const emCampo = document.activeElement.tagName === "INPUT";
+  if (e.key === "/" && !emCampo) {
+    e.preventDefault();
+    fBusca.focus();
+    fBusca.select();
+    return;
+  }
+  if (e.key === "Escape" && document.activeElement === fBusca) {
+    if (fBusca.value) { fBusca.value = ""; aplicar(); }
+    else fBusca.blur();
+    return;
+  }
+  if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const links = itens.filter((li) => !li.hidden).map((li) => li.querySelector("a"));
+  if (!links.length) return;
+  const pos = links.indexOf(document.activeElement);
+  const naBusca = document.activeElement === fBusca;
+  if (!naBusca && pos === -1) return;
+  let alvo;
+  if (naBusca) {
+    if (e.key === "ArrowUp") return;
+    alvo = links[0];
+  } else {
+    alvo = links[pos + (e.key === "ArrowDown" ? 1 : -1)];
+  }
+  if (alvo) { e.preventDefault(); alvo.focus(); }
+  else if (pos === 0 && e.key === "ArrowUp") { e.preventDefault(); fBusca.focus(); }
+});
+
+fetch("propostas.json")
+  .then((r) => (r.ok ? r.json() : Promise.reject()))
+  .then((d) => montar(d.propostas))
+  .catch(() => { document.getElementById("erro-carga").hidden = false; contagem.textContent = ""; });
+</script>
+</body>
+</html>

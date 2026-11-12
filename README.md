@@ -27,6 +27,7 @@ lista e abre esses endereços.
 | [Ybera PRO](https://sitepro-six.vercel.app/) | Site do programa PRO da Ybera para distribuidores, representantes e profissionais de salão, com visão de carteira, comissões e cadastro | [`urlandesigner/Site-Ybera-PRO`](https://github.com/urlandesigner/Site-Ybera-PRO) |
 | [Dra.LarissaCoelho](https://larissa-coelho.vercel.app/) | Site de uma dentista de Vila Velha/ES, página única com especialidades, tratamentos, diferenciais e agendamento de avaliação | [`urlandesigner/Larissa-Coelho`](https://github.com/urlandesigner/Larissa-Coelho) |
 | [Loja Ybera](https://loja-ybera.vercel.app/) | Proposta de nova loja institucional da Ybera, com apresentação da marca e vitrine das linhas de produto para cabelo | [`urlandesigner/LojaYbera`](https://github.com/urlandesigner/LojaYbera) |
+| [Propostas de sites](https://urlandesigner.github.io/works/propostas/) | Lista das propostas de site feitas para apresentar a clientes, cada uma aberta no ar para o cliente ver antes de fechar | [`urlandesigner/propostas-sites`](https://github.com/urlandesigner/propostas-sites) |
 
 ## Como funciona
 
@@ -38,6 +39,16 @@ lista e abre esses endereços.
   antiga (`/works/Atlas-pessoal/…`), leva para a `url` do projeto, então link
   antigo compartilhado continua valendo. Senão, mostra uma 404 geral.
 - `scripts/vitrine.py` — adiciona projeto e confere se as urls respondem.
+- `propostas/` — página **Propostas de sites**, uma segunda vitrine no mesmo
+  formato: `propostas/index.html` lê `propostas/propostas.json`. Lista os sites
+  de proposta para clientes (o código mora em `urlandesigner/propostas-sites`,
+  uma pasta por lead). Leva `noindex`. Só entra a proposta que o Urlan pedir:
+
+  ```bash
+  python3 scripts/vitrine.py adicionar --lista propostas \
+    --nome "Dra. Fulana" --desc "..." \
+    --url https://proposta.vercel.app/ --repo urlandesigner/propostas-sites
+  ```
 
 ## Regra de ouro
 
